@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:devfest19/pages/speakerDetails.dart';
 class SpeakerCards extends StatefulWidget {
   String _name, _company, _session, _imgURL;
   SpeakerCards(this._name, this._company, this._session, this._imgURL);
@@ -108,7 +108,10 @@ class _SpeakerCardsState extends State<SpeakerCards> {
                   ),
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => speakerDetails(widget._name,widget._company,widget._imgURL)));
+              },
             ),
           ),
         ),

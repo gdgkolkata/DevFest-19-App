@@ -49,6 +49,10 @@ flutter:
     - assets/drawer.png
     - assets/speaker_demo.png
     - assets/speaker.jpg
+    - assets/linkedin.png
+    - assets/git.png
+    - assets/fb.png
+    - assets/mail.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -6,6 +6,7 @@ import './ui/myButton.dart';
 import './navigation.dart';
 import './schedule.dart';
 import './speakers.dart';
+import './developer.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -127,6 +128,10 @@ class _HomePageState extends State<HomePage> {
                 Icons.android,
                 color: Colors.black87,
               ),
+              onTap: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Developer()));
+              },
             ),
           ],
         ),
