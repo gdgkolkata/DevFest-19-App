@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/piyush/Flutter projects/devfest19/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "/home/piyush/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/dcc234414752fa5f814a7fd1d1ceb2e7/res/values-port/values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}
