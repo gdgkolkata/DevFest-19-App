@@ -5,6 +5,7 @@ INJECTED from /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/D
 INJECTED from /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/android/app/src/main/AndroidManifest.xml:1:1-39:12
 INJECTED from /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/android/app/src/main/AndroidManifest.xml:1:1-39:12
 MERGED from /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/android/app/src/main/AndroidManifest.xml:1:1-39:12
+MERGED from [:url_launcher] /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-14:12
 MERGED from [:google_maps_flutter] /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/build/google_maps_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] /home/aritra/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/5d76b934bad44d3c7ad7314de71db367/AndroidManifest.xml:17:1-38:12
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/aritra/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/f2ec2bab843c731c1460a07574f4d4f9/AndroidManifest.xml:17:1-29:12
@@ -52,6 +53,8 @@ ADDED from /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevF
 		ADDED from /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/android/app/src/main/AndroidManifest.xml:6:18-77
 application
 ADDED from /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/android/app/src/main/AndroidManifest.xml:13:5-38:19
+MERGED from [:url_launcher] /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher] /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] /home/aritra/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/5d76b934bad44d3c7ad7314de71db367/AndroidManifest.xml:30:5-36:19
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] /home/aritra/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/5d76b934bad44d3c7ad7314de71db367/AndroidManifest.xml:30:5-36:19
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /home/aritra/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/f2ec2bab843c731c1460a07574f4d4f9/AndroidManifest.xml:22:5-27:19
@@ -120,6 +123,8 @@ uses-sdk
 INJECTED from /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/android/app/src/main/AndroidManifest.xml
+MERGED from [:url_launcher] /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [:google_maps_flutter] /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/build/google_maps_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [:google_maps_flutter] /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/build/google_maps_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] /home/aritra/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/5d76b934bad44d3c7ad7314de71db367/AndroidManifest.xml:20:5-44
@@ -154,6 +159,14 @@ INJECTED from /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/D
 	android:minSdkVersion
 		INJECTED from /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/android/app/src/main/AndroidManifest.xml
 		INJECTED from /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/android/app/src/debug/AndroidManifest.xml
+activity#io.flutter.plugins.urllauncher.UrlLauncherPlugin$WebViewActivity
+ADDED from [:url_launcher] /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher] /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher] /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher] /home/aritra/AndroidStudioProjects/Google_Projects/AritraDevFest/DevFest-19-App/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:9:13-92
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.android.gms:play-services-maps:16.1.0] /home/aritra/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/5d76b934bad44d3c7ad7314de71db367/AndroidManifest.xml:23:5-79
 	android:name

@@ -1,5 +1,10 @@
+import 'package:devfest19/utils/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+//Import to pages
+import 'package:devfest19/pages/schedule.dart';
 
 Widget myDrawer(BuildContext context) {
   return Drawer(
@@ -26,22 +31,33 @@ Widget myDrawer(BuildContext context) {
               padding: EdgeInsets.all(0.0),
             ),
           ),
-          ListTile(
-            title: Text(
-              "Home",
-              style: TextStyle(
-                color: Colors.grey.shade600,
+          // THIS NEEDS THINGS
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: hexToColor("#CBC5D7"), //this too
+                borderRadius: new BorderRadius.only(
+                    bottomRight: const Radius.circular(40.0),
+                    topRight: const Radius.circular(40.0)),
+              ),
+              child: ListTile(
+                title: Text(
+                  "Home",
+                  style: TextStyle(
+                    color: hexToColor("#673ab7"), //this too
+                  ),
+                ),
+                leading: Icon(
+                  Icons.home,
+                  color: hexToColor("#673ab7"), //this too
+                  size: 25.0,
+                ),
+                onTap: () {
+                  Navigator.pop(context);
+                },
               ),
             ),
-            leading: Icon(
-              Icons.home,
-              color: Colors.grey.shade600,
-              size: 25.0,
-            ),
-            onTap: () {
-              // Navigator.push(context,
-              // MaterialPageRoute(builder: (context) => HomePage()));
-            },
           ),
           ListTile(
             title: Text(
@@ -56,8 +72,8 @@ Widget myDrawer(BuildContext context) {
               size: 25.0,
             ),
             onTap: () {
-              // Navigator.push(context,
-              // MaterialPageRoute(builder: (context) => Schedule()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Schedule()));
             },
           ),
           ListTile(
@@ -96,7 +112,7 @@ Widget myDrawer(BuildContext context) {
           ),
           ListTile(
             title: Text(
-              "Sponsers",
+              "Sponsors",
               style: TextStyle(
                 color: Colors.grey.shade600,
               ),
@@ -119,28 +135,33 @@ Widget myDrawer(BuildContext context) {
               color: Colors.grey.shade600,
               size: 25.0,
             ),
+            onTap: () async {
+              const url = 'https://gdgkolkata.org/';
+              if (await canLaunch(url)) {
+                await launch(url);
+              } else {
+                throw 'Could not launch $url';
+              }
+            },
           ),
-          
-                 Column(
-                children: <Widget>[
-                  Divider(),
-                  Container(
-                    child: ListTile(
-                      title: Text(
-                        "Developers",
-                        style: TextStyle(
-                          color: Colors.grey.shade600,
-                        ),
-                      ),
-                      onTap: () {
-                        // Navigator.push(context,
-                        // MaterialPageRoute(builder: (context) => Developer()));
-                      },
+          Column(
+            children: <Widget>[
+              Divider(),
+              Container(
+                child: ListTile(
+                  title: Text(
+                    "Developers",
+                    style: TextStyle(
+                      color: Colors.grey.shade600,
                     ),
                   ),
-                ],
-             
-           
+                  onTap: () {
+                    // Navigator.push(context,
+                    // MaterialPageRoute(builder: (context) => Developer()));
+                  },
+                ),
+              ),
+            ],
           ),
         ],
       ),

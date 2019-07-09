@@ -5,6 +5,9 @@ import 'package:flutter/services.dart';
 import 'package:devfest19/utils/drawer.dart';
 import 'package:devfest19/utils/color.dart';
 
+// Imports to other pages
+import './schedule.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -40,7 +43,7 @@ class _HomePageState extends State<HomePage> {
             child: IconButton(
               icon: Icon(Icons.account_circle),
               iconSize: 30.0,
-              color: hexToColor('#4885ed'),
+               color: hexToColor('#673ab7'),
               onPressed: () {
                 // ToDo: Logic for AUTH
               },
@@ -110,4 +113,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
