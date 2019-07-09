@@ -1,6 +1,6 @@
-import 'package:devfest19/pages/ui/sessionCard.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+//
+import 'package:devfest19/pages/utils/sessionCard.dart';
 
 class Schedule extends StatefulWidget {
   @override
@@ -32,7 +32,7 @@ class _ScheduleState extends State<Schedule> {
         title: Text(
           'Schedule',
           style: TextStyle(
-            color: Colors.black87,
+            color: Colors.grey.shade600,
           ),
         ),
         elevation: 5.0,
@@ -43,7 +43,7 @@ class _ScheduleState extends State<Schedule> {
             child: IconButton(
               icon: Icon(Icons.bookmark_border),
               iconSize: 30.0,
-              color: hexToColor('#4885ed'),
+              color: hexToColor('#673ab7'),
               onPressed: () {},
             ),
           ),
@@ -52,7 +52,7 @@ class _ScheduleState extends State<Schedule> {
             child: IconButton(
               icon: Icon(Icons.star_border),
               iconSize: 30.0,
-              color: hexToColor('#4885ed'),
+              color: hexToColor('#673ab7'),
               onPressed: () {},
             ),
           ),

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/piyush/Flutter projects/devfest19/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-hu/values-hu.xml",
+            "outputFile": "/home/piyush/Flutter projects/gdg/DevFest-19-App/Piyush/DevFest-19-App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-hu/values-hu.xml",
             "map": [
                 {
                     "source": "/home/piyush/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/dcc234414752fa5f814a7fd1d1ceb2e7/res/values-hu/values-hu.xml",

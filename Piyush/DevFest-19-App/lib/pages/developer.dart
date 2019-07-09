@@ -1,5 +1,7 @@
+
 import 'package:flutter/material.dart';
-import './ui/DevCards.dart';
+//
+import './utils/DevCards.dart';
 class Developer extends StatefulWidget {
   @override
   _DeveloperState createState() => _DeveloperState();
@@ -22,12 +24,13 @@ class _DeveloperState extends State<Developer> {
         title: Text(
           'Developers',
           style: TextStyle(
-            color: Colors.black87,
+            color: Colors.grey.shade600,
           ),
         ),
         elevation: 5.0,
         backgroundColor: Colors.white,
       ),
+      
       body: ListView(
         children: <Widget>[
           DevCards(dev[0][0],dev[0][1],dev[0][2],),

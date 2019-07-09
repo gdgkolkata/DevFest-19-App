@@ -1,8 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/home/piyush/Flutter projects/devfest19/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/piyush/Flutter projects/gdg/DevFest-19-App/Piyush/DevFest-19-App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
+                {
+                    "source": "/home/piyush/Flutter projects/gdg/DevFest-19-App/Piyush/DevFest-19-App/android/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "347"
+                    },
+                    "to": {
+                        "startLines": "170",
+                        "startColumns": "4",
+                        "startOffsets": "8504",
+                        "endLines": "174",
+                        "endColumns": "12",
+                        "endOffsets": "8796"
+                    }
+                },
                 {
                     "source": "/home/piyush/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/90470ce974cbcf46e8bd38fbdf9582c1/res/values/values.xml",
                     "from": {
@@ -92,25 +111,6 @@
                         "endLines": "2,3,4,5,6,7,8,9,42,120,151,152,153,154,155,156,157,158,160,161,162,163,164,165,166,167,168",
                         "endColumns": "89,79,89,89,79,80,79,79,20,20,104,180,124,106,179,122,115,102,187,104,180,124,174,147,62,61,78",
                         "endOffsets": "190,270,360,450,530,611,691,771,2417,4256,6200,6381,6506,6613,6793,6916,7032,7135,7490,7595,7776,7901,8076,8224,8287,8349,8428"
-                    }
-                },
-                {
-                    "source": "/home/piyush/Flutter projects/devfest19/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "347"
-                    },
-                    "to": {
-                        "startLines": "170",
-                        "startColumns": "4",
-                        "startOffsets": "8504",
-                        "endLines": "174",
-                        "endColumns": "12",
-                        "endOffsets": "8796"
                     }
                 }
             ]

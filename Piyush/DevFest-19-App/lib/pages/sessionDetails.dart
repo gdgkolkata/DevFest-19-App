@@ -1,4 +1,4 @@
-import 'package:devfest19/pages/ui/sessionCard.dart';
+import 'package:devfest19/pages/utils/color.dart';
 import 'package:flutter/material.dart';
 
 class sessionDetails extends StatefulWidget {
@@ -10,9 +10,6 @@ class sessionDetails extends StatefulWidget {
 }
 
 class _sessionDetailsState extends State<sessionDetails> {
-  Color hexToColor(String code) {
-    return new Color(int.parse(code.substring(1, 7), radix: 16) + 0xFF000000);
-  }
 
   String description =
       "We are moving from a company that helps you find answers, to a company that helps you get things done...we want our products to work harder for you—in the context of your job, your home and your life. And they all share a single goal: to be helpful.";
@@ -25,7 +22,7 @@ class _sessionDetailsState extends State<sessionDetails> {
             child: Text(
               _tags.join(" | "),
               style: TextStyle(
-                color: hexToColor('#4885ed'),
+                color: hexToColor('#673ab7'),
                 fontSize: 20.0,
               ),
             ),
@@ -39,7 +36,7 @@ class _sessionDetailsState extends State<sessionDetails> {
           color: Colors.white,
           child: ListView(
             children: <Widget>[
-              Image.asset("assets/speaker_demo.png"),
+              Image.asset("assets/speaker_demo.jpeg"),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Text(
@@ -104,7 +101,7 @@ class _sessionDetailsState extends State<sessionDetails> {
                       padding: const EdgeInsets.only(right: 8.0),
                       child: Container(
                         height: 18.0,
-                        color: hexToColor('#4885ed'),
+                        color: hexToColor('#673ab7'),
                         child: Text("      "),
                       ),
                     ),
@@ -114,7 +111,7 @@ class _sessionDetailsState extends State<sessionDetails> {
                         height: 18.0,
                         color: widget._level == "Intermediate" ||
                                 widget._level == "Advance"
-                            ? hexToColor('#4885ed')
+                            ? hexToColor('#673ab7')
                             : Colors.black12,
                         child: Text("      ",),
                       ),
@@ -124,7 +121,7 @@ class _sessionDetailsState extends State<sessionDetails> {
                       child: Container(
                         height: 18.0,
                         color: widget._level == "Advance"
-                            ? hexToColor('#4885ed')
+                            ? hexToColor('#673ab7')
                             : Colors.black12,
                         child: Text("      "),
                       ),

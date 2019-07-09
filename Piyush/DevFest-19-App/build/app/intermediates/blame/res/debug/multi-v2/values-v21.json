@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/piyush/Flutter projects/devfest19/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
+            "outputFile": "/home/piyush/Flutter projects/gdg/DevFest-19-App/Piyush/DevFest-19-App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
             "map": [
                 {
                     "source": "/home/piyush/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/6301b68c6c07950e20434b54fe12c25b/res/values-v21/values-v21.xml",

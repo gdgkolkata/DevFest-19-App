@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -38,12 +37,14 @@ class _NavigationState extends State<Navigation> {
         elevation: 5.0,
         backgroundColor: Colors.white,
       ),
+     
       body: Column(
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               height: MediaQuery.of(context).size.height/2,
+              
               child: GoogleMap(
                 mapType: MapType.normal,
                 initialCameraPosition: _venue,

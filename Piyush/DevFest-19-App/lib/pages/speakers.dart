@@ -1,5 +1,6 @@
+import 'package:devfest19/pages/utils/drawer.dart';
 import 'package:flutter/material.dart';
-import './ui/speakerCards.dart';
+import './utils/speakerCards.dart';
 class Speakers extends StatefulWidget {
   @override
   _SpeakersState createState() => _SpeakersState();
@@ -22,12 +23,13 @@ class _SpeakersState extends State<Speakers> {
         title: Text(
           'Speakers',
           style: TextStyle(
-            color: Colors.black87,
+            color: Colors.grey.shade600,
           ),
         ),
         elevation: 5.0,
         backgroundColor: Colors.white,
       ),
+      
       body: ListView(
         children: <Widget>[
           SpeakerCards(speakers[0][0],speakers[0][1],speakers[0][2],speakers[0][3],),
