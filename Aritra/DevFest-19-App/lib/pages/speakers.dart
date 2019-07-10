@@ -1,6 +1,8 @@
 import 'package:devfest19/pages/utils/drawer.dart';
 import 'package:flutter/material.dart';
 import './utils/speakerCards.dart';
+import './utils/drawerInfo.dart';
+import 'home.dart';
 
 class Speakers extends StatefulWidget {
   @override
@@ -40,54 +42,67 @@ class _SpeakersState extends State<Speakers> {
       "https://mlconf.com/wp-content/uploads/2019/01/TT-161111-164253-400x400.jpg"
     ],
   ];
+
+  Future<bool> _willPopCallback() async {
+    // await showDialog or Show add banners or whatever
+    // then
+    // selection(lastVisited.removeLast());
+    selection(0);
+    Navigator.popUntil(context, ModalRoute.withName('/'));
+    return false; // return true if the route to be popped
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black87),
-        title: Text(
-          'Speakers',
-          style: TextStyle(
-            color: Colors.grey.shade600,
+    return WillPopScope(
+      onWillPop: _willPopCallback,
+      child: Scaffold(
+        appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.black87),
+          title: Text(
+            'Speakers',
+            style: TextStyle(
+              color: Colors.grey.shade600,
+            ),
           ),
+          elevation: 5.0,
+          backgroundColor: Colors.white,
         ),
-        elevation: 5.0,
-        backgroundColor: Colors.white,
-      ),
-      drawer: myDrawer(),
-      body: ListView(
-        children: <Widget>[
-          SpeakerCards(
-            speakers[0][0],
-            speakers[0][1],
-            speakers[0][2],
-            speakers[0][3],
-          ),
-          SpeakerCards(
-            speakers[1][0],
-            speakers[1][1],
-            speakers[1][2],
-            speakers[1][3],
-          ),
-          SpeakerCards(
-            speakers[2][0],
-            speakers[2][1],
-            speakers[2][2],
-            speakers[2][3],
-          ),
-          SpeakerCards(
-            speakers[3][0],
-            speakers[3][1],
-            speakers[3][2],
-            speakers[3][3],
-          ),
-          SpeakerCards(
-            speakers[4][0],
-            speakers[4][1],
-            speakers[4][2],
-            speakers[4][3],
-          ),
-        ],
+        drawer: myDrawer(),
+        body: ListView(
+          children: <Widget>[
+            SpeakerCards(
+              speakers[0][0],
+              speakers[0][1],
+              speakers[0][2],
+              speakers[0][3],
+            ),
+            SpeakerCards(
+              speakers[1][0],
+              speakers[1][1],
+              speakers[1][2],
+              speakers[1][3],
+            ),
+            SpeakerCards(
+              speakers[2][0],
+              speakers[2][1],
+              speakers[2][2],
+              speakers[2][3],
+            ),
+            SpeakerCards(
+              speakers[3][0],
+              speakers[3][1],
+              speakers[3][2],
+              speakers[3][3],
+            ),
+            SpeakerCards(
+              speakers[4][0],
+              speakers[4][1],
+              speakers[4][2],
+              speakers[4][3],
+            ),
+          ],
+        ),
       ),
     );
   }

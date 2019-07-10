@@ -13,24 +13,14 @@ import 'package:devfest19/pages/speakers.dart';
 import 'package:devfest19/pages/developer.dart';
 import 'package:devfest19/pages/navigation.dart';
 
+import 'drawerInfo.dart';
+
 class myDrawer extends StatefulWidget {
   @override
   _myDrawerState createState() => _myDrawerState();
 }
 
 class _myDrawerState extends State<myDrawer> {
-
-  void selection(int pos){
-    for(int i =0; i<select.length;i++){
-      if(i == pos){
-        select[i] = true;
-      }
-      else{
-        select[i] = false;
-      }
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -90,18 +80,25 @@ class _myDrawerState extends State<myDrawer> {
                     size: 25.0,
                   ),
                   onTap: () {
-                    setState(() {
-                      // select[0] = true;
-                      // select[1] = false;
-                      // select[2] = false;
-                      // select[3] = false;
-                      // select[4] = false;
-                      // select[5] = false;
-                      selection(0);
-                    });
+                    // setState(() {
+                    // select[0] = true;
+                    // select[1] = false;
+                    // select[2] = false;
+                    // select[3] = false;
+                    // select[4] = false;
+                    // select[5] = false;
+                    // selection(0);
+                    // });
                     Navigator.pop(context);
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => HomePage()));
+                    if (select[0] != true) {
+                      // lastVisited.addLast(findLastVisited());
+                      selection(0);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ));
+                    }
                   },
                 ),
               ),
@@ -140,19 +137,26 @@ class _myDrawerState extends State<myDrawer> {
                     size: 25.0,
                   ),
                   onTap: () {
-                    setState(() {
-                      // select[0] = false;
-                      // select[1] = true;
-                      // select[2] = false;
-                      // select[3] = false;
-                      // select[4] = false;
-                      // select[5] = false;
-                      selection(1);
-                    });
+                    // setState(() {
+                    // select[0] = false;
+                    // select[1] = true;
+                    // select[2] = false;
+                    // select[3] = false;
+                    // select[4] = false;
+                    // select[5] = false;
+                    // selection(1);
+                    // });
                     Navigator.pop(context);
                     // selection(0);
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => Schedule()));
+                    if (select[1] != true) {
+                      // lastVisited.addLast(findLastVisited());
+                      selection(1);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Schedule(),
+                          ));
+                    }
                   },
                 ),
               ),
@@ -191,19 +195,23 @@ class _myDrawerState extends State<myDrawer> {
                     size: 25.0,
                   ),
                   onTap: () {
-                    setState(() {
-                      // select[0] = false;
-                      // select[1] = false;
-                      // select[2] = true;
-                      // select[3] = false;
-                      // select[4] = false;
-                      // select[5] = false;
-                      selection(2);
-                    });
+                    // setState(() {
+                    // select[0] = false;
+                    // select[1] = false;
+                    // select[2] = true;
+                    // select[3] = false;
+                    // select[4] = false;
+                    // select[5] = false;
+                    // selection(2);
+                    // });
                     Navigator.pop(context);
                     // selection(0);
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => Speakers()));
+                    if (select[2] != true) {
+                      // lastVisited.addLast(findLastVisited());
+                      selection(2);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Speakers()));
+                    }
                   },
                 ),
               ),
@@ -242,19 +250,25 @@ class _myDrawerState extends State<myDrawer> {
                     size: 25.0,
                   ),
                   onTap: () {
-                    setState(() {
-                      // select[0] = false;
-                      // select[1] = false;
-                      // select[2] = false;
-                      // select[3] = true;
-                      // select[4] = false;
-                      // select[5] = false;
-                      selection(3);
-                    });
+                    // setState(() {
+                    // select[0] = false;
+                    // select[1] = false;
+                    // select[2] = false;
+                    // select[3] = true;
+                    // select[4] = false;
+                    // select[5] = false;
+                    // selection(3);
+                    // });
                     Navigator.pop(context);
                     // selection(0);
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => Navigation()));
+                    if (select[3] != true) {
+                      // lastVisited.addLast(findLastVisited());
+                      selection(3);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Navigation()));
+                    }
                   },
                 ),
               ),
@@ -293,17 +307,22 @@ class _myDrawerState extends State<myDrawer> {
                     size: 25.0,
                   ),
                   onTap: () {
-                    setState(() {
-                      // select[0] = false;
-                      // select[1] = false;
-                      // select[2] = false;
-                      // select[3] = false;
-                      // select[4] = true;
-                      // select[5] = false;
-                      selection(4);
-                    });
+                    // setState(() {
+                    // select[0] = false;
+                    // select[1] = false;
+                    // select[2] = false;
+                    // select[3] = false;
+                    // select[4] = true;
+                    // select[5] = false;
+                    // selection(4);
+                    // });
                     //NAvigate to sponsors
                     Navigator.pop(context);
+                    if (select[4] != true) {
+                      // lastVisited.addLast(findLastVisited());
+                      selection(4);
+                      //TOD
+                    }
                     // selection(0);
                   },
                 ),
@@ -342,22 +361,26 @@ class _myDrawerState extends State<myDrawer> {
                     size: 25.0,
                   ),
                   onTap: () async {
-                    setState(() {
-                      // select[0] = false;
-                      // select[1] = false;
-                      // select[2] = false;
-                      // select[3] = false;
-                      // select[4] = false;
-                      // select[5] = true;
-                      selection(5);
-                    });
+                    // setState(() {
+                    // select[0] = false;
+                    // select[1] = false;
+                    // select[2] = false;
+                    // select[3] = false;
+                    // select[4] = false;
+                    // select[5] = true;
+                    // selection(5);
+                    // });
                     Navigator.pop(context);
                     // selection(0);
-                    const url = 'https://gdgkolkata.org/';
-                    if (await canLaunch(url)) {
-                      await launch(url);
-                    } else {
-                      throw 'Could not launch $url';
+                    if (select[5] != true) {
+                      // lastVisited.addLast(findLastVisited());
+                      selection(0);
+                      const url = 'https://gdgkolkata.org/';
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
                     }
                   },
                 ),
@@ -378,8 +401,14 @@ class _myDrawerState extends State<myDrawer> {
                     ),
                     onTap: () {
                       Navigator.pop(context);
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Developer()));
+                      if (select[6] != true) {
+                        // lastVisited.addLast(findLastVisited());
+                        selection(6);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Developer()));
+                      }
                     },
                   ),
                 ),

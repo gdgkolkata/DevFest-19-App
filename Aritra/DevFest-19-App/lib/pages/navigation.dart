@@ -6,6 +6,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'utils/color.dart';
 
 import './utils/drawer.dart';
+import './utils/drawerInfo.dart';
+import 'home.dart';
 
 class Navigation extends StatefulWidget {
   @override
@@ -27,49 +29,60 @@ class _NavigationState extends State<Navigation> {
     target: LatLng(22.5602, 88.4902),
     zoom: 17.0,
   );
+
+  Future<bool> _willPopCallback() async {
+    // await showDialog or Show add banners or whatever
+    // then
+    // selection(lastVisited.removeLast());
+    selection(0);
+    Navigator.popUntil(context, ModalRoute.withName('/'));
+    return false; // return true if the route to be popped
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        iconTheme: new IconThemeData(color: Colors.black87),
-        title: Text(
-          'Find Your Way',
-          style: TextStyle(
-            color: Colors.black87,
+    return WillPopScope(
+      onWillPop: _willPopCallback,
+      child: Scaffold(
+        appBar: AppBar(
+          iconTheme: new IconThemeData(color: Colors.black87),
+          title: Text(
+            'Find Your Way',
+            style: TextStyle(
+              color: Colors.black87,
+            ),
           ),
+          elevation: 5.0,
+          backgroundColor: Colors.white,
         ),
-        elevation: 5.0,
-        backgroundColor: Colors.white,
-      ),
-
-      drawer: myDrawer(),
-
-      body: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: MediaQuery.of(context).size.height / 2,
-              child: GoogleMap(
-                mapType: MapType.normal,
-                initialCameraPosition: _venue,
-                markers: _createMarker(),
-                onMapCreated: (GoogleMapController controller) {
-                  _controller.complete(controller);
-                },
+        drawer: myDrawer(),
+        body: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: MediaQuery.of(context).size.height / 2,
+                child: GoogleMap(
+                  mapType: MapType.normal,
+                  initialCameraPosition: _venue,
+                  markers: _createMarker(),
+                  onMapCreated: (GoogleMapController controller) {
+                    _controller.complete(controller);
+                  },
+                ),
               ),
             ),
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height * (1 / 5),
-            width: MediaQuery.of(context).size.height * (1 / 5),
-            child: FlareActor(
-              'assets/compass2b.flr',
-              animation: "dir",
-              color: hexToColor("#673ab7"),
+            Container(
+              height: MediaQuery.of(context).size.height * (1 / 5),
+              width: MediaQuery.of(context).size.height * (1 / 5),
+              child: FlareActor(
+                'assets/compass2b.flr',
+                animation: "dir",
+                color: hexToColor("#673ab7"),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
