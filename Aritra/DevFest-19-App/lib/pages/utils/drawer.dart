@@ -100,6 +100,8 @@ class _myDrawerState extends State<myDrawer> {
                       selection(0);
                     });
                     Navigator.pop(context);
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
                   },
                 ),
               ),
@@ -148,8 +150,8 @@ class _myDrawerState extends State<myDrawer> {
                       selection(1);
                     });
                     Navigator.pop(context);
-                    selection(0);
-                    Navigator.push(context,
+                    // selection(0);
+                    Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => Schedule()));
                   },
                 ),
@@ -199,8 +201,8 @@ class _myDrawerState extends State<myDrawer> {
                       selection(2);
                     });
                     Navigator.pop(context);
-                    selection(0);
-                    Navigator.push(context,
+                    // selection(0);
+                    Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => Speakers()));
                   },
                 ),
@@ -250,8 +252,8 @@ class _myDrawerState extends State<myDrawer> {
                       selection(3);
                     });
                     Navigator.pop(context);
-                    selection(0);
-                    Navigator.push(context,
+                    // selection(0);
+                    Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => Navigation()));
                   },
                 ),
@@ -302,7 +304,7 @@ class _myDrawerState extends State<myDrawer> {
                     });
                     //NAvigate to sponsors
                     Navigator.pop(context);
-                    selection(0);
+                    // selection(0);
                   },
                 ),
               ),
@@ -350,7 +352,7 @@ class _myDrawerState extends State<myDrawer> {
                       selection(5);
                     });
                     Navigator.pop(context);
-                    selection(0);
+                    // selection(0);
                     const url = 'https://gdgkolkata.org/';
                     if (await canLaunch(url)) {
                       await launch(url);
@@ -389,4 +391,3 @@ class _myDrawerState extends State<myDrawer> {
     );
   }
 }
-

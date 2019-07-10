@@ -5,6 +5,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'utils/color.dart';
 
+import './utils/drawer.dart';
+
 class Navigation extends StatefulWidget {
   @override
   _NavigationState createState() => _NavigationState();
@@ -39,6 +41,9 @@ class _NavigationState extends State<Navigation> {
         elevation: 5.0,
         backgroundColor: Colors.white,
       ),
+
+      drawer: myDrawer(),
+
       body: Column(
         children: <Widget>[
           Padding(

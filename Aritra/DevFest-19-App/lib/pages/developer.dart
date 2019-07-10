@@ -1,4 +1,5 @@
 
+import 'package:devfest19/pages/utils/drawer.dart';
 import 'package:flutter/material.dart';
 //
 import './utils/DevCards.dart';
@@ -31,6 +32,8 @@ class _DeveloperState extends State<Developer> {
         backgroundColor: Colors.white,
       ),
       
+      drawer: myDrawer(),
+
       body: ListView(
         children: <Widget>[
           DevCards(dev[0][0],dev[0][1],dev[0][2],),
