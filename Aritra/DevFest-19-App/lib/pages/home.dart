@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-//Imports to utils
-import 'package:devfest19/utils/drawer.dart';
-import 'package:devfest19/utils/color.dart';
-
-// Imports to other pages
-import './schedule.dart';
+//
+import './utils/color.dart';
+import './utils/drawer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -28,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        iconTheme: new IconThemeData(color: Colors.black87),
+        iconTheme: new IconThemeData(color: Colors.grey.shade600),
         elevation: 5.0,
         title: Text(
           'Home',
@@ -51,7 +47,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      drawer: myDrawer(context),
+      drawer: myDrawer(),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,

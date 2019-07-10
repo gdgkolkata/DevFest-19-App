@@ -27,6 +27,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   intl: ^0.15.8
   url_launcher: ^5.0.3
+  flare_flutter:
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +51,7 @@ flutter:
     - assets/devfest.png
     - assets/logodevFestWtext.png
     - assets/logodevFest.png
+    - assets/compass2b.flr
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

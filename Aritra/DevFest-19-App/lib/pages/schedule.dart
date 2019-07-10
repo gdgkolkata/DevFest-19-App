@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-
-//Import to utils
-import 'package:devfest19/utils/sessionCard.dart';
-
+//
+import 'package:devfest19/pages/utils/sessionCard.dart';
 
 class Schedule extends StatefulWidget {
   @override
@@ -35,7 +32,7 @@ class _ScheduleState extends State<Schedule> {
         title: Text(
           'Schedule',
           style: TextStyle(
-            color: Colors.black87,
+            color: Colors.grey.shade600,
           ),
         ),
         elevation: 5.0,
