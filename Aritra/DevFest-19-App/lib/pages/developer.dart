@@ -1,9 +1,12 @@
-import 'package:devfest19/pages/utils/drawer.dart';
+// Flutter plugin import
 import 'package:flutter/material.dart';
-//
+
+// Pages import
+
+// Utils import
 import './utils/DevCards.dart';
+import './utils/drawer.dart';
 import './utils/drawerInfo.dart';
-import 'home.dart';
 
 class Developer extends StatefulWidget {
   @override
@@ -34,11 +37,11 @@ class _DeveloperState extends State<Developer> {
     ],
   ];
 
+  // Method that executes on pressing the "Back Button"
   Future<bool> _willPopCallback() async {
-    // await showDialog or Show add banners or whatever
-    // then
-    // selection(lastVisited.removeLast());
+    // Puts the flag up for "home", in drawer
     selection(0);
+    // Pops until the last page remain
     Navigator.popUntil(context, ModalRoute.withName('/'));
     return false; // return true if the route to be popped
   }

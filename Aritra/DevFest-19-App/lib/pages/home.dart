@@ -1,7 +1,11 @@
+// Flutter plugin imports
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
-//
+
+// Pages import
+
+// Utils import
 import './utils/color.dart';
 import './utils/drawer.dart';
 
@@ -22,9 +26,10 @@ class _HomePageState extends State<HomePage> {
       systemNavigationBarColor: Colors.white, //bottom bar color
       systemNavigationBarIconBrightness: Brightness.dark, //bottom bar icons
     ));
+
+    // Method which executes on pushing "Back Button"
     Future<bool> _willPopCallback() async {
-      // await showDialog or Show add banners or whatever
-      // then
+      // Exits the app
       SystemChannels.platform.invokeMethod('SystemNavigator.pop');
       return true; // return true if the route to be popped
     }
@@ -51,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                 iconSize: 30.0,
                 color: hexToColor('#673ab7'),
                 onPressed: () {
-                  // ToDo: Logic for AUTH
+                  // To Do: Logic for AUTH
                 },
               ),
             ),
@@ -101,7 +106,6 @@ class _HomePageState extends State<HomePage> {
                     0.0),
                 child: RaisedButton(
                   padding: EdgeInsets.all(20.0),
-                  // color: hexToColor('#C7B7E4'),//Light
                   color: hexToColor('#673ab7'),
                   onPressed: () async {
                     // ToDo: URL FOR FORM
@@ -115,7 +119,6 @@ class _HomePageState extends State<HomePage> {
                   },
                   child: Text(
                     "Apply Now",
-                    // style: TextStyle(color: hexToColor('#673ab7')),//Dark
                     style: TextStyle(color: Colors.white),
                   ),
                 ),

@@ -1,13 +1,15 @@
+// Flutter plugin imports
 import 'dart:async';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import 'utils/color.dart';
+// Pages imports
 
+// Utils imports
 import './utils/drawer.dart';
 import './utils/drawerInfo.dart';
-import 'home.dart';
+import './utils/color.dart';
 
 class Navigation extends StatefulWidget {
   @override
@@ -30,11 +32,11 @@ class _NavigationState extends State<Navigation> {
     zoom: 17.0,
   );
 
+  // Method which executes on pushing "Back Button"
   Future<bool> _willPopCallback() async {
-    // await showDialog or Show add banners or whatever
-    // then
-    // selection(lastVisited.removeLast());
+    // Puts the flag up for "home", in drawer
     selection(0);
+    // Pops until the last page remain
     Navigator.popUntil(context, ModalRoute.withName('/'));
     return false; // return true if the route to be popped
   }

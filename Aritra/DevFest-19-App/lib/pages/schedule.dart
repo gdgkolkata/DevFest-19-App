@@ -1,11 +1,12 @@
+// Flutter plugin imports
 import 'package:flutter/material.dart';
-//
-import 'package:devfest19/pages/utils/sessionCard.dart';
 
+// Pages imports
+
+// Utils imports
+import './utils/sessionCard.dart';
 import './utils/drawer.dart';
 import './utils/drawerInfo.dart';
-import 'home.dart';
-
 
 class Schedule extends StatefulWidget {
   @override
@@ -65,11 +66,11 @@ class _ScheduleState extends State<Schedule> {
   bool isBookmarked = false;
   bool isAdded = false;
 
+  // Method that executes on pressing the "Back Button"
   Future<bool> _willPopCallback() async {
-    // await showDialog or Show add banners or whatever
-    // then
-    // selection(lastVisited.removeLast());
+    // Puts the flag up for "home", in drawer
     selection(0);
+    // Pops until the last page remain
     Navigator.popUntil(context, ModalRoute.withName('/'));
     return false; // return true if the route to be popped
   }
@@ -78,7 +79,7 @@ class _ScheduleState extends State<Schedule> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: _willPopCallback,
-          child: Scaffold(
+      child: Scaffold(
         appBar: AppBar(
           iconTheme: new IconThemeData(color: Colors.black87),
           title: Text(
@@ -95,7 +96,7 @@ class _ScheduleState extends State<Schedule> {
               child: IconButton(
                 icon: Icon(Icons.bookmark_border),
                 iconSize: 30.0,
-                color: hexToColor('#673ab7'),
+                color: hexToColor('#673ab7'), //dark purple
                 onPressed: () {},
               ),
             ),
@@ -104,7 +105,7 @@ class _ScheduleState extends State<Schedule> {
               child: IconButton(
                 icon: Icon(Icons.star_border),
                 iconSize: 30.0,
-                color: hexToColor('#673ab7'),
+                color: hexToColor('#673ab7'), //dark purple
                 onPressed: () {},
               ),
             ),

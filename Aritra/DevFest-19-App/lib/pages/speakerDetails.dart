@@ -1,15 +1,19 @@
+// Flutter plugin imports
 import 'package:flutter/material.dart';
-//
-import 'package:devfest19/pages/utils/color.dart';
+
+// Pages import
+
+// Utils import
+import './utils/color.dart';
+
 class speakerDetails extends StatefulWidget {
   String _name, _company, _imgURL;
-  speakerDetails(this._name, this._company,this._imgURL);
+  speakerDetails(this._name, this._company, this._imgURL);
   @override
   _speakerDetailsState createState() => _speakerDetailsState();
 }
 
 class _speakerDetailsState extends State<speakerDetails> {
- 
   String details =
       "Sundar Pichai is a computer engineer and the current CEO of Google Inc. The technology giant Google, which specializes in Internet-related services and products, underwent a major corporate restructuring in 2015 following which Alphabet Inc was launched as its parent company with co-founders Larry Page as its CEO and Sergey Brin as President. Pichai, who had been serving as Google’s head of Products and Engineering, was named the new CEO of Google which is the biggest company under Alphabet Inc.";
   @override
@@ -29,31 +33,26 @@ class _speakerDetailsState extends State<speakerDetails> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(0.0)),
                   child: Row(
-                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       Container(
                         height: MediaQuery.of(context).size.height,
                         child: SizedBox(
                             width: MediaQuery.of(context).size.width / 4),
-                       // color: hexToColor('#4885ed'),
                       ),
                       Container(
                         height: MediaQuery.of(context).size.height,
                         child: SizedBox(
                             width: MediaQuery.of(context).size.width / 5),
-                        //color: hexToColor('#db3236'),
                       ),
                       Container(
                         height: MediaQuery.of(context).size.height,
                         child: SizedBox(
                             width: MediaQuery.of(context).size.width / 6),
-                       // color: hexToColor('#f4c20d'),
                       ),
                       Container(
                         height: MediaQuery.of(context).size.height,
                         child: SizedBox(
                             width: MediaQuery.of(context).size.width / 9.4),
-                        //color: hexToColor('#3cba54'),
                       ),
                     ],
                   ),
@@ -88,7 +87,7 @@ class _speakerDetailsState extends State<speakerDetails> {
                         Text(
                           widget._company,
                           style: TextStyle(
-                             color: hexToColor('#673ab7'),
+                            color: hexToColor('#673ab7'),
                             fontSize: 20.0,
                           ),
                         ),
@@ -105,10 +104,22 @@ class _speakerDetailsState extends State<speakerDetails> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                             GestureDetector(child: Container(height:50.0,child: Image.asset("assets/git.png"))),
-                            GestureDetector(child: Container(height:50.0,child: Image.asset("assets/fb.png"))),
-                              GestureDetector(child: Container(height:50.0,child: Image.asset("assets/mail.png"))),
-                               GestureDetector(child: Container(height:50.0,child: Image.asset("assets/linkedin.png"))),
+                            GestureDetector(
+                                child: Container(
+                                    height: 50.0,
+                                    child: Image.asset("assets/git.png"))),
+                            GestureDetector(
+                                child: Container(
+                                    height: 50.0,
+                                    child: Image.asset("assets/fb.png"))),
+                            GestureDetector(
+                                child: Container(
+                                    height: 50.0,
+                                    child: Image.asset("assets/mail.png"))),
+                            GestureDetector(
+                                child: Container(
+                                    height: 50.0,
+                                    child: Image.asset("assets/linkedin.png"))),
                           ],
                         ),
                       ],
