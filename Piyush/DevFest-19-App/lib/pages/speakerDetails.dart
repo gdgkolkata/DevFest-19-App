@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 //
 import 'package:devfest19/pages/utils/color.dart';
+class MyBehavior extends ScrollBehavior {
+  @override
+  Widget buildViewportChrome(
+      BuildContext context, Widget child, AxisDirection axisDirection) {
+    return child;
+  }
+}
+
 class speakerDetails extends StatefulWidget {
-  String _name, _company, _imgURL;
-  speakerDetails(this._name, this._company,this._imgURL);
+  String _name, _company, _imgURL, _bio;
+  speakerDetails(this._name, this._company,this._imgURL, this._bio);
   @override
   _speakerDetailsState createState() => _speakerDetailsState();
 }
 
 class _speakerDetailsState extends State<speakerDetails> {
  
-  String details =
-      "Sundar Pichai is a computer engineer and the current CEO of Google Inc. The technology giant Google, which specializes in Internet-related services and products, underwent a major corporate restructuring in 2015 following which Alphabet Inc was launched as its parent company with co-founders Larry Page as its CEO and Sergey Brin as President. Pichai, who had been serving as Google’s head of Products and Engineering, was named the new CEO of Google which is the biggest company under Alphabet Inc.";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,38 +84,59 @@ class _speakerDetailsState extends State<speakerDetails> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        SizedBox(
+                          height: 120.0,
+                        ),
                         Text(
                           widget._name,
                           style: TextStyle(
                             color: Colors.black87,
-                            fontSize: 25.0,
-                          ),
-                        ),
-                        Text(
-                          widget._company,
-                          style: TextStyle(
-                             color: hexToColor('#673ab7'),
-                            fontSize: 20.0,
+                            fontSize: 22.0,
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.only(right:8.0,left: 8.0),
                           child: Text(
-                            details,
+                            widget._company,
                             style: TextStyle(
-                              color: Colors.black87,
-                              fontSize: 18.0,
+                               color: hexToColor('#673ab7'),
+                              fontSize: 16.0,
                             ),
                           ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                             GestureDetector(child: Container(height:50.0,child: Image.asset("assets/git.png"))),
-                            GestureDetector(child: Container(height:50.0,child: Image.asset("assets/fb.png"))),
-                              GestureDetector(child: Container(height:50.0,child: Image.asset("assets/mail.png"))),
-                               GestureDetector(child: Container(height:50.0,child: Image.asset("assets/linkedin.png"))),
-                          ],
+                        Container(
+                          height: 400.0,
+                          child: Scrollbar(
+                            child: ScrollConfiguration(
+                              behavior: MyBehavior(),
+                              child: ListView(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      widget._bio,
+                                      style: TextStyle(
+                                        color: Colors.black87,
+                                        fontSize: 14.0,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                               GestureDetector(child: Container(height:50.0,child: Image.asset("assets/git.png"))),
+                              GestureDetector(child: Container(height:50.0,child: Image.asset("assets/fb.png"))),
+                                GestureDetector(child: Container(height:50.0,child: Image.asset("assets/mail.png"))),
+                                 GestureDetector(child: Container(height:50.0,child: Image.asset("assets/linkedin.png"))),
+                            ],
+                          ),
                         ),
                       ],
                     ),

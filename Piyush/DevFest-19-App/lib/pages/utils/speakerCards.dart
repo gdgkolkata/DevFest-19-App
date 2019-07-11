@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:devfest19/pages/speakerDetails.dart';
 class SpeakerCards extends StatefulWidget {
-  String _name, _company, _session, _imgURL;
-  SpeakerCards(this._name, this._company, this._session, this._imgURL);
+  String _name, _company, _session, _imgURL, bio;
+  SpeakerCards(this._name, this._company, this._session, this._imgURL, this.bio);
   @override
   _SpeakerCardsState createState() => _SpeakerCardsState();
 }
@@ -78,27 +78,23 @@ class _SpeakerCardsState extends State<SpeakerCards> {
                       SizedBox(
                         width: MediaQuery.of(context).size.width - 150,
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Text(
                               widget._name,
                               style: TextStyle(
                                 color: Colors.black87,
-                                fontSize: 25.0,
+                                fontSize: 22.0,
                               ),
                             ),
-                            Text(
-                              widget._company,
-                              style: TextStyle(
-                                color:  hexToColor("#673ab7"),
-                                fontSize: 20.0,
-                              ),
-                            ),
-                            Text(
-                              widget._session,
-                              style: TextStyle(
-                                color: Colors.black87,
-                                fontSize: 18.0,
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Text(
+                                widget._company,
+                                style: TextStyle(
+                                  color:  hexToColor("#673ab7"),
+                                  fontSize: 16.0,
+                                ),
                               ),
                             ),
                           ],
@@ -110,7 +106,7 @@ class _SpeakerCardsState extends State<SpeakerCards> {
               ),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => speakerDetails(widget._name,widget._company,widget._imgURL)));
+                    MaterialPageRoute(builder: (context) => speakerDetails(widget._name,widget._company,widget._imgURL, widget.bio)));
               },
             ),
           ),
