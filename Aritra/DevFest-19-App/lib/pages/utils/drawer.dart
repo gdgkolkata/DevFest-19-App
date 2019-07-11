@@ -273,7 +273,7 @@ class _myDrawerState extends State<myDrawer> {
                     Navigator.pop(context);
                     // selection(0);
                     if (select[5] != true) {
-                      allDef();
+                      selection(0);
                       const url = 'https://gdgkolkata.org/';
                       if (await canLaunch(url)) {
                         await launch(url);

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Jul 11 20:40:23 IST 2019
+#Thu Jul 11 21:13:02 IST 2019
 17.baseType=DIRECTORY
 4.path=flutter_assets/fonts/Summer-Light.otf
 8.set=ASSET

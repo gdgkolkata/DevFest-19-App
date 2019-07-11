@@ -11,9 +11,3 @@ void selection(int pos) {
     }
   }
 }
-
-void allDef() {
-  for (int i = 0; i < select.length; i++) {
-    select[i] = false;
-  }
-}

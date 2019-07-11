@@ -1,4 +1,4 @@
-#Thu Jul 11 20:40:22 IST 2019
+#Thu Jul 11 21:13:01 IST 2019
 base.0=/home/aritra/AndroidStudioProjects/Google_Projects/GITHUB/DevFest-19-App/Aritra/DevFest-19-App/build/app/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
