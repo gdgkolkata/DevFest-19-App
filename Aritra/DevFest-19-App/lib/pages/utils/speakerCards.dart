@@ -118,6 +118,7 @@ class _SpeakerCardsState extends State<SpeakerCards> {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: CircleAvatar(
+            backgroundColor: hexToColor("#C7B7E4"),
             backgroundImage: NetworkImage(widget._imgURL),
             radius: 60.0,
           ),
