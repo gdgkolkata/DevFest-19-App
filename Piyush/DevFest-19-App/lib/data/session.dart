@@ -3,7 +3,7 @@ import 'package:devfest19/data/item.dart';
 
 class Session {
   String id, title, description, startsAt, endsAt, room, roomId;
-  List<Item> speakers;
+  List speakers;
   List<Category> categories;
 
   Session({this.id, 

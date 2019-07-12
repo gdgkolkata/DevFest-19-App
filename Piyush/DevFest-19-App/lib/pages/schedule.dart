@@ -80,9 +80,12 @@ class SessionResponseItem extends StatelessWidget {
         return SessionCard(
           false,
           false,
+          // Start Time
           sessionResponse[0].sessionsList[index].startsAt.toString(),
+          // Title
           sessionResponse[0].sessionsList[index].title.toString(),
-          sessionResponse[0].sessionsList[index].speakers.toString(),
+          // Speakers
+          sessionResponse[0].sessionsList[index].speakers[0].name.toString(),
           "tags",
           "Intermidiate",
           sessionResponse[0].sessionsList[index].room.toString(),
