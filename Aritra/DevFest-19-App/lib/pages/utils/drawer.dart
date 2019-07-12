@@ -16,10 +16,10 @@ import './color.dart';
 
 class myDrawer extends StatefulWidget {
   @override
-  _myDrawerState createState() => _myDrawerState();
+  myDrawerState createState() => myDrawerState();
 }
 
-class _myDrawerState extends State<myDrawer> {
+class myDrawerState extends State<myDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -48,7 +48,7 @@ class _myDrawerState extends State<myDrawer> {
 
             // First Option
             Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
                   color: select[0] ? hexToColor("#CBC5D7") : Colors.white,
@@ -60,6 +60,7 @@ class _myDrawerState extends State<myDrawer> {
                   title: Text(
                     "Home",
                     style: TextStyle(
+                      fontWeight: FontWeight.bold,
                       color: select[0]
                           ? hexToColor("#673ab7")
                           : Colors.grey.shade600,
@@ -89,7 +90,7 @@ class _myDrawerState extends State<myDrawer> {
 
             // Second Option
             Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
                   color: select[1] ? hexToColor("#CBC5D7") : Colors.white,
@@ -101,6 +102,7 @@ class _myDrawerState extends State<myDrawer> {
                   title: Text(
                     "Schedule",
                     style: TextStyle(
+                      fontWeight: FontWeight.bold,
                       color: select[1]
                           ? hexToColor("#673ab7")
                           : Colors.grey.shade600,
@@ -130,7 +132,7 @@ class _myDrawerState extends State<myDrawer> {
 
             // Third Option
             Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
                   color: select[2] ? hexToColor("#CBC5D7") : Colors.white,
@@ -142,6 +144,7 @@ class _myDrawerState extends State<myDrawer> {
                   title: Text(
                     "Speakers",
                     style: TextStyle(
+                      fontWeight: FontWeight.bold,
                       color: select[2]
                           ? hexToColor("#673ab7")
                           : Colors.grey.shade600,
@@ -168,7 +171,7 @@ class _myDrawerState extends State<myDrawer> {
 
             // Forth Option
             Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
                   color: select[3] ? hexToColor("#CBC5D7") : Colors.white,
@@ -180,6 +183,7 @@ class _myDrawerState extends State<myDrawer> {
                   title: Text(
                     "Find Your Way",
                     style: TextStyle(
+                      fontWeight: FontWeight.bold,
                       color: select[3]
                           ? hexToColor("#673ab7")
                           : Colors.grey.shade600,
@@ -208,7 +212,7 @@ class _myDrawerState extends State<myDrawer> {
 
             // Fifth Option
             Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
                   color: select[4] ? hexToColor("#CBC5D7") : Colors.white,
@@ -220,6 +224,7 @@ class _myDrawerState extends State<myDrawer> {
                   title: Text(
                     "Sponsors",
                     style: TextStyle(
+                      fontWeight: FontWeight.bold,
                       color: select[4]
                           ? hexToColor("#673ab7")
                           : Colors.grey.shade600,
@@ -245,7 +250,7 @@ class _myDrawerState extends State<myDrawer> {
 
             // Sixth Option
             Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
                   color: select[5] ? hexToColor("#CBC5D7") : Colors.white,
@@ -257,6 +262,7 @@ class _myDrawerState extends State<myDrawer> {
                   title: Text(
                     "GDG Kolkata",
                     style: TextStyle(
+                      fontWeight: FontWeight.bold,
                       color: select[5]
                           ? hexToColor("#673ab7")
                           : Colors.grey.shade600,

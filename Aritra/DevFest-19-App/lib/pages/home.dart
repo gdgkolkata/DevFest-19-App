@@ -48,19 +48,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           backgroundColor: Colors.white,
-          actions: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: IconButton(
-                icon: Icon(Icons.account_circle),
-                iconSize: 30.0,
-                color: hexToColor('#673ab7'),
-                onPressed: () {
-                  // To Do: Logic for AUTH
-                },
-              ),
-            ),
-          ],
         ),
         drawer: myDrawer(),
         body: Container(

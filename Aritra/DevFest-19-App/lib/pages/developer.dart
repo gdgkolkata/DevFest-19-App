@@ -36,7 +36,7 @@ class _DeveloperState extends State<Developer> {
       "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI_400x400.png"
     ],
     [
-      "Aritra Roy",
+      "Aritra Roy Gosthipaty",
       "The Code Foundation",
       "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI_400x400.png"
     ],

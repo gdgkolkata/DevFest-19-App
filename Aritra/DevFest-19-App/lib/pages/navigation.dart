@@ -22,14 +22,14 @@ class _NavigationState extends State<Navigation> {
     return <Marker>[
       Marker(
         markerId: MarkerId("marker_1"),
-        position: LatLng(22.5602, 88.4902),
+        position: LatLng(22.5798047, 88.4610292),
       ),
     ].toSet();
   }
 
   final CameraPosition _venue = CameraPosition(
-    target: LatLng(22.5602, 88.4902),
-    zoom: 17.0,
+    target: LatLng(22.5798047, 88.4610292),
+    zoom: 18.0,
   );
 
   // Method which executes on pushing "Back Button"
@@ -63,7 +63,7 @@ class _NavigationState extends State<Navigation> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                height: MediaQuery.of(context).size.height / 2,
+                height: MediaQuery.of(context).size.height * 0.7,
                 child: GoogleMap(
                   mapType: MapType.normal,
                   initialCameraPosition: _venue,
@@ -74,13 +74,18 @@ class _NavigationState extends State<Navigation> {
                 ),
               ),
             ),
-            Container(
-              height: MediaQuery.of(context).size.height * (1 / 5),
-              width: MediaQuery.of(context).size.height * (1 / 5),
-              child: FlareActor(
-                'assets/compass2b.flr',
-                animation: "dir",
-                color: hexToColor("#673ab7"),
+            Expanded(
+              // child: FlareActor(
+              //   'assets/compass2b.flr',
+              //   animation: "dir",
+              //   color: hexToColor("#673ab7"),
+              // ),
+              child: Text(
+                "Novotel Kolkata Hotel And Residences",
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 25.0,
+                ),
               ),
             ),
           ],

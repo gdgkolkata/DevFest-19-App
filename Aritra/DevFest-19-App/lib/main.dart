@@ -1,9 +1,7 @@
 // Flutter plugin imports
+import 'package:devfest19/pages/home.dart';
 import 'package:devfest19/pages/utils/color.dart';
 import 'package:flutter/material.dart';
-
-// Pages import
-import './pages/home.dart';
 
 // Utils import
 

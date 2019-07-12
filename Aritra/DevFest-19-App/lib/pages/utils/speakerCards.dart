@@ -25,8 +25,9 @@ class _SpeakerCardsState extends State<SpeakerCards> {
         child: Card(
           elevation: 5.0,
           margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
           child: Center(
             child: ListTile(
                 contentPadding:
@@ -40,7 +41,7 @@ class _SpeakerCardsState extends State<SpeakerCards> {
                 // Name of the Speaker
                 title: Text(
                   widget._name.length > 40
-                      ? "${widget._company.substring(0, 37)}..."
+                      ? "${widget._name.substring(0, 37)}..."
                       : widget._name,
                   style: TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold),

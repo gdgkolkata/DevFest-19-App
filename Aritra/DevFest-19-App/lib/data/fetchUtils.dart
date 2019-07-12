@@ -100,7 +100,8 @@ class SessionResponseItem extends StatelessWidget {
           "name",
           "tags",
           "Intermidiate",
-          "Hall 1"
+          "Hall 1",
+          "description"
         );
       },
     );

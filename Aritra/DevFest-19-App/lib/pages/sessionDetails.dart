@@ -7,16 +7,14 @@ import 'package:flutter/material.dart';
 import './utils/color.dart';
 
 class sessionDetails extends StatefulWidget {
-  String _slot, _title, _speaker, _tags, _level, _venue;
-  sessionDetails(this._slot, this._title, this._speaker, this._tags,
-      this._level, this._venue);
+  String _slot, _title, _tags, _level, _venue, _description, _speaker;
+  sessionDetails(this._speaker, this._slot, this._title, this._tags,
+      this._level, this._venue, this._description);
   @override
-  _sessionDetailsState createState() => _sessionDetailsState();
+  sessionDetailsState createState() => sessionDetailsState();
 }
 
-class _sessionDetailsState extends State<sessionDetails> {
-  String description =
-      "We are moving from a company that helps you find answers, to a company that helps you get things done...we want our products to work harder for you—in the context of your job, your home and your life. And they all share a single goal: to be helpful.";
+class sessionDetailsState extends State<sessionDetails> {
   Widget placeTags(String tags) {
     List<String> _tags;
     _tags = tags.split(",");
@@ -40,9 +38,9 @@ class _sessionDetailsState extends State<sessionDetails> {
         color: Colors.white,
         child: ListView(
           children: <Widget>[
-            Image.asset("assets/speaker_demo.jpeg"),
+            // Title of the talk
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.fromLTRB(20.0, 20.0, 0.0, 10.0),
               child: Text(
                 widget._title,
                 style: TextStyle(
@@ -50,6 +48,22 @@ class _sessionDetailsState extends State<sessionDetails> {
                   fontSize: 30.0,
                 ),
               ),
+            ),
+            // Name of the Speaker
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 5.0),
+              child: Text(
+                widget._speaker,
+                style: TextStyle(
+                  color: Colors.grey.shade600,
+                  fontSize: 25.0,
+                ),
+              ),
+            ),
+            // Tags of the talk
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: placeTags(widget._tags),
             ),
             Padding(
               padding: const EdgeInsets.only(
@@ -61,7 +75,7 @@ class _sessionDetailsState extends State<sessionDetails> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      widget._slot,
+                      widget._slot == "null" ? "To be decided" : widget._slot,
                       style: TextStyle(
                         color: Colors.black87,
                         fontSize: 18.0,
@@ -81,7 +95,7 @@ class _sessionDetailsState extends State<sessionDetails> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      widget._venue,
+                      widget._venue == "null" ? "To be decided" : widget._venue,
                       style: TextStyle(
                         color: Colors.black87,
                         fontSize: 18.0,
@@ -144,16 +158,12 @@ class _sessionDetailsState extends State<sessionDetails> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(
-                description,
+                widget._description,
                 style: TextStyle(
                   color: Colors.black87,
                   fontSize: 18.0,
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: placeTags(widget._tags),
             ),
           ],
         ),

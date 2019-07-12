@@ -1,5 +1,6 @@
 class CategoryItem {
-  String id, name;
+  int id;
+  String name;
   CategoryItem({this.id, this.name});
   factory CategoryItem.fromJson(Map<String, dynamic> json){
   return CategoryItem(

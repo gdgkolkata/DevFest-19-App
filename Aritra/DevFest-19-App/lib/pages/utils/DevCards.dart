@@ -15,62 +15,44 @@ class _DevCardsState extends State<DevCards> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: Container(
-            height: MediaQuery.of(context).size.height / 5,
-            width: MediaQuery.of(context).size.width,
-            child: Padding(
-              padding: const EdgeInsets.only(
-                top: 5.0,
-                bottom: 5.0,
-              ),
-              child: Card(
-                elevation: 5.0,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width - 150,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            widget._name,
-                            style: TextStyle(
-                              color: Colors.black87,
-                              fontSize: 25.0,
-                            ),
-                          ),
-                          Text(
-                            widget._company,
-                            style: TextStyle(
-                              color: hexToColor("#673ab7"),
-                              fontSize: 20.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+    return SizedBox(
+      height: MediaQuery.of(context).size.height / 5,
+      child: Card(
+        elevation: 5.0,
+        margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Center(
+          child: ListTile(
+            contentPadding:
+                EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+            // Image of the Developer
+            leading: CircleAvatar(
+              backgroundColor: hexToColor("#C7B7E4"),
+              backgroundImage: NetworkImage(widget._imgURL),
+              radius: 25.0,
+            ),
+            // Name of the Speaker
+            title: Text(
+              widget._name.length > 40
+                  ? "${widget._name.substring(0, 37)}..."
+                  : widget._name,
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+            // Name of the Company
+            subtitle: Text(
+              widget._company.length > 70
+                  ? "${widget._company.substring(0, 67)}..."
+                  : widget._company,
+              style: TextStyle(
+                color: Colors.grey.shade600,
               ),
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: CircleAvatar(
-            backgroundColor: hexToColor("#C7B7E4"),
-            backgroundImage: NetworkImage(widget._imgURL),
-            radius: 60.0,
-          ),
-        ),
-      ],
+      ),
     );
   }
 }
