@@ -16,23 +16,28 @@ class Developer extends StatefulWidget {
 class _DeveloperState extends State<Developer> {
   List<List<String>> dev = [
     [
-      "Rimjhim Bhadani",
-      "Google Venkat Scholar",
-      "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI_400x400.png"
-    ],
-    [
-      "Aritra Roy",
-      "The Code Foundation",
-      "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI_400x400.png"
-    ],
-    [
       "Piyush Sinha",
       "Flutter Evangelist",
       "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI_400x400.png"
     ],
     [
+      "Rimjhim Bhadani",
+      "Google Venkat Scholar",
+      "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI_400x400.png"
+    ],
+    [
+      "Ritwik Raha",
+      "The Code Foundation",
+      "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI_400x400.png"
+    ],
+    [
       "Piyush Maheswari",
       "Graphixstory",
+      "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI_400x400.png"
+    ],
+    [
+      "Aritra Roy",
+      "The Code Foundation",
       "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI_400x400.png"
     ],
   ];
@@ -84,6 +89,11 @@ class _DeveloperState extends State<Developer> {
               dev[3][0],
               dev[3][1],
               dev[3][2],
+            ),
+            DevCards(
+              dev[4][0],
+              dev[4][1],
+              dev[4][2],
             ),
           ],
         ),

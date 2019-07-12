@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/piyush/Flutter projects/gdg/DevFest-19-App/Piyush/DevFest-19-App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-in/values-in.xml",
+            "outputFile": "/home/aritra/AndroidStudioProjects/Google_Projects/GITHUB/DevFest-19-App/Piyush/DevFest-19-App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-in/values-in.xml",
             "map": [
                 {
-                    "source": "/home/piyush/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/dcc234414752fa5f814a7fd1d1ceb2e7/res/values-in/values-in.xml",
+                    "source": "/home/aritra/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/85075ddb0fa4bedc4eda36884ef64902/res/values-in/values-in.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/piyush/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/3a30d91b9c4f10feaf637ef04064788a/res/values-in/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "190",
-                        "endOffsets": "437"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1269",
-                        "endColumns": "190",
-                        "endOffsets": "1455"
-                    }
-                },
-                {
-                    "source": "/home/piyush/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/6bd13a53ca002144545991ed00f50c5e/res/values-in/values.xml",
+                    "source": "/home/aritra/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/f2ec2bab843c731c1460a07574f4d4f9/res/values-in/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -52,6 +35,23 @@
                         "startOffsets": "105,214,410,538,646,860,989,1134,1460,1685,1792,1987,2115,2329,2503,2597,2687",
                         "endColumns": "108,195,127,107,213,128,144,134,224,106,194,127,213,173,93,89,107",
                         "endOffsets": "209,405,533,641,855,984,1129,1264,1680,1787,1982,2110,2324,2498,2592,2682,2790"
+                    }
+                },
+                {
+                    "source": "/home/aritra/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/fa236cd257356819602d11451a965961/res/values-in/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "190",
+                        "endOffsets": "437"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1269",
+                        "endColumns": "190",
+                        "endOffsets": "1455"
                     }
                 }
             ]

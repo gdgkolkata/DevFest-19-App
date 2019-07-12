@@ -28,7 +28,8 @@ dependencies:
   intl: ^0.15.8
   url_launcher: ^5.0.3
   flare_flutter:
-
+  http:
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

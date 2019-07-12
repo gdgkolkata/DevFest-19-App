@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aritra/AndroidStudioProjects/Google_Projects/GITHUB/DevFest-19-App/Aritra/DevFest-19-App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-fr/values-fr.xml",
+            "outputFile": "/home/aritra/AndroidStudioProjects/Google_Projects/Aritra/DevFest-19-App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-fr/values-fr.xml",
             "map": [
                 {
                     "source": "/home/aritra/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/fa236cd257356819602d11451a965961/res/values-fr/values.xml",

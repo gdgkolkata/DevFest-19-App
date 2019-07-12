@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aritra/AndroidStudioProjects/Google_Projects/GITHUB/DevFest-19-App/Aritra/DevFest-19-App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-te/values-te.xml",
+            "outputFile": "/home/aritra/AndroidStudioProjects/Google_Projects/Aritra/DevFest-19-App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-te/values-te.xml",
             "map": [
                 {
                     "source": "/home/aritra/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/85075ddb0fa4bedc4eda36884ef64902/res/values-te/values-te.xml",
