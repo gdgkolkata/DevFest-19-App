@@ -1,10 +1,18 @@
+// Flutter plugin imports
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 import 'dart:async';
-//
+
+// Pages imports
+
+// Utils imports
+import './utils/drawer.dart';
+import './utils/drawerInfo.dart';
 import './utils/speakerCards.dart';
+
+// Data imports
 import 'package:devfest19/data/speaker.dart';
 
 Future<List<Speaker>> fetchSpeakers(http.Client client) async {
@@ -27,31 +35,42 @@ class Speakers extends StatefulWidget {
 }
 
 class _SpeakersState extends State<Speakers> {
+  // Method that executes on pressing the "Back Button"
+  Future<bool> _willPopCallback() async {
+    // Puts the flag up for "home", in drawer
+    selection(0);
+    // Pops until the last page remain
+    Navigator.popUntil(context, ModalRoute.withName('/'));
+    return false; // return true if the route to be popped
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: 
-      AppBar(
-        iconTheme: IconThemeData(color: Colors.black87),
-        title: Text(
-          'Speakers',
-          style: TextStyle(
-            color: Colors.grey.shade600,
+    return WillPopScope(
+      onWillPop: _willPopCallback,
+      child: Scaffold(
+        appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.black87),
+          title: Text(
+            'Speakers',
+            style: TextStyle(
+              color: Colors.grey.shade600,
+            ),
           ),
+          elevation: 5.0,
+          backgroundColor: Colors.white,
         ),
-        elevation: 5.0,
-        backgroundColor: Colors.white,
-      ),
-      
-      body: FutureBuilder<List<Speaker>>(
-        future: fetchSpeakers(http.Client()),
-        builder: (context, snapshot) {
-          if (snapshot.hasError) print(snapshot.error);
+        drawer: myDrawer(),
+        body: FutureBuilder<List<Speaker>>(
+          future: fetchSpeakers(http.Client()),
+          builder: (context, snapshot) {
+            if (snapshot.hasError) print(snapshot.error);
 
-          return snapshot.hasData
-              ? SpeakersList(speakers: snapshot.data)
-              : Center(child: CircularProgressIndicator());
-        },
+            return snapshot.hasData
+                ? SpeakersList(speakers: snapshot.data)
+                : Center(child: CircularProgressIndicator());
+          },
+        ),
       ),
     );
   }
@@ -67,7 +86,8 @@ class SpeakersList extends StatelessWidget {
     return ListView.builder(
       itemCount: speakers.length,
       itemBuilder: (context, index) {
-        return SpeakerCards(speakers[index].fullName, speakers[index].tagLine, "", speakers[index].profilePicture, speakers[index].bio);
+        return SpeakerCards(speakers[index].fullName, speakers[index].tagLine,
+            "", speakers[index].profilePicture, speakers[index].bio);
       },
     );
   }

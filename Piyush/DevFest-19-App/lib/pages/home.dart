@@ -1,6 +1,11 @@
+// Flutter plugin imports
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-//
+import 'package:url_launcher/url_launcher.dart';
+
+// Pages import
+
+// Utils import
 import './utils/color.dart';
 import './utils/drawer.dart';
 
@@ -21,89 +26,92 @@ class _HomePageState extends State<HomePage> {
       systemNavigationBarColor: Colors.white, //bottom bar color
       systemNavigationBarIconBrightness: Brightness.dark, //bottom bar icons
     ));
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        iconTheme: new IconThemeData(color: Colors.black87),
-        elevation: 5.0,
-        title: Text(
-          'Home',
-          style: TextStyle(
-            color: Colors.grey.shade600,
-          ),
-        ),
+
+    // Method which executes on pushing "Back Button"
+    Future<bool> _willPopCallback() async {
+      // Exits the app
+      SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+      return true; // return true if the route to be popped
+    }
+
+    return WillPopScope(
+      onWillPop: _willPopCallback,
+      child: Scaffold(
         backgroundColor: Colors.white,
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: IconButton(
-              icon: Icon(Icons.account_circle),
-              iconSize: 30.0,
-               color: hexToColor('#673ab7'),
-              onPressed: () {
-                // ToDo: Logic for AUTH
-              },
+        appBar: AppBar(
+          iconTheme: new IconThemeData(color: Colors.grey.shade600),
+          elevation: 5.0,
+          title: Text(
+            'Home',
+            style: TextStyle(
+              color: Colors.grey.shade600,
             ),
           ),
-        ],
-      ),
-      drawer: myDrawer(),
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            Image.asset("assets/devfest.png"),
-            RichText(
-              text: TextSpan(
-                text: "August 2019\n",
-                style: TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.grey,
-                ),
-                children: <TextSpan>[
-                  TextSpan(
-                    text: "Welcome to\nGDG Kolkata DevFest\n",
-                    style: TextStyle(
-                      fontSize: 22.0,
-                      color: Colors.black,
-                    ),
+          backgroundColor: Colors.white,
+        ),
+        drawer: myDrawer(),
+        body: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Image.asset("assets/devfest.png"),
+              RichText(
+                text: TextSpan(
+                  text: "August 2019\n",
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.grey,
                   ),
-                  TextSpan(
-                    text: para,
-                    style: TextStyle(
-                      fontSize: 14.0,
-                      color: Colors.grey.shade600,
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "Welcome to\nGDG Kolkata DevFest\n",
+                      style: TextStyle(
+                        fontSize: 22.0,
+                        color: Colors.black,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(
-                  MediaQuery.of(context).size.width * (1 / 4),
-                  20.0,
-                  MediaQuery.of(context).size.width * (1 / 4),
-                  0.0),
-              child: RaisedButton(
-                padding: EdgeInsets.all(20.0),
-                // color: hexToColor('#C7B7E4'),//Light
-                color: hexToColor('#673ab7'),
-                onPressed: () {
-                  // ToDo: URL FOR FORM
-                },
-                child: Text(
-                  "Apply Now",
-                  // style: TextStyle(color: hexToColor('#673ab7')),//Dark
-                  style: TextStyle(color: Colors.white),
+                    TextSpan(
+                      text: para,
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.grey.shade600,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            )
-          ],
+              Padding(
+                padding: EdgeInsets.fromLTRB(
+                    MediaQuery.of(context).size.width * (1 / 4),
+                    20.0,
+                    MediaQuery.of(context).size.width * (1 / 4),
+                    0.0),
+                child: RaisedButton(
+                  padding: EdgeInsets.all(20.0),
+                  color: hexToColor('#673ab7'),
+                  onPressed: () async {
+                    // ToDo: URL FOR FORM
+                    const url =
+                        'https://docs.google.com/forms/d/e/1FAIpQLSfnitNzIblk6ciVqYgIHRM303Dl44ZvpAtMcqvqWQeQUBYLdw/viewform';
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
+                  child: Text(
+                    "Apply Now",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

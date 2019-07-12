@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aritra/AndroidStudioProjects/Google_Projects/GITHUB/DevFest-19-App/Piyush/DevFest-19-App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "/home/piyush/Flutter projects/GDG_DEVFEST/DevFest-19-App/Piyush/DevFest-19-App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/home/aritra/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/820e3b4d909d724701b336a04746c8f2/res/values-v24/values-v24.xml",
+                    "source": "/home/piyush/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/6301b68c6c07950e20434b54fe12c25b/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

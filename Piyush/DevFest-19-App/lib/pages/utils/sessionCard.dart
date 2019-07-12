@@ -32,17 +32,18 @@ class _SessionCardState extends State<SessionCard> {
             width: MediaQuery.of(context).size.width-20,
             child: GestureDetector(
               child: Padding(
-                padding: const EdgeInsets.only(top:8.0,bottom: 8.0,left: 0.0,right: 0.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Card(
                   elevation: 5.0,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0)),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      SizedBox(
-                        width: 2.5 * MediaQuery.of(context).size.width/3.2,
+                      Container(
+                        width:300.0 ,
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             Text(
                               widget._slot,
@@ -69,49 +70,15 @@ class _SessionCardState extends State<SessionCard> {
                           ],
                         ),
                       ),
-                      Container(
-                        color: hexToColor("#CBC5D7"),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            IconButton(
-                              icon: widget._isBookmarked == false
-                                  ? Icon(Icons.bookmark_border)
-                                  : Icon(Icons.bookmark),
-                              color: hexToColor('#673ab7'),
-                              onPressed: () {
-                                setState(() {
-                                  if (!widget._isBookmarked)
-                                    widget._isBookmarked = true;
-                                  else
-                                   widget._isBookmarked = false;
-                                });
-                              },
-                            ),
-                            IconButton(
-                              icon: widget._isAdded == false
-                                  ? Icon(Icons.star_border)
-                                  : Icon(Icons.star),
-                              color: hexToColor('#673ab7'),
-                              onPressed: () {
-                                setState(() {
-                                  if (!widget._isAdded)
-                                    widget._isAdded = true;
-                                  else
-                                    widget._isAdded = false;
-                                });
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
+                      Icon(Icons.keyboard_arrow_right,
+                    color: Colors.grey.shade600, size: 30.0),
                     ],
                   ),
                 ),
               ),
               onTap: (){
-                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => sessionDetails(widget._slot,widget._title,widget._speaker,widget._tags,widget._level,widget._venue)));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => sessionDetails(widget._slot,widget._title,widget._tags,widget._level,widget._venue)));
               },
             ),
           );
