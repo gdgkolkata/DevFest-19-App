@@ -7,16 +7,15 @@ import 'package:flutter/material.dart';
 import './utils/color.dart';
 
 class sessionDetails extends StatefulWidget {
-  String _slot, _title, _tags, _level, _venue,_description;
-  sessionDetails(this._slot, this._title, this._tags,
-      this._level, this._venue,this._description);
+  String _slot, _title, _tags, _level, _venue, _description;
+  sessionDetails(this._slot, this._title, this._tags, this._level, this._venue,
+      this._description);
   @override
   _sessionDetailsState createState() => _sessionDetailsState();
 }
 
 class _sessionDetailsState extends State<sessionDetails> {
-
-     Widget placeTags(String tags) {
+  Widget placeTags(String tags) {
     List<String> _tags;
     _tags = tags.split(",");
     return tags == ""
@@ -59,7 +58,7 @@ class _sessionDetailsState extends State<sessionDetails> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      widget._slot,
+                      widget._slot == "null" ? "To be decided" : widget._slot,
                       style: TextStyle(
                         color: Colors.black87,
                         fontSize: 18.0,
@@ -79,7 +78,7 @@ class _sessionDetailsState extends State<sessionDetails> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      widget._venue,
+                      widget._venue == "null" ? "To be decided" : widget._venue,
                       style: TextStyle(
                         color: Colors.black87,
                         fontSize: 18.0,
@@ -140,6 +139,10 @@ class _sessionDetailsState extends State<sessionDetails> {
               ),
             ),
             Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: placeTags(widget._tags),
+            ),
+            Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(
                 widget._description,
@@ -148,10 +151,6 @@ class _sessionDetailsState extends State<sessionDetails> {
                   fontSize: 18.0,
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: placeTags(widget._tags),
             ),
           ],
         ),

@@ -25,8 +25,9 @@ class _SpeakerCardsState extends State<SpeakerCards> {
         child: Card(
           elevation: 5.0,
           margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
           child: Center(
             child: ListTile(
                 contentPadding:
