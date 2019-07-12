@@ -7,17 +7,16 @@ import 'package:flutter/material.dart';
 import './utils/color.dart';
 
 class sessionDetails extends StatefulWidget {
-  String _slot, _title, _tags, _level, _venue;
+  String _slot, _title, _tags, _level, _venue,_description;
   sessionDetails(this._slot, this._title, this._tags,
-      this._level, this._venue);
+      this._level, this._venue,this._description);
   @override
   _sessionDetailsState createState() => _sessionDetailsState();
 }
 
 class _sessionDetailsState extends State<sessionDetails> {
-  String description =
-      "We are moving from a company that helps you find answers, to a company that helps you get things done...we want our products to work harder for you—in the context of your job, your home and your life. And they all share a single goal: to be helpful.";
-  Widget placeTags(String tags) {
+
+     Widget placeTags(String tags) {
     List<String> _tags;
     _tags = tags.split(",");
     return tags == ""
@@ -40,7 +39,6 @@ class _sessionDetailsState extends State<sessionDetails> {
         color: Colors.white,
         child: ListView(
           children: <Widget>[
-            Image.asset("assets/speaker_demo.jpeg"),
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(
@@ -144,7 +142,7 @@ class _sessionDetailsState extends State<sessionDetails> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(
-                description,
+                widget._description,
                 style: TextStyle(
                   color: Colors.black87,
                   fontSize: 18.0,

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class SessionCard extends StatefulWidget {
   bool _isAdded, _isBookmarked;
-  String _slot, _title, _speaker, _tags, _level, _venue;
+  String _slot, _title, _speaker, _tags, _level, _venue,_description;
   SessionCard(this._isAdded, this._isBookmarked, this._slot, this._title,
-      this._speaker, this._tags, this._level, this._venue);
+      this._speaker, this._tags, this._level, this._venue,this._description);
   @override
   _SessionCardState createState() => _SessionCardState();
 }
@@ -91,7 +91,8 @@ class _SessionCardState extends State<SessionCard> {
                       widget._title,
                       widget._tags,
                       widget._level,
-                      widget._venue)));
+                      widget._venue,
+                      widget._description)));
         },
       ),
     );

@@ -22,14 +22,14 @@ class _NavigationState extends State<Navigation> {
     return <Marker>[
       Marker(
         markerId: MarkerId("marker_1"),
-        position: LatLng(22.5602, 88.4902),
+        position: LatLng(22.5726, 88.3639),
       ),
     ].toSet();
   }
 
   final CameraPosition _venue = CameraPosition(
-    target: LatLng(22.5602, 88.4902),
-    zoom: 17.0,
+    target: LatLng(22.5726, 88.3639),
+    zoom: 10.0,
   );
 
   // Method which executes on pushing "Back Button"
