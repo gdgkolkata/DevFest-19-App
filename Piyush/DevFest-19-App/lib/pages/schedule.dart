@@ -1,4 +1,6 @@
 // Flutter plugin imports
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -9,16 +11,28 @@ import 'dart:async';
 import 'package:devfest19/data/sessionResponse.dart';
 import 'package:devfest19/data/item.dart';
 
+//pages import
+import './error.dart';
+
 // Utils imports
 import './utils/sessionCard.dart';
 import './utils/drawer.dart';
 
-Future<List<SessionResponse>> fetchSessionResponse(http.Client client) async {
-  final response =
+Future<List<SessionResponse>> fetchSessionResponse(http.Client client, BuildContext context) async {
+  try{
+    final response =
       await client.get('https://sessionize.com/api/v2/f0dxidzh/view/sessions');
-
   return compute(parseSessionResponse, response.body);
+  }on SocketException catch(_){
+    Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ErrorPage(message: "Can't reach the servers, \n Please check your internet connection.",)));
+             
+  }
+ 
 }
+
 
 List<SessionResponse> parseSessionResponse(String responseBody) {
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
@@ -28,6 +42,7 @@ List<SessionResponse> parseSessionResponse(String responseBody) {
       .toList();
 }
 
+
 class Schedule extends StatefulWidget {
   @override
   _ScheduleState createState() => _ScheduleState();
@@ -35,7 +50,6 @@ class Schedule extends StatefulWidget {
 
 class _ScheduleState extends State<Schedule> {
   //slot,title,speaker,tags,level,venue
-
   Color hexToColor(String code) {
     return new Color(int.parse(code.substring(1, 7), radix: 16) + 0xFF000000);
   }
@@ -58,7 +72,7 @@ class _ScheduleState extends State<Schedule> {
       ),
       drawer: myDrawer(),
       body: FutureBuilder<List<SessionResponse>>(
-        future: fetchSessionResponse(http.Client()),
+        future: fetchSessionResponse(http.Client(),context),
         builder: (context, snapshot) {
           if (snapshot.hasError) print(snapshot.error);
           return snapshot.hasData

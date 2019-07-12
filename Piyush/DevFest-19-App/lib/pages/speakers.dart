@@ -1,4 +1,6 @@
 // Flutter plugin imports
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -6,7 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'dart:async';
 
 // Pages imports
-
+import './error.dart';
 // Utils imports
 import './utils/drawer.dart';
 import './utils/drawerInfo.dart';
@@ -15,11 +17,18 @@ import './utils/speakerCards.dart';
 // Data imports
 import 'package:devfest19/data/speaker.dart';
 
-Future<List<Speaker>> fetchSpeakers(http.Client client) async {
+Future<List<Speaker>> fetchSpeakers(http.Client client, BuildContext context) async {
+  try{
   final response =
       await client.get('https://sessionize.com/api/v2/f0dxidzh/view/speakers');
 
   return compute(parseSpeakers, response.body);
+  }on SocketException catch(_){
+    Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ErrorPage(message: "Can't reach the servers, \n Please check your internet connection.",)));
+  }
 }
 
 // A function that converts a response body into a List<Photo>.
@@ -62,7 +71,7 @@ class _SpeakersState extends State<Speakers> {
         ),
         drawer: myDrawer(),
         body: FutureBuilder<List<Speaker>>(
-          future: fetchSpeakers(http.Client()),
+          future: fetchSpeakers(http.Client(), context),
           builder: (context, snapshot) {
             if (snapshot.hasError) print(snapshot.error);
 
