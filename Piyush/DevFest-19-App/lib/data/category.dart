@@ -1,7 +1,8 @@
 import 'package:devfest19/data/categoryItem.dart';
 import 'package:devfest19/data/item.dart';
 class Category {
-  String id, name;
+  int id;
+  String name;
   List<CategoryItem> categoryItems;
 
   Category({this.id, this.name, 

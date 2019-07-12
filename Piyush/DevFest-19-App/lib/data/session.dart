@@ -4,7 +4,7 @@ import 'package:devfest19/data/item.dart';
 class Session {
   String id, title, description, startsAt, endsAt, room, roomId;
   List speakers;
-  List<Category> categories;
+  List categories;
 
   Session({this.id, 
   this.title, 
@@ -14,7 +14,7 @@ class Session {
   this.room, 
   this.roomId, 
   this.speakers, 
-  //this.categories
+  this.categories
   });
 
   factory Session.fromJson(Map<String, dynamic> json){
@@ -22,8 +22,8 @@ class Session {
      var list1 = json['speakers'] as List;
      List<Item> speakersList = list1.map((i) => Item.fromJson(i)).toList();
 
-    //  var list2 = json['categories'] as List;
-    //  List<Category> categoriesList = list2.map((k) => Category.fromJson(k)).toList();
+     var list2 = json['categories'] as List;
+     List<Category> categoriesList = list2.map((k) => Category.fromJson(k)).toList();
 
   return Session(
     id: json['id'],
@@ -34,7 +34,7 @@ class Session {
     room: json['room'], 
     roomId: json['roomId'],
     speakers: speakersList,
-    //categories: categoriesList
+    categories: categoriesList
     );
   }
 

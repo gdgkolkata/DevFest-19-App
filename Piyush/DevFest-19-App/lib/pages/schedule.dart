@@ -23,7 +23,9 @@ Future<List<SessionResponse>> fetchSessionResponse(http.Client client) async {
 List<SessionResponse> parseSessionResponse(String responseBody) {
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
-  return parsed.map<SessionResponse>((json) => SessionResponse.fromJson(json)).toList();
+  return parsed
+      .map<SessionResponse>((json) => SessionResponse.fromJson(json))
+      .toList();
 }
 
 class Schedule extends StatefulWidget {
@@ -69,7 +71,7 @@ class _ScheduleState extends State<Schedule> {
 }
 
 class SessionResponseItem extends StatelessWidget {
-  Item i=new Item();
+  Item i = new Item();
   final List<SessionResponse> sessionResponse;
   SessionResponseItem({Key key, this.sessionResponse}) : super(key: key);
   @override
@@ -86,7 +88,8 @@ class SessionResponseItem extends StatelessWidget {
           sessionResponse[0].sessionsList[index].title.toString(),
           // Speakers
           sessionResponse[0].sessionsList[index].speakers[0].name.toString(),
-          "tags",
+          // "tags",
+          sessionResponse[0].sessionsList[index].categories[1].categoryItems[0].name.toString(),
           "Intermidiate",
           sessionResponse[0].sessionsList[index].room.toString(),
         );
