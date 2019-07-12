@@ -90,7 +90,9 @@ class SessionResponseItem extends StatelessWidget {
           sessionResponse[0].sessionsList[index].speakers[0].name.toString(),
           // "tags",
           sessionResponse[0].sessionsList[index].categories[1].categoryItems[0].name.toString(),
-          "Intermidiate",
+          // hardness
+          sessionResponse[0].sessionsList[index].categories[2].categoryItems[0].name.toString(),
+          // Room
           sessionResponse[0].sessionsList[index].room.toString(),
         );
       },
