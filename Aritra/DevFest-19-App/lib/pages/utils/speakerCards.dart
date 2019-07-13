@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 
 // Pages import
 import 'package:devfest19/pages/speakerDetails.dart';
+import 'package:devfest19/data/speaker.dart';
 
 class SpeakerCards extends StatefulWidget {
   String _name, _company, _session, _imgURL, _bio;
+  List<Link> links;
   SpeakerCards(
-      this._name, this._company, this._session, this._imgURL, this._bio);
+      this._name, this._company, this._session, this._imgURL, this._bio, this.links);
   @override
   _SpeakerCardsState createState() => _SpeakerCardsState();
 }
@@ -66,7 +68,7 @@ class _SpeakerCardsState extends State<SpeakerCards> {
             context,
             MaterialPageRoute(
                 builder: (context) => speakerDetails(widget._name,
-                    widget._company, widget._imgURL, widget._bio)));
+                    widget._company, widget._imgURL, widget._bio, widget.links)));
       },
     );
   }

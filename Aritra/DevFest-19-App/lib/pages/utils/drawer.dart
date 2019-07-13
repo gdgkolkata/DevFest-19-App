@@ -9,6 +9,7 @@ import 'package:devfest19/pages/schedule.dart';
 import 'package:devfest19/pages/speakers.dart';
 import 'package:devfest19/pages/developer.dart';
 import 'package:devfest19/pages/navigation.dart';
+import 'package:devfest19/pages/sponsors.dart';
 
 // Utils import
 import 'drawerInfo.dart';
@@ -242,6 +243,10 @@ class myDrawerState extends State<myDrawer> {
                     if (select[4] != true) {
                       selection(4);
                       //To Do:
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Sponsors()));
                     }
                   },
                 ),
@@ -300,7 +305,7 @@ class myDrawerState extends State<myDrawer> {
                 Container(
                   child: ListTile(
                     title: Text(
-                      "Developers",
+                      "Team",
                       style: TextStyle(
                         color: Colors.grey.shade600,
                       ),

@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
               Image.asset("assets/devfest.png"),
               RichText(
                 text: TextSpan(
-                  text: "August 2019\n",
+                  text: "August 4, 2019\n",
                   style: TextStyle(
                     fontSize: 16.0,
                     color: Colors.grey,

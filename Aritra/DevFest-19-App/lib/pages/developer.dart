@@ -16,29 +16,29 @@ class Developer extends StatefulWidget {
 class _DeveloperState extends State<Developer> {
   List<List<String>> dev = [
     [
+      "Aritra Roy Gosthipaty",
+      "The Code Foundation",
+      "https://user-images.githubusercontent.com/26908195/61170217-38937f00-a583-11e9-8fe2-7be6aa2e0a40.jpg"
+    ],
+    [
       "Piyush Sinha",
       "Flutter Evangelist",
       "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI_400x400.png"
     ],
     [
+      "Piyush Maheswari",
+      "Android | Flutter",
+      "https://user-images.githubusercontent.com/26908195/61170219-3df0c980-a583-11e9-9942-ea9ce4b2c1eb.jpg"
+    ],
+    [
       "Rimjhim Bhadani",
-      "Google Venkat Scholar",
-      "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI_400x400.png"
+      "GHC Scholar | Google Venkat Scholar",
+      "https://user-images.githubusercontent.com/26908195/61170221-40532380-a583-11e9-8210-d04ac9da67d7.JPG"
     ],
     [
       "Ritwik Raha",
       "The Code Foundation",
-      "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI_400x400.png"
-    ],
-    [
-      "Piyush Maheswari",
-      "Graphixstory",
-      "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI_400x400.png"
-    ],
-    [
-      "Aritra Roy Gosthipaty",
-      "The Code Foundation",
-      "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI_400x400.png"
+      "https://user-images.githubusercontent.com/26908195/61170254-21a15c80-a584-11e9-96a6-a39e726716ff.png"
     ],
   ];
 
@@ -59,7 +59,7 @@ class _DeveloperState extends State<Developer> {
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.black87),
           title: Text(
-            'Developers',
+            'Team',
             style: TextStyle(
               color: Colors.grey.shade600,
             ),

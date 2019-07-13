@@ -1,10 +1,12 @@
 // Flutter plugin imports
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // Pages import
 
 // Utils import
 import './utils/color.dart';
+import 'package:devfest19/data/speaker.dart';
 
 class MyBehavior extends ScrollBehavior {
   @override
@@ -16,7 +18,8 @@ class MyBehavior extends ScrollBehavior {
 
 class speakerDetails extends StatefulWidget {
   String _name, _company, _imgURL, _bio;
-  speakerDetails(this._name, this._company, this._imgURL, this._bio);
+  List<Link> links;
+  speakerDetails(this._name, this._company, this._imgURL, this._bio, this.links);
   @override
   speakerDetailsState createState() => speakerDetailsState();
 }
@@ -101,6 +104,12 @@ class speakerDetailsState extends State<speakerDetails> {
                         ),
                       ),
                     ),
+                    //Social Media links
+                    Row(
+                      children: <Widget>[
+                        getSocialMediaProfiles()
+                      ],
+                    )
                   ],
                 ),
               ),
@@ -109,5 +118,47 @@ class speakerDetailsState extends State<speakerDetails> {
         ),
       ),
     );
+  }
+
+  Widget getSocialMediaProfiles() {
+    List<Widget> widgets = new List<Widget>();
+    List<Link> links = widget.links;
+    for(var i = 0; i < links.length; i++) {
+      Widget w = new GestureDetector(
+        onTap: () async{
+          var url = links[i].link;
+          print("URL: " + url);
+          if (await canLaunch(url)) {
+            await launch(url);
+            } else {
+              throw 'Could not launch $url';
+              }
+            },
+            child: new Container(
+              width: 50,
+              height: 50,
+              padding: const EdgeInsets.all(8.0),
+              decoration: new BoxDecoration(
+                shape: BoxShape.circle,
+                image: new DecorationImage(
+                  fit: BoxFit.fill,
+                  image: getImage(links[i].title)
+                  )
+              ),
+            )
+      );
+      widgets.add(w);
+    }
+    return new Row(children: widgets);
+  }
+
+  ImageProvider getImage(String title) {
+    switch (title) {
+      case "Blog": {return NetworkImage('https://user-images.githubusercontent.com/26908195/61170316-4fd36c00-a585-11e9-9f86-355b1724600e.png');}
+      case "Company Website": {return NetworkImage('https://user-images.githubusercontent.com/26908195/61170315-4e09a880-a585-11e9-9f01-1aafaf02531a.png');}
+      case "LinkedIn": {return NetworkImage('https://user-images.githubusercontent.com/26908195/61169267-ca49bf00-a578-11e9-97bb-ee4b42aff03a.png');}
+      case "Twitter": {return NetworkImage('https://user-images.githubusercontent.com/26908195/61169269-e0f01600-a578-11e9-8604-ae23d619d972.png');}
+      default: {return NetworkImage('https://user-images.githubusercontent.com/26908195/61170317-51049900-a585-11e9-85ee-90c2bd7e1b4b.png');}
+    }
   }
 }

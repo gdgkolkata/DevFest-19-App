@@ -101,7 +101,7 @@ class SpeakersList extends StatelessWidget {
       itemCount: speakers.length,
       itemBuilder: (context, index) {
         return SpeakerCards(speakers[index].fullName, speakers[index].tagLine,
-            "", speakers[index].profilePicture, speakers[index].bio);
+            "", speakers[index].profilePicture, speakers[index].bio, speakers[index].links);
       },
     );
   }

@@ -47,7 +47,7 @@ class _SessionCardState extends State<SessionCard> {
               contentPadding:
                   EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
               leading: Text(
-                widget._slot == "null" ? "Time" : widget._slot,
+                widget._slot == "null" ? "--:--" : widget._slot,
                 style: TextStyle(color: hexToColor("#C7B7E4")),
               ),
               // Title of the session
