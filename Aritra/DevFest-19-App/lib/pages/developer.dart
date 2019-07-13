@@ -16,29 +16,34 @@ class Developer extends StatefulWidget {
 class _DeveloperState extends State<Developer> {
   List<List<String>> dev = [
     [
-      "Aritra Roy Gosthipaty",
-      "The Code Foundation",
-      "https://user-images.githubusercontent.com/26908195/61170217-38937f00-a583-11e9-8fe2-7be6aa2e0a40.jpg"
-    ],
-    [
       "Piyush Sinha",
       "Flutter Evangelist",
-      "https://user-images.githubusercontent.com/26908195/61172548-87e9a780-a5a3-11e9-8c4b-8c866140c7e8.jpg"
+      "https://user-images.githubusercontent.com/26908195/61172548-87e9a780-a5a3-11e9-8c4b-8c866140c7e8.jpg",
+      "https://github.com/piyushsinha24",
     ],
     [
-      "Piyush Maheswari",
-      "Android | Flutter",
-      "https://user-images.githubusercontent.com/26908195/61170219-3df0c980-a583-11e9-9942-ea9ce4b2c1eb.jpg"
+      "Aritra Roy Gosthipaty",
+      "Flutter | Java | Android",
+      "https://user-images.githubusercontent.com/26908195/61170217-38937f00-a583-11e9-8fe2-7be6aa2e0a40.jpg",
+      "https://github.com/ariG23498",
     ],
     [
       "Rimjhim Bhadani",
       "GHC Scholar | Google Venkat Scholar",
-      "https://user-images.githubusercontent.com/26908195/61170221-40532380-a583-11e9-8210-d04ac9da67d7.JPG"
+      "https://user-images.githubusercontent.com/26908195/61170221-40532380-a583-11e9-8210-d04ac9da67d7.JPG",
+      "https://github.com/Rimjhim28"
     ],
     [
       "Ritwik Raha",
-      "The Code Foundation",
-      "https://user-images.githubusercontent.com/26908195/61170254-21a15c80-a584-11e9-96a6-a39e726716ff.png"
+      "UI/UX | Matlab | Image Processing",
+      "https://user-images.githubusercontent.com/26908195/61170254-21a15c80-a584-11e9-96a6-a39e726716ff.png",
+      "https://github.com/ritwikraha"
+    ],
+    [
+      "Piyush Maheswari",
+      "Android | Flutter",
+      "https://user-images.githubusercontent.com/26908195/61170219-3df0c980-a583-11e9-9942-ea9ce4b2c1eb.jpg",
+      "https://github.com/Piyush2769"
     ],
   ];
 
@@ -57,6 +62,7 @@ class _DeveloperState extends State<Developer> {
       onWillPop: _willPopCallback,
       child: Scaffold(
         appBar: AppBar(
+          brightness: Brightness.light,
           iconTheme: IconThemeData(color: Colors.black87),
           title: Text(
             'Team',
@@ -74,26 +80,31 @@ class _DeveloperState extends State<Developer> {
               dev[0][0],
               dev[0][1],
               dev[0][2],
+              dev[0][3],
             ),
             DevCards(
               dev[1][0],
               dev[1][1],
               dev[1][2],
+              dev[1][3],
             ),
             DevCards(
               dev[2][0],
               dev[2][1],
               dev[2][2],
+              dev[2][3],
             ),
             DevCards(
               dev[3][0],
               dev[3][1],
               dev[3][2],
+              dev[3][3],
             ),
             DevCards(
               dev[4][0],
               dev[4][1],
               dev[4][2],
+              dev[4][3],
             ),
           ],
         ),

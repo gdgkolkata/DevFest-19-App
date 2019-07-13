@@ -46,6 +46,7 @@ class _NavigationState extends State<Navigation> {
       onWillPop: _willPopCallback,
       child: Scaffold(
         appBar: AppBar(
+          brightness: Brightness.light,
           iconTheme: new IconThemeData(color: Colors.black87),
           title: Text(
             'Find Your Way',

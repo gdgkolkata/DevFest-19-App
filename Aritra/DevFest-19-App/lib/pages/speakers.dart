@@ -64,6 +64,7 @@ class _SpeakersState extends State<Speakers> {
       onWillPop: _willPopCallback,
       child: Scaffold(
         appBar: AppBar(
+          brightness: Brightness.light,
           iconTheme: IconThemeData(color: Colors.black87),
           title: Text(
             'Speakers',

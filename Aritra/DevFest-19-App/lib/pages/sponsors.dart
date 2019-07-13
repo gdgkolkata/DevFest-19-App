@@ -29,6 +29,7 @@ class _SponsorsState extends State<Sponsors> {
       onWillPop: _willPopCallback,
       child: Scaffold(
         appBar: AppBar(
+          brightness: Brightness.light,
           iconTheme: IconThemeData(color: Colors.black87),
           title: Text(
             'Sponsors',

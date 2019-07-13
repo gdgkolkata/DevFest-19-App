@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 // Pages import
 
@@ -21,10 +22,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.white, //top bar color
-      statusBarIconBrightness: Brightness.dark, //top bar icons
-      systemNavigationBarColor: Colors.white, //bottom bar color
-      systemNavigationBarIconBrightness: Brightness.dark, //bottom bar icons
+      statusBarColor: Colors.white10, //top bar color
+      systemNavigationBarColor: Colors.white10, //bottom bar color
+      systemNavigationBarIconBrightness: Brightness.dark,
     ));
 
     // Method which executes on pushing "Back Button"
@@ -39,6 +39,7 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          brightness: Brightness.light, //check
           iconTheme: new IconThemeData(color: Colors.grey.shade600),
           elevation: 5.0,
           title: Text(
@@ -54,10 +55,10 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Image.asset("assets/devfest.png"),
             Padding(
-              padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(8.0, 10.0, 8.0, 0.0),
               child: RichText(
                 text: TextSpan(
-                  text: "August 4, 2019\n",
+                  text: "August 4, 2019\n\n",
                   style: TextStyle(
                     fontSize: 16.0,
                     color: Colors.grey,
@@ -83,10 +84,32 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
+              padding: const EdgeInsets.fromLTRB(8.0, 40.0, 8.0, 0.0),
+              child: Text(
+                "Highlights 2018\n",
+                style: TextStyle(
+                  fontSize: 22.0,
+                  color: Colors.grey,
+                ),
+              ),
+            ),
+            // Video
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
+              child: Container(
+                  height: 250.0,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  child: WebView(
+                    initialUrl:
+                        'https://www.youtube.com/embed/jG2_TN-jfH4?autoplay=0&rel=0',
+                    javaScriptMode: JavaScriptMode.unrestricted,
+                  )),
+            ),
+            Padding(
               padding: EdgeInsets.fromLTRB(
-                  MediaQuery.of(context).size.width * (1 / 4),
+                  MediaQuery.of(context).size.width * (1 / 3),
                   30.0,
-                  MediaQuery.of(context).size.width * (1 / 4),
+                  MediaQuery.of(context).size.width * (1 / 3),
                   10.0),
               child: RaisedButton(
                 padding: EdgeInsets.all(20.0),
