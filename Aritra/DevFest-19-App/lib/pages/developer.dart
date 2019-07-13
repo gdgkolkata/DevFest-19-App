@@ -23,7 +23,7 @@ class _DeveloperState extends State<Developer> {
     [
       "Piyush Sinha",
       "Flutter Evangelist",
-      "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI_400x400.png"
+      "https://user-images.githubusercontent.com/26908195/61172548-87e9a780-a5a3-11e9-8c4b-8c866140c7e8.jpg"
     ],
     [
       "Piyush Maheswari",
