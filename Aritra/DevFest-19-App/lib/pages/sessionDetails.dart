@@ -31,6 +31,43 @@ class sessionDetailsState extends State<sessionDetails> {
           );
   }
 
+  // Dialog Box for NOT STREAMING
+  void _showDialog() {
+    // flutter defined function
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          elevation: 5.0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(10.0),
+            ),
+          ),
+          title: new Text(
+            "Live Stream",
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          content: new Text(
+            "Live Streaming is disabled.\nKeep an 👀 on the 4th of Aug.",
+            style: TextStyle(color: Colors.grey.shade600),
+          ),
+          actions: <Widget>[
+            // usually buttons at the bottom of the dialog
+            new FlatButton(
+              child: new Text("Close"),
+              color: hexToColor("#C7B7E4"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +112,9 @@ class sessionDetailsState extends State<sessionDetails> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      widget._slot == "null" ? "To be decided" : widget._slot,
+                      widget._slot == "null"
+                          ? "To be decided"
+                          : widget._slot.substring(11, 16),
                       style: TextStyle(
                         color: Colors.black87,
                         fontSize: 18.0,
@@ -170,7 +209,9 @@ class sessionDetailsState extends State<sessionDetails> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          _showDialog();
+        },
         backgroundColor: Colors.white,
         tooltip: 'Live Streaming',
         child: Icon(

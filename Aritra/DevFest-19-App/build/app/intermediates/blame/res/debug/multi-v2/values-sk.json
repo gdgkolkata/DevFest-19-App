@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\HP\\Desktop\\DevFest-19-App\\Aritra\\DevFest-19-App\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
+            "outputFile": "/home/aritra/AndroidStudioProjects/Google_Projects/GITHUB/DevFest-19-App/Aritra/DevFest-19-App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sk/values-sk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\3b9ea0a272fee04979d1f336978f9733\\res\\values-sk\\values-sk.xml",
+                    "source": "/home/aritra/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/85075ddb0fa4bedc4eda36884ef64902/res/values-sk/values-sk.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\3960ed04d13a91f73e4ea512bbb02146\\res\\values-sk\\values.xml",
+                    "source": "/home/aritra/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/fa236cd257356819602d11451a965961/res/values-sk/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\6241fd2c6fe23e4fc161af54db744fb0\\res\\values-sk\\values.xml",
+                    "source": "/home/aritra/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/f2ec2bab843c731c1460a07574f4d4f9/res/values-sk/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

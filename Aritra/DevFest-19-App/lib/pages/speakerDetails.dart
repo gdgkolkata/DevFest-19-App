@@ -106,6 +106,8 @@ class speakerDetailsState extends State<speakerDetails> {
                     ),
                     //Social Media links
                     Row(
+                      // crossAxisAlignment: CrossAxisAlignment.stretch,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         getSocialMediaProfiles()
                       ],
@@ -135,8 +137,8 @@ class speakerDetailsState extends State<speakerDetails> {
               }
             },
             child: new Container(
-              width: 50,
-              height: 50,
+              width: 40,//from 50
+              height: 40,//from 50
               padding: const EdgeInsets.all(8.0),
               decoration: new BoxDecoration(
                 shape: BoxShape.circle,
