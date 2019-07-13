@@ -59,6 +59,7 @@ flutter:
     - assets/linkedin.png
     - assets/worldwide.png
     - assets/twitter.png
+    - assets/devfestfull.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

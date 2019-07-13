@@ -3,12 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:http/http.dart' as http;
 
 // Pages import
 
 // Utils import
 import './utils/color.dart';
 import './utils/drawer.dart';
+import 'dart:io';
+import 'dart:async';
+
+bool hasNet = false;
+void internetCheck() async {
+  try {
+    await http.get('https://www.google.com/');
+    hasNet = true;
+  } on SocketException catch (_) {
+    hasNet = false;
+  }
+}
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,6 +34,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    internetCheck();
+
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.white10, //top bar color
       systemNavigationBarColor: Colors.white10, //bottom bar color
@@ -94,17 +110,25 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             // Video
-            Padding(
-              padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
-              child: Container(
-                  height: 250.0,
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  child: WebView(
-                    initialUrl:
-                        'https://www.youtube.com/embed/jG2_TN-jfH4?autoplay=0&rel=0',
-                    javaScriptMode: JavaScriptMode.unrestricted,
-                  )),
-            ),
+            hasNet
+                ? Padding(
+                    padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
+                    child: Container(
+                        height: 250.0,
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        child: WebView(
+                          initialUrl:
+                              'https://www.youtube.com/embed/jG2_TN-jfH4?autoplay=0&rel=0',
+                          javaScriptMode: JavaScriptMode.unrestricted,
+                        )),
+                  )
+                : Padding(
+                    padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
+                    child: Container(
+                        height: 250.0,
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        child: Image.asset("assets/devfestfull.png")),
+                  ),
             Padding(
               padding: EdgeInsets.fromLTRB(
                   MediaQuery.of(context).size.width * (1 / 3),
