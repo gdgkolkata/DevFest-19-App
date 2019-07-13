@@ -50,17 +50,12 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.white,
         ),
         drawer: myDrawer(),
-        body: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              Image.asset("assets/devfest.png"),
-              RichText(
+        body: ListView(
+          children: <Widget>[
+            Image.asset("assets/devfest.png"),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
+              child: RichText(
                 text: TextSpan(
                   text: "August 4, 2019\n",
                   style: TextStyle(
@@ -69,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   children: <TextSpan>[
                     TextSpan(
-                      text: "Welcome to\nGDG Kolkata DevFest\n",
+                      text: "Welcome to\nGDG Kolkata DevFest\n\n",
                       style: TextStyle(
                         fontSize: 22.0,
                         color: Colors.black,
@@ -79,39 +74,39 @@ class _HomePageState extends State<HomePage> {
                       text: para,
                       style: TextStyle(
                         fontSize: 14.0,
+                        height: 1.5,
                         color: Colors.grey.shade600,
                       ),
                     ),
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(
-                    MediaQuery.of(context).size.width * (1 / 4),
-                    20.0,
-                    MediaQuery.of(context).size.width * (1 / 4),
-                    0.0),
-                child: RaisedButton(
-                  padding: EdgeInsets.all(20.0),
-                  color: hexToColor('#673ab7'),
-                  onPressed: () async {
-                    // ToDo: URL FOR FORM
-                    const url =
-                        'https://docs.google.com/forms/d/e/1FAIpQLSfnitNzIblk6ciVqYgIHRM303Dl44ZvpAtMcqvqWQeQUBYLdw/viewform';
-                    if (await canLaunch(url)) {
-                      await launch(url);
-                    } else {
-                      throw 'Could not launch $url';
-                    }
-                  },
-                  child: Text(
-                    "Apply Now",
-                    style: TextStyle(color: Colors.white),
-                  ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(
+                  MediaQuery.of(context).size.width * (1 / 4),
+                  30.0,
+                  MediaQuery.of(context).size.width * (1 / 4),
+                  10.0),
+              child: RaisedButton(
+                padding: EdgeInsets.all(20.0),
+                color: hexToColor('#673ab7'),
+                onPressed: () async {
+                  const url =
+                      'https://docs.google.com/forms/d/e/1FAIpQLSfnitNzIblk6ciVqYgIHRM303Dl44ZvpAtMcqvqWQeQUBYLdw/viewform';
+                  if (await canLaunch(url)) {
+                    await launch(url);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
+                child: Text(
+                  "Apply Now",
+                  style: TextStyle(color: Colors.white),
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );

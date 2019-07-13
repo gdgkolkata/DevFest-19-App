@@ -38,7 +38,7 @@ class myDrawerState extends State<myDrawer> {
                     ),
                     Align(
                       alignment: Alignment.topLeft,
-                      child: Image.asset("assets/logodevFestWtext.png"),
+                      child: Image.asset("assets/logodevFest.png"),
                     ),
                   ],
                 ),

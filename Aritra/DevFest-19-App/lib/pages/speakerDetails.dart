@@ -19,7 +19,8 @@ class MyBehavior extends ScrollBehavior {
 class speakerDetails extends StatefulWidget {
   String _name, _company, _imgURL, _bio;
   List<Link> links;
-  speakerDetails(this._name, this._company, this._imgURL, this._bio, this.links);
+  speakerDetails(
+      this._name, this._company, this._imgURL, this._bio, this.links);
   @override
   speakerDetailsState createState() => speakerDetailsState();
 }
@@ -70,12 +71,10 @@ class speakerDetailsState extends State<speakerDetails> {
                     Padding(
                       padding: const EdgeInsets.only(left: 12.0),
                       child: Text(
-                        widget._company.length > 90
-                            ? "${widget._company.substring(0, 87)}..."
-                            : widget._company,
+                        widget._company,
                         style: TextStyle(
                           color: hexToColor('#673ab7'),
-                          fontSize: 16.0,
+                          fontSize: 14.0,
                         ),
                       ),
                     ),
@@ -108,9 +107,7 @@ class speakerDetailsState extends State<speakerDetails> {
                     Row(
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        getSocialMediaProfiles()
-                      ],
+                      children: <Widget>[getSocialMediaProfiles()],
                     )
                   ],
                 ),
@@ -125,42 +122,52 @@ class speakerDetailsState extends State<speakerDetails> {
   Widget getSocialMediaProfiles() {
     List<Widget> widgets = new List<Widget>();
     List<Link> links = widget.links;
-    for(var i = 0; i < links.length; i++) {
+    for (var i = 0; i < links.length; i++) {
       Widget w = new GestureDetector(
-        onTap: () async{
-          var url = links[i].link;
-          print("URL: " + url);
-          if (await canLaunch(url)) {
-            await launch(url);
+          onTap: () async {
+            var url = links[i].link;
+            print("URL: " + url);
+            if (await canLaunch(url)) {
+              await launch(url);
             } else {
               throw 'Could not launch $url';
-              }
-            },
-            child: new Container(
-              width: 40,//from 50
-              height: 40,//from 50
+            }
+          },
+          child: new Container(
+              width: 40, //from 50
+              height: 40, //from 50
               padding: const EdgeInsets.all(8.0),
               decoration: new BoxDecoration(
                 shape: BoxShape.circle,
-                image: new DecorationImage(
-                  fit: BoxFit.fill,
-                  image: getImage(links[i].title)
-                  )
               ),
-            )
-      );
+              child: getImage(links[i].title)));
       widgets.add(w);
     }
     return new Row(children: widgets);
   }
 
-  ImageProvider getImage(String title) {
+  Image getImage(String title) {
     switch (title) {
-      case "Blog": {return NetworkImage('https://user-images.githubusercontent.com/26908195/61170316-4fd36c00-a585-11e9-9f86-355b1724600e.png');}
-      case "Company Website": {return NetworkImage('https://user-images.githubusercontent.com/26908195/61170315-4e09a880-a585-11e9-9f01-1aafaf02531a.png');}
-      case "LinkedIn": {return NetworkImage('https://user-images.githubusercontent.com/26908195/61169267-ca49bf00-a578-11e9-97bb-ee4b42aff03a.png');}
-      case "Twitter": {return NetworkImage('https://user-images.githubusercontent.com/26908195/61169269-e0f01600-a578-11e9-8604-ae23d619d972.png');}
-      default: {return NetworkImage('https://user-images.githubusercontent.com/26908195/61170317-51049900-a585-11e9-85ee-90c2bd7e1b4b.png');}
+      case "Blog":
+        {
+          return Image.asset("assets/blogging.png");
+        }
+      case "Company Website":
+        {
+          return Image.asset("assets/domain.png");
+        }
+      case "LinkedIn":
+        {
+          return Image.asset("assets/linkedin.png");
+        }
+      case "Twitter":
+        {
+          return Image.asset("assets/twitter.png");
+        }
+      default:
+        {
+          return Image.asset("assets/worldwide.png");
+        }
     }
   }
 }
