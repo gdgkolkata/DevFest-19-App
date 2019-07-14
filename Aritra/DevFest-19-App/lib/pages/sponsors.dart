@@ -1,12 +1,47 @@
-// Flutter plugin import
-import 'package:flutter/material.dart';
+// Flutter plugin imports
+import 'dart:io';
 import 'package:url_launcher/url_launcher.dart';
 
-// Pages import
+import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:flutter/foundation.dart';
+import 'dart:async';
 
-// Utils import
+// Pages imports
+import './error.dart';
+// Utils imports
 import './utils/drawer.dart';
 import './utils/drawerInfo.dart';
+
+// Data imports
+import 'package:devfest19/data/sponsor.dart';
+
+Future<List<Sponsor>> fetchSponsors(
+    http.Client client, BuildContext context) async {
+  try {
+    final response = await client
+        .get('https://raw.githubusercontent.com/Rimjhim28/Devfest-19-Data/master/sponsors.json');
+    return compute(parseSponsors, response.body);
+  } on SocketException catch (_) {
+    selection(0);
+
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (context) => ErrorPage(
+                  message:
+                      "Can't reach the servers, \n Please check your internet connection.",
+                )));
+  }
+}
+
+// A function that converts a response body into a List<Photo>.
+List<Sponsor> parseSponsors(String responseBody) {
+  final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
+
+  return parsed.map<Sponsor>((json) => Sponsor.fromJson(json)).toList();
+}
 
 class Sponsors extends StatefulWidget {
   @override
@@ -41,128 +76,70 @@ class _SponsorsState extends State<Sponsors> {
           backgroundColor: Colors.white,
         ),
         drawer: myDrawer(),
-        body: ListView(
-          children: <Widget>[
-            // First Sponsor
-            GestureDetector(
-              onTap: () async {
-                const url = 'https://www.jetbrains.com/';
-                if (await canLaunch(url)) {
-                  await launch(url);
-                } else {
-                  throw 'Could not launch $url';
-                }
-              },
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height / 3,
-                child: Card(
-                  elevation: 5.0,
-                  margin:
-                      new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Image.asset(
-                        "assets/jetbrains.png",
-                        height: MediaQuery.of(context).size.height / 4,
-                        width: MediaQuery.of(context).size.height / 2,
-                      ),
-                      Text(
-                        "JetBrains",
-                        style: TextStyle(
-                          color: Colors.grey.shade600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            // Second Sponsor
-            GestureDetector(
-              onTap: () async {
-                const url = 'https://www.manning.com/';
-                if (await canLaunch(url)) {
-                  await launch(url);
-                } else {
-                  throw 'Could not launch $url';
-                }
-              },
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height / 3,
-                child: Card(
-                  elevation: 5.0,
-                  margin:
-                      new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Image.asset(
-                        "assets/manning.png",
-                        height: MediaQuery.of(context).size.height / 4,
-                        width: MediaQuery.of(context).size.height / 2,
-                      ),
-                      Text(
-                        "Manning",
-                        style: TextStyle(
-                          color: Colors.grey.shade600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            // Third Sponsor
-            GestureDetector(
-              onTap: () async {
-                const url = 'https://www.pyimagesearch.com';
-                if (await canLaunch(url)) {
-                  await launch(url);
-                } else {
-                  throw 'Could not launch $url';
-                }
-              },
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height / 3,
-                child: Card(
-                  elevation: 5.0,
-                  margin:
-                      new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Image.asset(
-                        "assets/pyimagesearch.png",
-                        height: MediaQuery.of(context).size.height / 4,
-                        width: MediaQuery.of(context).size.height / 2,
-                      ),
-                      Text(
-                        "PyImageSearch",
-                        style: TextStyle(
-                          color: Colors.grey.shade600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
+        body: FutureBuilder<List<Sponsor>>(
+          future: fetchSponsors(http.Client(), context),
+          builder: (context, snapshot) {
+            if (snapshot.hasError) print(snapshot.error);
+
+            return snapshot.hasData
+                ? SponsorsList(sponsors: snapshot.data)
+                : Center(child: CircularProgressIndicator());
+          },
         ),
       ),
+    );
+  }
+}
+
+class SponsorsList extends StatelessWidget {
+  final List<Sponsor> sponsors;
+
+  SponsorsList({Key key, this.sponsors}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: sponsors.length,
+      itemBuilder: (context, index) {
+        return GestureDetector(
+              onTap: () async {
+                var url = sponsors[index].url;
+                if (await canLaunch(url)) {
+                  await launch(url);
+                } else {
+                  throw 'Could not launch $url';
+                }
+              },
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height / 3,
+                child: Card(
+                  elevation: 5.0,
+                  margin:
+                      new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Image.network(
+                        sponsors[index].logo,
+                        height: MediaQuery.of(context).size.height / 4,
+                        width: MediaQuery.of(context).size.height / 2,
+                      ),
+                      Text(
+                        sponsors[index].name,
+                        style: TextStyle(
+                          color: Colors.grey.shade600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+      },
     );
   }
 }
