@@ -16,6 +16,12 @@ class Developer extends StatefulWidget {
 class _DeveloperState extends State<Developer> {
   List<List<String>> dev = [
     [
+      "Anubhav Singh",
+      "Machine Learning | Web",
+      "https://sessionize.com/image?f=0f23cfd8866f41e621578a6852f0749d,400,400,True,False,a4-720f-4317-b318-37a0cf4afef0.4077d175-8c5e-4c78-b4ad-596c234b3408.jpg",
+      "https://github.com/xprilion"
+    ],
+    [
       "Piyush Sinha",
       "Flutter Evangelist",
       "https://user-images.githubusercontent.com/26908195/61172548-87e9a780-a5a3-11e9-8c4b-8c866140c7e8.jpg",
@@ -29,7 +35,7 @@ class _DeveloperState extends State<Developer> {
     ],
     [
       "Rimjhim Bhadani",
-      "GHC Scholar | Google Venkat Scholar",
+      "Android | Flutter",
       "https://user-images.githubusercontent.com/26908195/61170221-40532380-a583-11e9-8210-d04ac9da67d7.JPG",
       "https://github.com/Rimjhim28"
     ],
@@ -105,6 +111,12 @@ class _DeveloperState extends State<Developer> {
               dev[4][1],
               dev[4][2],
               dev[4][3],
+            ),
+            DevCards(
+              dev[5][0],
+              dev[5][1],
+              dev[5][2],
+              dev[5][3],
             ),
           ],
         ),

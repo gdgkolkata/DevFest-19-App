@@ -42,7 +42,7 @@ List<Sponsor> parseSponsors(String responseBody) {
 
   return parsed.map<Sponsor>((json) => Sponsor.fromJson(json)).toList();
 }
-String details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+//String details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 class Sponsors extends StatefulWidget {
   @override
   _SponsorsState createState() => _SponsorsState();
@@ -130,7 +130,7 @@ class SponsorsList extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      details.length>440?"${details.substring(0, 400)}...":details,
+                      sponsors[index].description.length>440?"${sponsors[index].description.substring(0, 400)}...":sponsors[index].description,
                       style: TextStyle(
                         fontSize: 8.0,
                         color: Colors.grey.shade600,
