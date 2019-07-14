@@ -20,8 +20,8 @@ import 'package:devfest19/data/sponsor.dart';
 Future<List<Sponsor>> fetchSponsors(
     http.Client client, BuildContext context) async {
   try {
-    final response = await client
-        .get('https://raw.githubusercontent.com/Rimjhim28/Devfest-19-Data/master/sponsors.json');
+    final response = await client.get(
+        'https://raw.githubusercontent.com/Rimjhim28/Devfest-19-Data/master/sponsors.json');
     return compute(parseSponsors, response.body);
   } on SocketException catch (_) {
     selection(0);
@@ -102,43 +102,42 @@ class SponsorsList extends StatelessWidget {
       itemCount: sponsors.length,
       itemBuilder: (context, index) {
         return GestureDetector(
-              onTap: () async {
-                var url = sponsors[index].url;
-                if (await canLaunch(url)) {
-                  await launch(url);
-                } else {
-                  throw 'Could not launch $url';
-                }
-              },
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height / 3,
-                child: Card(
-                  elevation: 5.0,
-                  margin:
-                      new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Image.network(
-                        sponsors[index].logo,
-                        height: MediaQuery.of(context).size.height / 4,
-                        width: MediaQuery.of(context).size.height / 2,
-                      ),
-                      Text(
-                        sponsors[index].name,
-                        style: TextStyle(
-                          color: Colors.grey.shade600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+          onTap: () async {
+            var url = sponsors[index].url;
+            if (await canLaunch(url)) {
+              await launch(url);
+            } else {
+              throw 'Could not launch $url';
+            }
+          },
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height / 3,
+            child: Card(
+              elevation: 5.0,
+              margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
               ),
-            );
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Image.network(
+                    sponsors[index].logo,
+                    height: MediaQuery.of(context).size.height / 4,
+                    width: MediaQuery.of(context).size.height / 2,
+                  ),
+                  Text(
+                    sponsors[index].name,
+                    style: TextStyle(
+                      color: Colors.grey.shade600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
       },
     );
   }

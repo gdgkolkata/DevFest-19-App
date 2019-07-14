@@ -71,71 +71,163 @@ class _ScheduleState extends State<Schedule> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: _willPopCallback,
-      child: Scaffold(
-        appBar: AppBar(
-          brightness: Brightness.light,
-          iconTheme: new IconThemeData(color: Colors.black87),
-          title: Text(
-            'Schedule',
-            style: TextStyle(
-              color: Colors.grey.shade600,
+      child: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          appBar: AppBar(
+            // Tabbar
+            bottom: TabBar(
+              // labelColor: hexToColor("#C7B7E4"),
+              unselectedLabelColor: Colors.grey,
+              indicatorColor: hexToColor("#673ab7"),
+              tabs: <Widget>[
+                Tab(
+                  icon: Text(
+                    "Hall1",
+                    style: TextStyle(color: Colors.grey.shade600),
+                  ),
+                ),
+                Tab(
+                  icon: Text(
+                    "Hall2",
+                    style: TextStyle(color: Colors.grey.shade600),
+                  ),
+                ),
+              ],
             ),
+            brightness: Brightness.light,
+            iconTheme: new IconThemeData(color: Colors.black87),
+            title: Text(
+              'Schedule',
+              style: TextStyle(
+                color: Colors.grey.shade600,
+              ),
+            ),
+            elevation: 5.0,
+            backgroundColor: Colors.white,
           ),
-          elevation: 5.0,
-          backgroundColor: Colors.white,
-        ),
-        drawer: myDrawer(),
-        body: FutureBuilder<List<SessionResponse>>(
-          future: fetchSessionResponse(http.Client(), context),
-          builder: (context, snapshot) {
-            if (snapshot.hasError) print(snapshot.error);
-            return snapshot.hasData
-                ? SessionResponseItem(sessionResponse: snapshot.data)
-                : Center(child: CircularProgressIndicator());
-          },
+          drawer: myDrawer(),
+          body: TabBarView(
+            children: <Widget>[
+              // For Hall 1
+              FutureBuilder<List<SessionResponse>>(
+                future: fetchSessionResponse(http.Client(), context),
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) print(snapshot.error);
+                  return snapshot.hasData
+                      ? SessionResponseItem1(sessionResponse: snapshot.data)
+                      : Center(child: CircularProgressIndicator());
+                },
+              ),
+              // For Hall 2
+              FutureBuilder<List<SessionResponse>>(
+                future: fetchSessionResponse(http.Client(), context),
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) print(snapshot.error);
+                  return snapshot.hasData
+                      ? SessionResponseItem2(sessionResponse: snapshot.data)
+                      : Center(child: CircularProgressIndicator());
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-class SessionResponseItem extends StatelessWidget {
+class SessionResponseItem1 extends StatelessWidget {
   // Item i = new Item();
   final List<SessionResponse> sessionResponse;
-  SessionResponseItem({Key key, this.sessionResponse}) : super(key: key);
+  SessionResponseItem1({Key key, this.sessionResponse}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: sessionResponse[0].sessionsList.length,
-      itemBuilder: (context, index) {
-        return SessionCard(
-          false,
-          false,
-          // Start Time
-          sessionResponse[0].sessionsList[index].startsAt.toString(),
-          // Title
-          sessionResponse[0].sessionsList[index].title.toString(),
-          // Speakers
-          sessionResponse[0].sessionsList[index].speakers[0].name.toString(),
-          // "tags",
-          sessionResponse[0]
-              .sessionsList[index]
-              .categories[1]
-              .categoryItems[0]
-              .name
-              .toString(),
-          // hardness
-          sessionResponse[0]
-              .sessionsList[index]
-              .categories[2]
-              .categoryItems[0]
-              .name
-              .toString(),
-          // Room
-          sessionResponse[0].sessionsList[index].room.toString(),
-          //description
-          sessionResponse[0].sessionsList[index].description.toString(),
-        );
+      itemBuilder: (BuildContext context, int index) {
+        return sessionResponse[0].sessionsList[index].roomId == 7132
+            ? SessionCard(
+                false,
+                false,
+                // Start Time
+                sessionResponse[0].sessionsList[index].startsAt.toString(),
+                // Title
+                sessionResponse[0].sessionsList[index].title.toString(),
+                // Speakers
+                sessionResponse[0]
+                    .sessionsList[index]
+                    .speakers[0]
+                    .name
+                    .toString(),
+                // "tags",
+                sessionResponse[0]
+                    .sessionsList[index]
+                    .categories[1]
+                    .categoryItems[0]
+                    .name
+                    .toString(),
+                // hardness
+                sessionResponse[0]
+                    .sessionsList[index]
+                    .categories[2]
+                    .categoryItems[0]
+                    .name
+                    .toString(),
+                // Room
+                sessionResponse[0].sessionsList[index].room.toString(),
+                //description
+                sessionResponse[0].sessionsList[index].description.toString(),
+              )
+            : Container();
+      },
+    );
+  }
+}
+
+class SessionResponseItem2 extends StatelessWidget {
+  // Item i = new Item();
+  final List<SessionResponse> sessionResponse;
+  SessionResponseItem2({Key key, this.sessionResponse}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: sessionResponse[0].sessionsList.length,
+      itemBuilder: (BuildContext context, int index) {
+        return sessionResponse[0].sessionsList[index].roomId == 7133
+            ? SessionCard(
+                false,
+                false,
+                // Start Time
+                sessionResponse[0].sessionsList[index].startsAt.toString(),
+                // Title
+                sessionResponse[0].sessionsList[index].title.toString(),
+                // Speakers
+                sessionResponse[0]
+                    .sessionsList[index]
+                    .speakers[0]
+                    .name
+                    .toString(),
+                // "tags",
+                sessionResponse[0]
+                    .sessionsList[index]
+                    .categories[1]
+                    .categoryItems[0]
+                    .name
+                    .toString(),
+                // hardness
+                sessionResponse[0]
+                    .sessionsList[index]
+                    .categories[2]
+                    .categoryItems[0]
+                    .name
+                    .toString(),
+                // Room
+                sessionResponse[0].sessionsList[index].room.toString(),
+                //description
+                sessionResponse[0].sessionsList[index].description.toString(),
+              )
+            : Container();
       },
     );
   }
