@@ -24,9 +24,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  intl: ^0.15.8
   url_launcher: ^5.0.3
-  flare_flutter:
   http:
   webview_flutter: ^0.1.2
   
@@ -59,7 +57,6 @@ flutter:
     - assets/linkedin.png
     - assets/worldwide.png
     - assets/twitter.png
-    - assets/devfestfull.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -76,9 +73,7 @@ flutter:
     - family: GoogleSans
       fonts:
         - asset: fonts/GoogleSansRegular.ttf
-    - family: SummerLight
-      fonts:
-        - asset: fonts/Summer-Light.otf
+   
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
