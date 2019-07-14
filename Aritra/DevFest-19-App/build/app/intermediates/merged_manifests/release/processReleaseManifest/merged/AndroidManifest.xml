@@ -9,8 +9,6 @@
         android:targetSdkVersion="28" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- Include required permissions for Google Maps API to run. -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -27,7 +25,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:icon="@mipmap/ic_launcher"
-        android:label="DevFest&apos;19" >
+        android:label="GDG Kolkata DevFest&apos;19" >
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDzSvMXoweTezf51RINyMwtbiyOVTdqoiI" />

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Jul 14 15:13:16 IST 2019
+#Sun Jul 14 17:42:18 IST 2019
 17.baseType=DIRECTORY
 4.path=flutter_assets/fonts/GoogleSansRegular.ttf
 22.set=ASSET

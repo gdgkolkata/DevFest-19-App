@@ -146,6 +146,7 @@ class _HomePageState extends State<HomePage> {
                   MediaQuery.of(context).size.width * (1 / 3),
                   10.0),
               child: RaisedButton(
+                shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(15.0)),
                 padding: EdgeInsets.all(20.0),
                 color: hexToColor('#673ab7'),
                 onPressed: () async {
