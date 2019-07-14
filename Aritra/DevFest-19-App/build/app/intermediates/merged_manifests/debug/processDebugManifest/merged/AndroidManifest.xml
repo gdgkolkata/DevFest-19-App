@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.devfest19"
+    package="gdg.devfest19"
     android:versionCode="1"
-    android:versionName="1.0.0" >
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -30,7 +30,7 @@
         android:name="io.flutter.app.FlutterApplication"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="devfest19" >
+        android:label="GDG Kolkata DevFest&apos;19" >
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDzSvMXoweTezf51RINyMwtbiyOVTdqoiI" />

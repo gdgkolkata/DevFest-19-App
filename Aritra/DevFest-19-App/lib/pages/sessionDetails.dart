@@ -153,6 +153,16 @@ class sessionDetailsState extends State<sessionDetails> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
+                      "Session Level : ",
+                      style: TextStyle(
+                        color: Colors.black87,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
                       widget._level,
                       style: TextStyle(
                         color: Colors.black87,
@@ -212,11 +222,11 @@ class sessionDetailsState extends State<sessionDetails> {
         onPressed: () {
           _showDialog();
         },
-        backgroundColor: Colors.white,
+        backgroundColor: hexToColor('#673ab7'),
         tooltip: 'Live Streaming',
         child: Icon(
           Icons.videocam,
-          color: Colors.black87,
+          color: Colors.white,
         ),
         elevation: 2.0,
       ),

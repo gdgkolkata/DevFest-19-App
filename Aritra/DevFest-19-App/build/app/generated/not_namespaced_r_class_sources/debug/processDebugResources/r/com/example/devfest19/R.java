@@ -457,12 +457,12 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderAuthority com.example.devfest19:fontProviderAuthority}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderCerts com.example.devfest19:fontProviderCerts}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderFetchStrategy com.example.devfest19:fontProviderFetchStrategy}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderFetchTimeout com.example.devfest19:fontProviderFetchTimeout}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderPackage com.example.devfest19:fontProviderPackage}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderQuery com.example.devfest19:fontProviderQuery}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderAuthority gdg.devfest19:fontProviderAuthority}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderCerts gdg.devfest19:fontProviderCerts}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderFetchStrategy gdg.devfest19:fontProviderFetchStrategy}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderFetchTimeout gdg.devfest19:fontProviderFetchTimeout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderPackage gdg.devfest19:fontProviderPackage}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderQuery gdg.devfest19:fontProviderQuery}</code></td><td></td></tr>
      * </table>
      * @see #FontFamily_fontProviderAuthority
      * @see #FontFamily_fontProviderCerts
@@ -476,17 +476,17 @@ public final class R {
       0x7f010010, 0x7f010011
     };
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#fontProviderAuthority}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#fontProviderAuthority}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.example.devfest19:fontProviderAuthority
+     * @attr name gdg.devfest19:fontProviderAuthority
      */
     public static final int FontFamily_fontProviderAuthority=0;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#fontProviderCerts}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#fontProviderCerts}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -494,11 +494,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.example.devfest19:fontProviderCerts
+     * @attr name gdg.devfest19:fontProviderCerts
      */
     public static final int FontFamily_fontProviderCerts=1;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#fontProviderFetchStrategy}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#fontProviderFetchStrategy}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -511,11 +511,11 @@ public final class R {
      * <tr><td>blocking</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.example.devfest19:fontProviderFetchStrategy
+     * @attr name gdg.devfest19:fontProviderFetchStrategy
      */
     public static final int FontFamily_fontProviderFetchStrategy=2;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#fontProviderFetchTimeout}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#fontProviderFetchTimeout}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
@@ -528,27 +528,27 @@ public final class R {
      * <tr><td>forever</td><td>ffffffff</td><td></td></tr>
      * </table>
      *
-     * @attr name com.example.devfest19:fontProviderFetchTimeout
+     * @attr name gdg.devfest19:fontProviderFetchTimeout
      */
     public static final int FontFamily_fontProviderFetchTimeout=3;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#fontProviderPackage}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#fontProviderPackage}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.example.devfest19:fontProviderPackage
+     * @attr name gdg.devfest19:fontProviderPackage
      */
     public static final int FontFamily_fontProviderPackage=4;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#fontProviderQuery}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#fontProviderQuery}
      * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.example.devfest19:fontProviderQuery
+     * @attr name gdg.devfest19:fontProviderQuery
      */
     public static final int FontFamily_fontProviderQuery=5;
     /**
@@ -558,9 +558,9 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FontFamilyFont_font com.example.devfest19:font}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontStyle com.example.devfest19:fontStyle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontWeight com.example.devfest19:fontWeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_font gdg.devfest19:font}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontStyle gdg.devfest19:fontStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontWeight gdg.devfest19:fontWeight}</code></td><td></td></tr>
      * </table>
      * @see #FontFamilyFont_font
      * @see #FontFamilyFont_fontStyle
@@ -570,7 +570,7 @@ public final class R {
       0x7f01000b, 0x7f010012, 0x7f010013
     };
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#font}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#font}
      * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -578,11 +578,11 @@ public final class R {
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      *
-     * @attr name com.example.devfest19:font
+     * @attr name gdg.devfest19:font
      */
     public static final int FontFamilyFont_font=0;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#fontStyle}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#fontStyle}
      * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -595,16 +595,16 @@ public final class R {
      * <tr><td>normal</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.example.devfest19:fontStyle
+     * @attr name gdg.devfest19:fontStyle
      */
     public static final int FontFamilyFont_fontStyle=1;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#fontWeight}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#fontWeight}
      * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
-     * @attr name com.example.devfest19:fontWeight
+     * @attr name gdg.devfest19:fontWeight
      */
     public static final int FontFamilyFont_fontWeight=2;
     /**
@@ -614,9 +614,9 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #LoadingImageView_circleCrop com.example.devfest19:circleCrop}</code></td><td></td></tr>
-     * <tr><td><code>{@link #LoadingImageView_imageAspectRatio com.example.devfest19:imageAspectRatio}</code></td><td></td></tr>
-     * <tr><td><code>{@link #LoadingImageView_imageAspectRatioAdjust com.example.devfest19:imageAspectRatioAdjust}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LoadingImageView_circleCrop gdg.devfest19:circleCrop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LoadingImageView_imageAspectRatio gdg.devfest19:imageAspectRatio}</code></td><td></td></tr>
+     * <tr><td><code>{@link #LoadingImageView_imageAspectRatioAdjust gdg.devfest19:imageAspectRatioAdjust}</code></td><td></td></tr>
      * </table>
      * @see #LoadingImageView_circleCrop
      * @see #LoadingImageView_imageAspectRatio
@@ -626,26 +626,26 @@ public final class R {
       0x7f010009, 0x7f010014, 0x7f010015
     };
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#circleCrop}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#circleCrop}
      * attribute's value can be found in the {@link #LoadingImageView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.devfest19:circleCrop
+     * @attr name gdg.devfest19:circleCrop
      */
     public static final int LoadingImageView_circleCrop=0;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#imageAspectRatio}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#imageAspectRatio}
      * attribute's value can be found in the {@link #LoadingImageView} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.devfest19:imageAspectRatio
+     * @attr name gdg.devfest19:imageAspectRatio
      */
     public static final int LoadingImageView_imageAspectRatio=1;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#imageAspectRatioAdjust}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#imageAspectRatioAdjust}
      * attribute's value can be found in the {@link #LoadingImageView} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -659,7 +659,7 @@ public final class R {
      * <tr><td>none</td><td>0</td><td></td></tr>
      * </table>
      *
-     * @attr name com.example.devfest19:imageAspectRatioAdjust
+     * @attr name gdg.devfest19:imageAspectRatioAdjust
      */
     public static final int LoadingImageView_imageAspectRatioAdjust=2;
     /**
@@ -669,30 +669,30 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #MapAttrs_ambientEnabled com.example.devfest19:ambientEnabled}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_cameraBearing com.example.devfest19:cameraBearing}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_cameraMaxZoomPreference com.example.devfest19:cameraMaxZoomPreference}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_cameraMinZoomPreference com.example.devfest19:cameraMinZoomPreference}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_cameraTargetLat com.example.devfest19:cameraTargetLat}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_cameraTargetLng com.example.devfest19:cameraTargetLng}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_cameraTilt com.example.devfest19:cameraTilt}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_cameraZoom com.example.devfest19:cameraZoom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_latLngBoundsNorthEastLatitude com.example.devfest19:latLngBoundsNorthEastLatitude}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_latLngBoundsNorthEastLongitude com.example.devfest19:latLngBoundsNorthEastLongitude}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_latLngBoundsSouthWestLatitude com.example.devfest19:latLngBoundsSouthWestLatitude}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_latLngBoundsSouthWestLongitude com.example.devfest19:latLngBoundsSouthWestLongitude}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_liteMode com.example.devfest19:liteMode}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_mapType com.example.devfest19:mapType}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiCompass com.example.devfest19:uiCompass}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiMapToolbar com.example.devfest19:uiMapToolbar}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiRotateGestures com.example.devfest19:uiRotateGestures}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiScrollGestures com.example.devfest19:uiScrollGestures}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiScrollGesturesDuringRotateOrZoom com.example.devfest19:uiScrollGesturesDuringRotateOrZoom}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiTiltGestures com.example.devfest19:uiTiltGestures}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiZoomControls com.example.devfest19:uiZoomControls}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_uiZoomGestures com.example.devfest19:uiZoomGestures}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_useViewLifecycle com.example.devfest19:useViewLifecycle}</code></td><td></td></tr>
-     * <tr><td><code>{@link #MapAttrs_zOrderOnTop com.example.devfest19:zOrderOnTop}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_ambientEnabled gdg.devfest19:ambientEnabled}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_cameraBearing gdg.devfest19:cameraBearing}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_cameraMaxZoomPreference gdg.devfest19:cameraMaxZoomPreference}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_cameraMinZoomPreference gdg.devfest19:cameraMinZoomPreference}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_cameraTargetLat gdg.devfest19:cameraTargetLat}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_cameraTargetLng gdg.devfest19:cameraTargetLng}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_cameraTilt gdg.devfest19:cameraTilt}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_cameraZoom gdg.devfest19:cameraZoom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_latLngBoundsNorthEastLatitude gdg.devfest19:latLngBoundsNorthEastLatitude}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_latLngBoundsNorthEastLongitude gdg.devfest19:latLngBoundsNorthEastLongitude}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_latLngBoundsSouthWestLatitude gdg.devfest19:latLngBoundsSouthWestLatitude}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_latLngBoundsSouthWestLongitude gdg.devfest19:latLngBoundsSouthWestLongitude}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_liteMode gdg.devfest19:liteMode}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_mapType gdg.devfest19:mapType}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiCompass gdg.devfest19:uiCompass}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiMapToolbar gdg.devfest19:uiMapToolbar}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiRotateGestures gdg.devfest19:uiRotateGestures}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiScrollGestures gdg.devfest19:uiScrollGestures}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiScrollGesturesDuringRotateOrZoom gdg.devfest19:uiScrollGesturesDuringRotateOrZoom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiTiltGestures gdg.devfest19:uiTiltGestures}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiZoomControls gdg.devfest19:uiZoomControls}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_uiZoomGestures gdg.devfest19:uiZoomGestures}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_useViewLifecycle gdg.devfest19:useViewLifecycle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #MapAttrs_zOrderOnTop gdg.devfest19:zOrderOnTop}</code></td><td></td></tr>
      * </table>
      * @see #MapAttrs_ambientEnabled
      * @see #MapAttrs_cameraBearing
@@ -728,126 +728,126 @@ public final class R {
       0x7f010023, 0x7f010024, 0x7f010025, 0x7f010026
     };
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#ambientEnabled}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#ambientEnabled}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.devfest19:ambientEnabled
+     * @attr name gdg.devfest19:ambientEnabled
      */
     public static final int MapAttrs_ambientEnabled=0;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#cameraBearing}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#cameraBearing}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.devfest19:cameraBearing
+     * @attr name gdg.devfest19:cameraBearing
      */
     public static final int MapAttrs_cameraBearing=1;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#cameraMaxZoomPreference}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#cameraMaxZoomPreference}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.devfest19:cameraMaxZoomPreference
+     * @attr name gdg.devfest19:cameraMaxZoomPreference
      */
     public static final int MapAttrs_cameraMaxZoomPreference=2;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#cameraMinZoomPreference}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#cameraMinZoomPreference}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.devfest19:cameraMinZoomPreference
+     * @attr name gdg.devfest19:cameraMinZoomPreference
      */
     public static final int MapAttrs_cameraMinZoomPreference=3;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#cameraTargetLat}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#cameraTargetLat}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.devfest19:cameraTargetLat
+     * @attr name gdg.devfest19:cameraTargetLat
      */
     public static final int MapAttrs_cameraTargetLat=4;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#cameraTargetLng}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#cameraTargetLng}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.devfest19:cameraTargetLng
+     * @attr name gdg.devfest19:cameraTargetLng
      */
     public static final int MapAttrs_cameraTargetLng=5;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#cameraTilt}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#cameraTilt}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.devfest19:cameraTilt
+     * @attr name gdg.devfest19:cameraTilt
      */
     public static final int MapAttrs_cameraTilt=6;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#cameraZoom}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#cameraZoom}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.devfest19:cameraZoom
+     * @attr name gdg.devfest19:cameraZoom
      */
     public static final int MapAttrs_cameraZoom=7;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#latLngBoundsNorthEastLatitude}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#latLngBoundsNorthEastLatitude}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.devfest19:latLngBoundsNorthEastLatitude
+     * @attr name gdg.devfest19:latLngBoundsNorthEastLatitude
      */
     public static final int MapAttrs_latLngBoundsNorthEastLatitude=8;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#latLngBoundsNorthEastLongitude}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#latLngBoundsNorthEastLongitude}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.devfest19:latLngBoundsNorthEastLongitude
+     * @attr name gdg.devfest19:latLngBoundsNorthEastLongitude
      */
     public static final int MapAttrs_latLngBoundsNorthEastLongitude=9;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#latLngBoundsSouthWestLatitude}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#latLngBoundsSouthWestLatitude}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.devfest19:latLngBoundsSouthWestLatitude
+     * @attr name gdg.devfest19:latLngBoundsSouthWestLatitude
      */
     public static final int MapAttrs_latLngBoundsSouthWestLatitude=10;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#latLngBoundsSouthWestLongitude}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#latLngBoundsSouthWestLongitude}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
-     * @attr name com.example.devfest19:latLngBoundsSouthWestLongitude
+     * @attr name gdg.devfest19:latLngBoundsSouthWestLongitude
      */
     public static final int MapAttrs_latLngBoundsSouthWestLongitude=11;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#liteMode}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#liteMode}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.devfest19:liteMode
+     * @attr name gdg.devfest19:liteMode
      */
     public static final int MapAttrs_liteMode=12;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#mapType}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#mapType}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>Must be one of the following constant values.</p>
@@ -863,107 +863,107 @@ public final class R {
      * <tr><td>terrain</td><td>3</td><td></td></tr>
      * </table>
      *
-     * @attr name com.example.devfest19:mapType
+     * @attr name gdg.devfest19:mapType
      */
     public static final int MapAttrs_mapType=13;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#uiCompass}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#uiCompass}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.devfest19:uiCompass
+     * @attr name gdg.devfest19:uiCompass
      */
     public static final int MapAttrs_uiCompass=14;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#uiMapToolbar}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#uiMapToolbar}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.devfest19:uiMapToolbar
+     * @attr name gdg.devfest19:uiMapToolbar
      */
     public static final int MapAttrs_uiMapToolbar=15;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#uiRotateGestures}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#uiRotateGestures}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.devfest19:uiRotateGestures
+     * @attr name gdg.devfest19:uiRotateGestures
      */
     public static final int MapAttrs_uiRotateGestures=16;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#uiScrollGestures}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#uiScrollGestures}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.devfest19:uiScrollGestures
+     * @attr name gdg.devfest19:uiScrollGestures
      */
     public static final int MapAttrs_uiScrollGestures=17;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#uiScrollGesturesDuringRotateOrZoom}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#uiScrollGesturesDuringRotateOrZoom}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.devfest19:uiScrollGesturesDuringRotateOrZoom
+     * @attr name gdg.devfest19:uiScrollGesturesDuringRotateOrZoom
      */
     public static final int MapAttrs_uiScrollGesturesDuringRotateOrZoom=18;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#uiTiltGestures}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#uiTiltGestures}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.devfest19:uiTiltGestures
+     * @attr name gdg.devfest19:uiTiltGestures
      */
     public static final int MapAttrs_uiTiltGestures=19;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#uiZoomControls}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#uiZoomControls}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.devfest19:uiZoomControls
+     * @attr name gdg.devfest19:uiZoomControls
      */
     public static final int MapAttrs_uiZoomControls=20;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#uiZoomGestures}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#uiZoomGestures}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.devfest19:uiZoomGestures
+     * @attr name gdg.devfest19:uiZoomGestures
      */
     public static final int MapAttrs_uiZoomGestures=21;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#useViewLifecycle}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#useViewLifecycle}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.devfest19:useViewLifecycle
+     * @attr name gdg.devfest19:useViewLifecycle
      */
     public static final int MapAttrs_useViewLifecycle=22;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#zOrderOnTop}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#zOrderOnTop}
      * attribute's value can be found in the {@link #MapAttrs} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      *
-     * @attr name com.example.devfest19:zOrderOnTop
+     * @attr name gdg.devfest19:zOrderOnTop
      */
     public static final int MapAttrs_zOrderOnTop=23;
     /**
@@ -973,9 +973,9 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #SignInButton_buttonSize com.example.devfest19:buttonSize}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SignInButton_colorScheme com.example.devfest19:colorScheme}</code></td><td></td></tr>
-     * <tr><td><code>{@link #SignInButton_scopeUris com.example.devfest19:scopeUris}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SignInButton_buttonSize gdg.devfest19:buttonSize}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SignInButton_colorScheme gdg.devfest19:colorScheme}</code></td><td></td></tr>
+     * <tr><td><code>{@link #SignInButton_scopeUris gdg.devfest19:scopeUris}</code></td><td></td></tr>
      * </table>
      * @see #SignInButton_buttonSize
      * @see #SignInButton_colorScheme
@@ -985,7 +985,7 @@ public final class R {
       0x7f010001, 0x7f01000a, 0x7f01001c
     };
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#buttonSize}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#buttonSize}
      * attribute's value can be found in the {@link #SignInButton} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -1003,11 +1003,11 @@ public final class R {
      * <tr><td>wide</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.example.devfest19:buttonSize
+     * @attr name gdg.devfest19:buttonSize
      */
     public static final int SignInButton_buttonSize=0;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#colorScheme}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#colorScheme}
      * attribute's value can be found in the {@link #SignInButton} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -1025,11 +1025,11 @@ public final class R {
      * <tr><td>light</td><td>1</td><td></td></tr>
      * </table>
      *
-     * @attr name com.example.devfest19:colorScheme
+     * @attr name gdg.devfest19:colorScheme
      */
     public static final int SignInButton_colorScheme=1;
     /**
-     * <p>This symbol is the offset where the {@link com.example.devfest19.R.attr#scopeUris}
+     * <p>This symbol is the offset where the {@link gdg.devfest19.R.attr#scopeUris}
      * attribute's value can be found in the {@link #SignInButton} array.
      *
      * <p>May be a reference to another resource, in the form
@@ -1039,7 +1039,7 @@ public final class R {
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      *
-     * @attr name com.example.devfest19:scopeUris
+     * @attr name gdg.devfest19:scopeUris
      */
     public static final int SignInButton_scopeUris=2;
   }

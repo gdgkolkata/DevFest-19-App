@@ -1,4 +1,4 @@
-com.example.devfest19
+gdg.devfest19
 attr ambientEnabled
 attr buttonSize
 attr cameraBearing

@@ -79,7 +79,7 @@ MERGED from [com.android.support:support-compat:26.1.0] /home/piyush/.gradle/cac
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/piyush/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/958a6bbe68ecac02a6ce7f894bad4e44/AndroidManifest.xml:24:5-28:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/piyush/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/958a6bbe68ecac02a6ce7f894bad4e44/AndroidManifest.xml:24:5-28:19
 	android:label
-		ADDED from /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/android/app/src/main/AndroidManifest.xml:15:9-34
+		ADDED from /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/android/app/src/main/AndroidManifest.xml:15:9-44
 	android:icon
 		ADDED from /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/android/app/src/main/AndroidManifest.xml:16:9-43
 	android:name
