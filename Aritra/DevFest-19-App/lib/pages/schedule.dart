@@ -9,7 +9,7 @@ import 'dart:async';
 
 // Data imports
 import 'package:devfest19/data/sessionResponse.dart';
-import 'package:devfest19/data/item.dart';
+// import 'package:devfest19/data/item.dart';
 
 //pages import
 import './error.dart';
@@ -100,7 +100,7 @@ class _ScheduleState extends State<Schedule> {
 }
 
 class SessionResponseItem extends StatelessWidget {
-  Item i = new Item();
+  // Item i = new Item();
   final List<SessionResponse> sessionResponse;
   SessionResponseItem({Key key, this.sessionResponse}) : super(key: key);
   @override

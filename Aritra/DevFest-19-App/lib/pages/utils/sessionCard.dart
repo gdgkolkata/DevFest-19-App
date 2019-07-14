@@ -46,9 +46,16 @@ class _SessionCardState extends State<SessionCard> {
             child: ListTile(
               contentPadding:
                   EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-              leading: Text(
-                widget._slot == "null" ? "--:--" : widget._slot.substring(11,16),
-                style: TextStyle(color: hexToColor("#C7B7E4")),
+              // Slot
+              leading: CircleAvatar(
+                backgroundColor: hexToColor("#C7B7E4"),
+                radius: 25.0,
+                child: Text(
+                  widget._slot == "null"
+                      ? "--:--"
+                      : widget._slot.substring(11, 16),
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
               // Title of the session
               title: Text(

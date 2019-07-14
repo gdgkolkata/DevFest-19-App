@@ -2,7 +2,8 @@ import 'package:devfest19/data/category.dart';
 import 'package:devfest19/data/item.dart';
 
 class Session {
-  String id, title, description, startsAt, endsAt, room, roomId;
+  String id, title, description, startsAt, endsAt, room;
+  int roomId;
   List speakers;
   List categories;
 

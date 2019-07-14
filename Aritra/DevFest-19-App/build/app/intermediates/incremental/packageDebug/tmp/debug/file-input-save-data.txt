@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Jul 14 11:48:00 IST 2019
+#Sun Jul 14 14:33:15 IST 2019
 17.baseType=DIRECTORY
 4.path=flutter_assets/assets/blogging.png
 25.base=/home/aritra/AndroidStudioProjects/Google_Projects/GITHUB/DevFest-19-App/Aritra/DevFest-19-App/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
