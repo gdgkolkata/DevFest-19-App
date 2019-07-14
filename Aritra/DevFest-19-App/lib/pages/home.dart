@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:http/http.dart' as http;
 
 // Pages import
 
@@ -13,43 +12,54 @@ import './utils/drawer.dart';
 import 'dart:io';
 import 'dart:async';
 
-bool hasNet = false;
-void internetCheck() async {
-  try {
-    await http.get('https://www.google.com/');
-    hasNet = true;
-  } on SocketException catch (_) {
-    hasNet = false;
-  }
-}
-
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  bool hasNet = false;
+  void internetCheck() async {
+    try {
+      final result = await InternetAddress.lookup('google.com');
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+        print('connected');
+        setState(() {
+          hasNet = true;
+        });
+      }
+    } on SocketException catch (_) {
+      print('not connected');
+      setState(() {
+        hasNet = false;
+      });
+    }
+  }
+
   String para =
       "DevFests are community-led, developer events hosted by GDG chapters around the globe focused on community building and learning about Google’s technologies. Each DevFest is inspired by and uniquely tailored to the needs of the developer community and region that hosts it.";
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    internetCheck();
+  }
+
+  // Method which executes on pushing "Back Button"
+  Future<bool> _willPopCallback() async {
+    // Exits the app
+    SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+    return true; // return true if the route to be popped
+  }
 
   @override
   Widget build(BuildContext context) {
-
-    internetCheck();
-
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.white10, //top bar color
       systemNavigationBarColor: Colors.white10, //bottom bar color
       systemNavigationBarIconBrightness: Brightness.dark,
     ));
-
-    // Method which executes on pushing "Back Button"
-    Future<bool> _willPopCallback() async {
-      // Exits the app
-      SystemChannels.platform.invokeMethod('SystemNavigator.pop');
-      return true; // return true if the route to be popped
-    }
-
+    debugPrint(hasNet.toString());
     return WillPopScope(
       onWillPop: _willPopCallback,
       child: Scaffold(
@@ -110,7 +120,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             // Video
-            hasNet
+            hasNet == true
                 ? Padding(
                     padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
                     child: Container(
