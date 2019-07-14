@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/build/google_maps_flutter/intermediates/res/merged/release/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/piyush/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/dcc234414752fa5f814a7fd1d1ceb2e7/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/build/google_maps_flutter/intermediates/res/merged/release/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/piyush/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/dcc234414752fa5f814a7fd1d1ceb2e7/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/build/google_maps_flutter/intermediates/res/merged/release/layout-v21/notification_action.xml",
+        "source": "/home/piyush/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/dcc234414752fa5f814a7fd1d1ceb2e7/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/build/google_maps_flutter/intermediates/res/merged/release/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/piyush/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/dcc234414752fa5f814a7fd1d1ceb2e7/res/layout-v21/notification_template_custom_big.xml"
+    }
+]
