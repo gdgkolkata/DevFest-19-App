@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 // Pages import
 
@@ -109,36 +108,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(8.0, 40.0, 8.0, 0.0),
-              child: Text(
-                "Highlights 2018\n",
-                style: TextStyle(
-                  fontSize: 22.0,
-                  color: Colors.grey,
-                ),
-              ),
-            ),
-            // Video
-            hasNet == true
-                ? Padding(
-                    padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
-                    child: Container(
-                        height: 250.0,
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        child: WebView(
-                          initialUrl:
-                              'https://www.youtube.com/embed/jG2_TN-jfH4?autoplay=0&rel=0',
-                          javaScriptMode: JavaScriptMode.unrestricted,
-                        )),
-                  )
-                : Padding(
-                    padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
-                    child: Container(
-                        height: 250.0,
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        child: Image.asset("assets/devfestfull.png")),
-                  ),
             Padding(
               padding: EdgeInsets.fromLTRB(
                   MediaQuery.of(context).size.width * (1 / 3),
