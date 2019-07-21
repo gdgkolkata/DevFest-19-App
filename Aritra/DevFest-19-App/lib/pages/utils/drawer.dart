@@ -22,19 +22,19 @@ import './color.dart';
 import 'package:devfest19/data/schedule_response.dart';
 
 
-Future<ScheduleResponse> fetchResponse() async {
-  print('FETCH RESPONSE');
-  final response =
-      await http.get('https://raw.githubusercontent.com/Rimjhim28/Devfest-19-Data/master/state.json?t=timestamp');
+// Future<ScheduleResponse> fetchResponse() async {
+//   print('FETCH RESPONSE');
+//   final response =
+//       await http.get('https://raw.githubusercontent.com/Rimjhim28/Devfest-19-Data/master/state.json?t=timestamp');
 
-  if (response.statusCode == 200) {
-    // If server returns an OK response, parse the JSON.
-    return ScheduleResponse.fromJson(json.decode(response.body));
-  } else {
-    // If that response was not OK, throw an error.
-    throw Exception('Failed to load post');
-  }
-}
+//   if (response.statusCode == 200) {
+//     // If server returns an OK response, parse the JSON.
+//     return ScheduleResponse.fromJson(json.decode(response.body));
+//   } else {
+//     // If that response was not OK, throw an error.
+//     throw Exception('Failed to load post');
+//   }
+// }
 
 class myDrawer extends StatefulWidget {
   @override
@@ -43,16 +43,16 @@ class myDrawer extends StatefulWidget {
 
 class myDrawerState extends State<myDrawer> {
 
-ScheduleResponse rsp;
+//ScheduleResponse rsp;
 
-void getResponse() async {
-  rsp = await fetchResponse();
-  print('INSIDE RESPONSE: ${rsp.state}' );
-}
+// void getResponse() async {
+//   rsp = await fetchResponse();
+//   print('INSIDE RESPONSE: ${rsp.state}' );
+// }
   @override
   void initState(){
     super.initState();
-    getResponse();
+    //getResponse();
   }
 
   @override
@@ -154,19 +154,12 @@ void getResponse() async {
                     Navigator.pop(context);
                     if (select[1] != true) {
                       selection(1);
-                      if(rsp.state == 1) {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => Schedule(),
-                          ));
-                      } else {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Empty_Schedule(),
-                          ));
-                      }
+                          )
+                        );
                     }
                   },
                 ),

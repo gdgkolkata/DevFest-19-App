@@ -83,13 +83,13 @@ class _ScheduleState extends State<Schedule> {
               tabs: <Widget>[
                 Tab(
                   icon: Text(
-                    "Hall1",
+                    "Eiffel Hall1",
                     style: TextStyle(color: Colors.grey.shade600),
                   ),
                 ),
                 Tab(
                   icon: Text(
-                    "Hall2",
+                    "Eiffel Hall2",
                     style: TextStyle(color: Colors.grey.shade600),
                   ),
                 ),
