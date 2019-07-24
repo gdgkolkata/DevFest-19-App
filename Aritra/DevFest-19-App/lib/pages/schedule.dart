@@ -23,7 +23,7 @@ Future<List<SessionResponse>> fetchSessionResponse(
     http.Client client, BuildContext context) async {
   try {
     final response = await client
-        .get('https://sessionize.com/api/v2/f0dxidzh/view/sessions');
+        .get('https://raw.githubusercontent.com/Rimjhim28/Devfest-19-Data/master/schedule.json?t=timestamp');
     return compute(parseSessionResponse, response.body);
   } on SocketException catch (_) {
     selection(0);
@@ -65,8 +65,6 @@ class _ScheduleState extends State<Schedule> {
     return false; // return true if the route to be popped
   }
 
-  bool isBookmarked = false;
-  bool isAdded = false;
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
