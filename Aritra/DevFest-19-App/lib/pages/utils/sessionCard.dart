@@ -74,9 +74,11 @@ class _SessionCardState extends State<SessionCard> {
                     color: Colors.grey.shade600, fontWeight: FontWeight.bold),
               ),
               // The Go button
-              trailing: Icon(Icons.keyboard_arrow_right,
-                  color: Colors.grey.shade600, size: 30.0),
+              trailing:Icon(Icons.keyboard_arrow_right,
+                  color:widget._description!="null"?  Colors.grey.shade600:Colors.white, size: 30.0),
+             
               onTap: () {
+                if(widget._description!="null"){
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -88,6 +90,7 @@ class _SessionCardState extends State<SessionCard> {
                             widget._level,
                             widget._venue,
                             widget._description)));
+                }
               },
             ),
           ),

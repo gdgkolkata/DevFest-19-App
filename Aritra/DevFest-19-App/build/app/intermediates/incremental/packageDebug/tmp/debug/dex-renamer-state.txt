@@ -1,4 +1,4 @@
-#Mon Jul 15 13:41:49 IST 2019
+#Wed Jul 24 20:32:11 IST 2019
 base.0=/home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/build/app/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
