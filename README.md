@@ -1,5 +1,7 @@
 # DevFest-19-App
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3e7f37640e0442818ef71e06b66937da)](https://app.codacy.com/app/ariG23498/DevFest-19-App?utm_source=github.com&utm_medium=referral&utm_content=Rimjhim28/DevFest-19-App&utm_campaign=Badge_Grade_Dashboard)
+
 ## About the Application
 
 DevFest Kolkata’19 is the 2nd edition of the greatest technical extravaganza of GDG Kolkata and is all set to take place on 4th of August this year. Tread your way through the series of events lined up for you via the completely equipped official DevFest App. With all the information gathered around in a single App, enjoy the day long event without any hassle.
