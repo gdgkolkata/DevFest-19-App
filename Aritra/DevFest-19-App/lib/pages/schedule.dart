@@ -6,6 +6,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 import 'dart:async';
+import 'package:dynamic_theme/dynamic_theme.dart';
+import 'package:flutter/services.dart';
 
 // Data imports
 import 'package:devfest19/data/sessionResponse.dart';
@@ -67,12 +69,19 @@ class _ScheduleState extends State<Schedule> {
 
   @override
   Widget build(BuildContext context) {
+     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor:Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //top bar color
+      systemNavigationBarColor: Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //bottom bar color
+      systemNavigationBarIconBrightness: Theme.of(context).backgroundColor==Colors.white? Brightness.dark:Brightness.light,
+    ));
     return WillPopScope(
       onWillPop: _willPopCallback,
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
+          backgroundColor: Theme.of(context).backgroundColor,
           appBar: AppBar(
+            
             // Tabbar
             bottom: TabBar(
               // labelColor: hexToColor("#C7B7E4"),
@@ -81,28 +90,28 @@ class _ScheduleState extends State<Schedule> {
               tabs: <Widget>[
                 Tab(
                   icon: Text(
-                    "Eiffel Hall1",
-                    style: TextStyle(color: Colors.grey.shade600),
+                    "Eiffel Hall 1",
+                    style: TextStyle( color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white,),
                   ),
                 ),
                 Tab(
                   icon: Text(
-                    "Eiffel Hall2",
-                    style: TextStyle(color: Colors.grey.shade600),
+                    "Eiffel Hall 2",
+                    style: TextStyle( color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white,),
                   ),
                 ),
               ],
             ),
-            brightness: Brightness.light,
-            iconTheme: new IconThemeData(color: Colors.black87),
+            brightness: Theme.of(context).backgroundColor==Colors.white? Brightness.light:Brightness.dark, //check
+            backgroundColor: Theme.of(context).backgroundColor,
+           iconTheme: new IconThemeData(color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white),
             title: Text(
               'Schedule',
               style: TextStyle(
-                color: Colors.grey.shade600,
+                color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white,
               ),
             ),
             elevation: 5.0,
-            backgroundColor: Colors.white,
           ),
           drawer: myDrawer(),
           body: TabBarView(

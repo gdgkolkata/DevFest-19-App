@@ -6,6 +6,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 import 'dart:async';
+import 'package:flutter/services.dart';
 
 // Pages imports
 import './error.dart';
@@ -60,20 +61,26 @@ class _SpeakersState extends State<Speakers> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor:Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //top bar color
+      systemNavigationBarColor: Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //bottom bar color
+      systemNavigationBarIconBrightness: Theme.of(context).backgroundColor==Colors.white? Brightness.dark:Brightness.light,
+    ));
     return WillPopScope(
       onWillPop: _willPopCallback,
       child: Scaffold(
+        backgroundColor:Theme.of(context).backgroundColor,
         appBar: AppBar(
-          brightness: Brightness.light,
-          iconTheme: IconThemeData(color: Colors.black87),
+         brightness: Theme.of(context).backgroundColor==Colors.white? Brightness.light:Brightness.dark, //check
+         iconTheme: new IconThemeData(color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white),
           title: Text(
             'Speakers',
             style: TextStyle(
-              color: Colors.grey.shade600,
+             color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white,
             ),
           ),
           elevation: 5.0,
-          backgroundColor: Colors.white,
+          backgroundColor: Theme.of(context).backgroundColor,
         ),
         drawer: myDrawer(),
         body: FutureBuilder<List<Speaker>>(

@@ -16,13 +16,15 @@ class _DevCardsState extends State<DevCards> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: MediaQuery.of(context).size.height / 5,
       child: Card(
+        color: Theme.of(context).backgroundColor,
         elevation: 5.0,
         margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
+          side: BorderSide(color: Colors.white,width: 0.2),
         ),
         child: Center(
           child: GestureDetector(
@@ -49,7 +51,7 @@ class _DevCardsState extends State<DevCards> {
                     ? "${widget._name.substring(0, 37)}..."
                     : widget._name,
                 style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                    TextStyle(color: Theme.of(context).backgroundColor==Colors.white?Colors.black:Colors.white, fontWeight: FontWeight.bold),
               ),
               // Name of the Company
               subtitle: Text(

@@ -1,7 +1,9 @@
 // Flutter plugin imports
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 
 // Pages import
 
@@ -54,31 +56,45 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.white10, //top bar color
-      systemNavigationBarColor: Colors.white10, //bottom bar color
-      systemNavigationBarIconBrightness: Brightness.dark,
+      statusBarColor:Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //top bar color
+      systemNavigationBarColor: Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //bottom bar color
+      systemNavigationBarIconBrightness: Theme.of(context).backgroundColor==Colors.white? Brightness.dark:Brightness.light,
     ));
     debugPrint(hasNet.toString());
     return WillPopScope(
       onWillPop: _willPopCallback,
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).backgroundColor,
         appBar: AppBar(
-          brightness: Brightness.light, //check
-          iconTheme: new IconThemeData(color: Colors.grey.shade600),
+          brightness: Theme.of(context).backgroundColor==Colors.white? Brightness.light:Brightness.dark, //check
+          iconTheme: new IconThemeData(color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white),
           elevation: 5.0,
           title: Text(
             'Home',
             style: TextStyle(
-              color: Colors.grey.shade600,
+              color: Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white,
             ),
           ),
-          backgroundColor: Colors.white,
+          backgroundColor: Theme.of(context).backgroundColor,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.lightbulb_outline),
+              iconSize: 20.0,
+              onPressed: () {
+                DynamicTheme.of(context).setThemeData(new ThemeData(
+                  backgroundColor:
+                      Theme.of(context).backgroundColor == Colors.white
+                          ? Colors.black
+                          : Colors.white,
+                ));
+              },
+            )
+          ],
         ),
         drawer: myDrawer(),
         body: ListView(
           children: <Widget>[
-            Image.asset("assets/devfest.png"),
+            Image.asset("assets/logodevFest.png",height: MediaQuery.of(context).size.height * 0.4),
             Padding(
               padding: const EdgeInsets.fromLTRB(8.0, 10.0, 8.0, 0.0),
               child: RichText(
@@ -93,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                       text: "Welcome to\nGDG Kolkata DevFest\n\n",
                       style: TextStyle(
                         fontSize: 22.0,
-                        color: Colors.black,
+                        color: Theme.of(context).backgroundColor==Colors.white?Colors.black:Colors.white,
                       ),
                     ),
                     TextSpan(
@@ -108,31 +124,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(
-                  MediaQuery.of(context).size.width * (1 / 3),
-                  30.0,
-                  MediaQuery.of(context).size.width * (1 / 3),
-                  10.0),
-              child: RaisedButton(
-                shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(15.0)),
-                padding: EdgeInsets.all(20.0),
-                color: hexToColor('#673ab7'),
-                onPressed: () async {
-                  const url =
-                      'https://docs.google.com/forms/d/e/1FAIpQLSfnitNzIblk6ciVqYgIHRM303Dl44ZvpAtMcqvqWQeQUBYLdw/viewform';
-                  if (await canLaunch(url)) {
-                    await launch(url);
-                  } else {
-                    throw 'Could not launch $url';
-                  }
-                },
-                child: Text(
-                  "Apply Now",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            )
           ],
         ),
       ),

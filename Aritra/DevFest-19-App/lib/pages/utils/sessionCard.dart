@@ -34,13 +34,15 @@ class _SessionCardState extends State<SessionCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      child: SizedBox(
+      child: Container(
         height: MediaQuery.of(context).size.height / 5,
         child: Card(
+          color: Theme.of(context).backgroundColor,
           elevation: 5.0,
           margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
+             side: BorderSide(color: Colors.white,width: 0.2),
           ),
           child: Center(
             child: ListTile(
@@ -63,7 +65,7 @@ class _SessionCardState extends State<SessionCard> {
                     ? "${widget._title.substring(0, 47)}..."
                     : widget._title,
                 style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                    TextStyle(color: Theme.of(context).backgroundColor==Colors.white?Colors.black:Colors.white, fontWeight: FontWeight.bold),
               ),
               // Speaker
               subtitle: Text(
@@ -75,7 +77,7 @@ class _SessionCardState extends State<SessionCard> {
               ),
               // The Go button
               trailing:Icon(Icons.keyboard_arrow_right,
-                  color:widget._description!="null"?  Colors.grey.shade600:Colors.white, size: 30.0),
+                  color:widget._description!="null"?  Colors.grey.shade600:Theme.of(context).backgroundColor, size: 30.0),
              
               onTap: () {
                 if(widget._description!="null"){

@@ -29,6 +29,7 @@ class speakerDetailsState extends State<speakerDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:Theme.of(context).backgroundColor,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(18.0),
@@ -41,9 +42,11 @@ class speakerDetailsState extends State<speakerDetails> {
                 bottom: 10.0,
               ),
               child: Card(
+                color:Theme.of(context).backgroundColor,
                 elevation: 5.0,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
+                    borderRadius: BorderRadius.circular(10.0),
+                    side: BorderSide(color: Colors.white,width: 0.2)),
                 child: Column(
                   // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -63,7 +66,7 @@ class speakerDetailsState extends State<speakerDetails> {
                           ? "${widget._company.substring(0, 37)}..."
                           : widget._name,
                       style: TextStyle(
-                        color: Colors.black87,
+                        color: Theme.of(context).backgroundColor==Colors.white?Colors.black:Colors.white,
                         fontSize: 22.0,
                       ),
                     ),

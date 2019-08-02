@@ -5,6 +5,7 @@ INJECTED from /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/De
 INJECTED from /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/android/app/src/main/AndroidManifest.xml:1:1-35:12
 INJECTED from /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/android/app/src/main/AndroidManifest.xml:1:1-35:12
 MERGED from /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/android/app/src/main/AndroidManifest.xml:1:1-35:12
+MERGED from [:shared_preferences] /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
 MERGED from [:url_launcher] /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-14:12
 MERGED from [:google_maps_flutter] /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/build/google_maps_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] /home/piyush/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.1.0.aar/90470ce974cbcf46e8bd38fbdf9582c1/AndroidManifest.xml:17:1-38:12
@@ -115,6 +116,8 @@ uses-sdk
 INJECTED from /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/android/app/src/main/AndroidManifest.xml
+MERGED from [:shared_preferences] /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [:url_launcher] /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [:url_launcher] /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [:google_maps_flutter] /home/piyush/Flutter projects/devfestival/DevFest-19-App/Aritra/DevFest-19-App/build/google_maps_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44

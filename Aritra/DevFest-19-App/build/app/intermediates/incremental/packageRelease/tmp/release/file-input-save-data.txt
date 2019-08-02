@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Jul 15 12:52:46 IST 2019
+#Fri Aug 02 23:50:38 IST 2019
 17.baseType=DIRECTORY
 4.path=flutter_assets/assets/github.png
 8.set=ASSET

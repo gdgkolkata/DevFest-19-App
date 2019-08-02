@@ -14,6 +14,7 @@ import 'package:devfest19/pages/navigation.dart';
 import 'package:devfest19/pages/sponsors.dart';
 import 'package:devfest19/pages/empty_schedule.dart';
 
+
 // Utils import
 import 'drawerInfo.dart';
 import './color.dart';
@@ -59,7 +60,7 @@ class myDrawerState extends State<myDrawer> {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.white,
+        color: Theme.of(context).backgroundColor,
         child: ListView(
           children: <Widget>[
             Container(
@@ -86,7 +87,6 @@ class myDrawerState extends State<myDrawer> {
               padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: select[0] ? hexToColor("#CBC5D7") : Colors.white,
                   borderRadius: new BorderRadius.only(
                       bottomRight: const Radius.circular(40.0),
                       topRight: const Radius.circular(40.0)),
@@ -128,7 +128,6 @@ class myDrawerState extends State<myDrawer> {
               padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: select[1] ? hexToColor("#CBC5D7") : Colors.white,
                   borderRadius: new BorderRadius.only(
                       bottomRight: const Radius.circular(40.0),
                       topRight: const Radius.circular(40.0)),
@@ -171,7 +170,6 @@ class myDrawerState extends State<myDrawer> {
               padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: select[2] ? hexToColor("#CBC5D7") : Colors.white,
                   borderRadius: new BorderRadius.only(
                       bottomRight: const Radius.circular(40.0),
                       topRight: const Radius.circular(40.0)),
@@ -210,7 +208,6 @@ class myDrawerState extends State<myDrawer> {
               padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: select[3] ? hexToColor("#CBC5D7") : Colors.white,
                   borderRadius: new BorderRadius.only(
                       bottomRight: const Radius.circular(40.0),
                       topRight: const Radius.circular(40.0)),
@@ -251,7 +248,6 @@ class myDrawerState extends State<myDrawer> {
               padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: select[4] ? hexToColor("#CBC5D7") : Colors.white,
                   borderRadius: new BorderRadius.only(
                       bottomRight: const Radius.circular(40.0),
                       topRight: const Radius.circular(40.0)),
@@ -293,7 +289,6 @@ class myDrawerState extends State<myDrawer> {
               padding: const EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 0.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: select[5] ? hexToColor("#CBC5D7") : Colors.white,
                   borderRadius: new BorderRadius.only(
                       bottomRight: const Radius.circular(40.0),
                       topRight: const Radius.circular(40.0)),
@@ -332,6 +327,7 @@ class myDrawerState extends State<myDrawer> {
                 ),
               ),
             ),
+            
 
             // The lower container
             Column(

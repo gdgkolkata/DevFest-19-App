@@ -39,6 +39,7 @@ class sessionDetailsState extends State<sessionDetails> {
       builder: (BuildContext context) {
         // return object of type Dialog
         return AlertDialog(
+          backgroundColor: Theme.of(context).backgroundColor==Colors.white?Colors.white:Colors.grey[700],
           elevation: 5.0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
@@ -47,17 +48,17 @@ class sessionDetailsState extends State<sessionDetails> {
           ),
           title: new Text(
             "Live Stream",
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontWeight: FontWeight.bold,),
           ),
           content: new Text(
             "Live Streaming is disabled.\nKeep an 👀 on the 4th of Aug.",
-            style: TextStyle(color: Colors.grey.shade600),
+            style: TextStyle(color: Theme.of(context).backgroundColor==Colors.white?Colors.black:Colors.white,),
           ),
           actions: <Widget>[
             // usually buttons at the bottom of the dialog
             new FlatButton(
-              child: new Text("Close"),
-              color: hexToColor("#C7B7E4"),
+              child: new Text("Close",style: TextStyle(color:Colors.white ),),
+              color:Theme.of(context).backgroundColor==Colors.white?hexToColor("#C7B7E4"):hexToColor('#673ab7'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -71,8 +72,9 @@ class sessionDetailsState extends State<sessionDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:Theme.of(context).backgroundColor,
       body: Container(
-        color: Colors.white,
+        color: Theme.of(context).backgroundColor,
         child: ListView(
           children: <Widget>[
             // Title of the talk
@@ -81,7 +83,7 @@ class sessionDetailsState extends State<sessionDetails> {
               child: Text(
                 widget._title,
                 style: TextStyle(
-                  color: Colors.black87,
+                  color: Theme.of(context).backgroundColor==Colors.white?Colors.black:Colors.white,
                   fontSize: 30.0,
                 ),
               ),
@@ -92,7 +94,7 @@ class sessionDetailsState extends State<sessionDetails> {
               child: Text(
                 widget._speaker,
                 style: TextStyle(
-                  color: Colors.grey.shade600,
+                  color: Theme.of(context).backgroundColor==Colors.white?Colors.grey.shade600:Colors.grey.shade400,
                   fontSize: 25.0,
                 ),
               ),
@@ -108,7 +110,7 @@ class sessionDetailsState extends State<sessionDetails> {
               ),
               child: Row(
                 children: <Widget>[
-                  Icon(Icons.access_time),
+                  Icon(Icons.access_time,color: Theme.of(context).backgroundColor==Colors.white?Colors.black:Colors.white,),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
@@ -116,7 +118,7 @@ class sessionDetailsState extends State<sessionDetails> {
                           ? "To be decided"
                           : widget._slot.substring(11, 16),
                       style: TextStyle(
-                        color: Colors.black87,
+                        color: Theme.of(context).backgroundColor==Colors.white?Colors.black:Colors.white,
                         fontSize: 18.0,
                       ),
                     ),
@@ -130,13 +132,13 @@ class sessionDetailsState extends State<sessionDetails> {
               ),
               child: Row(
                 children: <Widget>[
-                  Icon(Icons.location_city),
+                  Icon(Icons.location_city,color: Theme.of(context).backgroundColor==Colors.white?Colors.black:Colors.white,),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       widget._venue == "null" ? "To be decided" : widget._venue,
                       style: TextStyle(
-                        color: Colors.black87,
+                        color: Theme.of(context).backgroundColor==Colors.white?Colors.black:Colors.white,
                         fontSize: 18.0,
                       ),
                     ),
@@ -155,7 +157,7 @@ class sessionDetailsState extends State<sessionDetails> {
                     child: Text(
                       "Session Level : ",
                       style: TextStyle(
-                        color: Colors.black87,
+                        color: Theme.of(context).backgroundColor==Colors.white?Colors.black:Colors.white,
                         fontSize: 18.0,
                       ),
                     ),
@@ -165,7 +167,7 @@ class sessionDetailsState extends State<sessionDetails> {
                     child: Text(
                       widget._level,
                       style: TextStyle(
-                        color: Colors.black87,
+                        color: Theme.of(context).backgroundColor==Colors.white?Colors.grey.shade600:Colors.grey.shade400,
                         fontSize: 18.0,
                       ),
                     ),
@@ -185,7 +187,7 @@ class sessionDetailsState extends State<sessionDetails> {
                       color: widget._level == "Intermediate" ||
                               widget._level == "Advance"
                           ? hexToColor('#673ab7')
-                          : Colors.black12,
+                          : Colors.grey,
                       child: Text(
                         "      ",
                       ),
@@ -197,7 +199,7 @@ class sessionDetailsState extends State<sessionDetails> {
                       height: 18.0,
                       color: widget._level == "Advance"
                           ? hexToColor('#673ab7')
-                          : Colors.black12,
+                          : Colors.grey,
                       child: Text("      "),
                     ),
                   ),
@@ -209,7 +211,7 @@ class sessionDetailsState extends State<sessionDetails> {
               child: Text(
                 widget._description,
                 style: TextStyle(
-                  color: Colors.black87,
+                  color: Theme.of(context).backgroundColor==Colors.white?Colors.black:Colors.grey.shade600,
                   fontSize: 18.0,
                 ),
               ),
@@ -236,7 +238,7 @@ class sessionDetailsState extends State<sessionDetails> {
           height: 40.0,
         ),
         shape: CircularNotchedRectangle(),
-        color: Colors.white,
+        color: Theme.of(context).backgroundColor==Colors.white?Colors.white:hexToColor("#212121"),
       ),
     );
   }

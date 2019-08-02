@@ -1,6 +1,7 @@
 // Flutter plugin imports
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 // Pages imports
@@ -8,7 +9,6 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 // Utils imports
 import './utils/drawer.dart';
 import './utils/drawerInfo.dart';
-import './utils/color.dart';
 
 class Navigation extends StatefulWidget {
   @override
@@ -16,12 +16,17 @@ class Navigation extends StatefulWidget {
 }
 
 class _NavigationState extends State<Navigation> {
-  Completer<GoogleMapController> _controller = Completer();
+  GoogleMapController _controller;
+  bool isMapCreated = false;
+
   Set<Marker> _createMarker() {
     return <Marker>[
       Marker(
         markerId: MarkerId("marker_1"),
         position: LatLng(22.5798047, 88.4610292),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+          BitmapDescriptor.hueViolet,
+        ),
       ),
     ].toSet();
   }
@@ -40,22 +45,43 @@ class _NavigationState extends State<Navigation> {
     return false; // return true if the route to be popped
   }
 
+  changeMode() {
+    getJsonFile('assets/night.json').then(setmapstyle);
+  }
+
+  Future<String> getJsonFile(String path) async {
+    return await rootBundle.loadString(path);
+  }
+
+  void setmapstyle(String mapStyle) {
+    _controller.setMapStyle(mapStyle);
+  }
+
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor:Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //top bar color
+      systemNavigationBarColor: Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //bottom bar color
+      systemNavigationBarIconBrightness: Theme.of(context).backgroundColor==Colors.white? Brightness.dark:Brightness.light,
+    ));
+    if (isMapCreated) {
+      if(Theme.of(context).backgroundColor==Colors.black){changeMode();}
+    }
     return WillPopScope(
       onWillPop: _willPopCallback,
       child: Scaffold(
+        backgroundColor: Theme.of(context).backgroundColor,
         appBar: AppBar(
-          brightness: Brightness.light,
-          iconTheme: new IconThemeData(color: Colors.black87),
+          backgroundColor: Theme.of(context).backgroundColor,
+           iconTheme: new IconThemeData(color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white),
           title: Text(
             'Find Your Way',
             style: TextStyle(
-              color: Colors.black87,
+                color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white,
             ),
           ),
           elevation: 5.0,
-          backgroundColor: Colors.white,
+          brightness: Theme.of(context).backgroundColor==Colors.white? Brightness.light:Brightness.dark,
         ),
         drawer: myDrawer(),
         body: Column(
@@ -69,7 +95,10 @@ class _NavigationState extends State<Navigation> {
                   initialCameraPosition: _venue,
                   markers: _createMarker(),
                   onMapCreated: (GoogleMapController controller) {
-                    _controller.complete(controller);
+                    _controller = controller;
+                    isMapCreated = true;
+                    if(Theme.of(context).backgroundColor==Colors.black){changeMode();}
+                    setState(() {});
                   },
                 ),
               ),
@@ -78,7 +107,7 @@ class _NavigationState extends State<Navigation> {
               child: Text(
                 "Novotel Kolkata Hotel And Residences",
                 style: TextStyle(
-                  color: Colors.grey.shade600,
+                  color: Colors.grey.shade400,
                   fontWeight: FontWeight.bold,
                   fontSize: 16.0,
                 ),
