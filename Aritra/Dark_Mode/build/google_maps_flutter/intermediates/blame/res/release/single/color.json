@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/aritra/AndroidStudioProjects/Google_Projects/Aritra/DevFest-19-App/build/google_maps_flutter/intermediates/res/merged/release/color/common_google_signin_btn_tint.xml",
+        "source": "/home/aritra/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/f2ec2bab843c731c1460a07574f4d4f9/res/color/common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "/home/aritra/AndroidStudioProjects/Google_Projects/Aritra/DevFest-19-App/build/google_maps_flutter/intermediates/res/merged/release/color/common_google_signin_btn_text_light.xml",
+        "source": "/home/aritra/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/f2ec2bab843c731c1460a07574f4d4f9/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/home/aritra/AndroidStudioProjects/Google_Projects/Aritra/DevFest-19-App/build/google_maps_flutter/intermediates/res/merged/release/color/common_google_signin_btn_text_dark.xml",
+        "source": "/home/aritra/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/f2ec2bab843c731c1460a07574f4d4f9/res/color/common_google_signin_btn_text_dark.xml"
+    }
+]
