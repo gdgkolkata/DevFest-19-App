@@ -60,12 +60,22 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor:Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //top bar color
-      systemNavigationBarColor: Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //bottom bar color
-      systemNavigationBarIconBrightness: Theme.of(context).backgroundColor==Colors.white? Brightness.dark:Brightness.light,
+      statusBarColor: Theme.of(context).backgroundColor == Colors.white
+          ? Colors.white10
+          : Colors.black, //top bar color
+      systemNavigationBarColor:
+          Theme.of(context).backgroundColor == Colors.white
+              ? Colors.white10
+              : Colors.black, //bottom bar color
+      systemNavigationBarIconBrightness:
+          Theme.of(context).backgroundColor == Colors.white
+              ? Brightness.dark
+              : Brightness.light,
     ));
     if (isMapCreated) {
-      if(Theme.of(context).backgroundColor==Colors.black){changeMode();}
+      if (Theme.of(context).backgroundColor == Colors.black) {
+        changeMode();
+      }
     }
     return WillPopScope(
       onWillPop: _willPopCallback,
@@ -73,15 +83,22 @@ class _NavigationState extends State<Navigation> {
         backgroundColor: Theme.of(context).backgroundColor,
         appBar: AppBar(
           backgroundColor: Theme.of(context).backgroundColor,
-           iconTheme: new IconThemeData(color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white),
+          iconTheme: new IconThemeData(
+              color: Theme.of(context).backgroundColor == Colors.white
+                  ? Colors.grey.shade600
+                  : Colors.white),
           title: Text(
             'Find Your Way',
             style: TextStyle(
-                color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white,
+              color: Theme.of(context).backgroundColor == Colors.white
+                  ? Colors.grey.shade600
+                  : Colors.white,
             ),
           ),
           elevation: 5.0,
-          brightness: Theme.of(context).backgroundColor==Colors.white? Brightness.light:Brightness.dark,
+          brightness: Theme.of(context).backgroundColor == Colors.white
+              ? Brightness.light
+              : Brightness.dark,
         ),
         drawer: myDrawer(),
         body: Column(
@@ -97,7 +114,9 @@ class _NavigationState extends State<Navigation> {
                   onMapCreated: (GoogleMapController controller) {
                     _controller = controller;
                     isMapCreated = true;
-                    if(Theme.of(context).backgroundColor==Colors.black){changeMode();}
+                    if (Theme.of(context).backgroundColor == Colors.black) {
+                      changeMode();
+                    }
                     setState(() {});
                   },
                 ),

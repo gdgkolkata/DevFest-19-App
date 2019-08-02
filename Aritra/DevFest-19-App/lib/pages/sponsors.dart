@@ -43,6 +43,7 @@ List<Sponsor> parseSponsors(String responseBody) {
 
   return parsed.map<Sponsor>((json) => Sponsor.fromJson(json)).toList();
 }
+
 //String details="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 class Sponsors extends StatefulWidget {
   @override
@@ -62,25 +63,40 @@ class _SponsorsState extends State<Sponsors> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor:Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //top bar color
-      systemNavigationBarColor: Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //bottom bar color
-      systemNavigationBarIconBrightness: Theme.of(context).backgroundColor==Colors.white? Brightness.dark:Brightness.light,
+      statusBarColor: Theme.of(context).backgroundColor == Colors.white
+          ? Colors.white10
+          : Colors.black, //top bar color
+      systemNavigationBarColor:
+          Theme.of(context).backgroundColor == Colors.white
+              ? Colors.white10
+              : Colors.black, //bottom bar color
+      systemNavigationBarIconBrightness:
+          Theme.of(context).backgroundColor == Colors.white
+              ? Brightness.dark
+              : Brightness.light,
     ));
     return WillPopScope(
       onWillPop: _willPopCallback,
       child: Scaffold(
-        backgroundColor:Theme.of(context).backgroundColor,
+        backgroundColor: Theme.of(context).backgroundColor,
         appBar: AppBar(
-         brightness: Theme.of(context).backgroundColor==Colors.white? Brightness.light:Brightness.dark, //check
-          iconTheme: new IconThemeData(color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white),
+          brightness: Theme.of(context).backgroundColor == Colors.white
+              ? Brightness.light
+              : Brightness.dark, //check
+          iconTheme: new IconThemeData(
+              color: Theme.of(context).backgroundColor == Colors.white
+                  ? Colors.grey.shade600
+                  : Colors.white),
           title: Text(
             'Sponsors',
             style: TextStyle(
-              color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white,
+              color: Theme.of(context).backgroundColor == Colors.white
+                  ? Colors.grey.shade600
+                  : Colors.white,
             ),
           ),
           elevation: 5.0,
-          backgroundColor:Theme.of(context).backgroundColor,
+          backgroundColor: Theme.of(context).backgroundColor,
         ),
         drawer: myDrawer(),
         body: FutureBuilder<List<Sponsor>>(
@@ -117,14 +133,15 @@ class SponsorsList extends StatelessWidget {
               throw 'Could not launch $url';
             }
           },
-          child: SizedBox(
+          child: Container(
             height: MediaQuery.of(context).size.height / 2,
             child: Card(
-               color: Theme.of(context).backgroundColor==Colors.white?Colors.white:Colors.grey[900],
+              color: Theme.of(context).backgroundColor,
               elevation: 5.0,
               margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
+                side: BorderSide(color: Colors.white, width: 0.2),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -132,15 +149,17 @@ class SponsorsList extends StatelessWidget {
                 children: <Widget>[
                   Image.network(
                     sponsors[index].logo,
-                    height: MediaQuery.of(context).size.height / 4,
+                    height: MediaQuery.of(context).size.height / 5,
                     width: MediaQuery.of(context).size.height / 2,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      sponsors[index].description.length>440?"${sponsors[index].description.substring(0, 400)}...":sponsors[index].description,
+                      sponsors[index].description.length > 440
+                          ? "${sponsors[index].description.substring(0, 400)}..."
+                          : sponsors[index].description,
                       style: TextStyle(
-                        fontSize: 8.0,
+                        fontSize: 12.0,
                         color: Colors.grey.shade600,
                       ),
                     ),

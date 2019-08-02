@@ -62,21 +62,36 @@ class _SpeakersState extends State<Speakers> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor:Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //top bar color
-      systemNavigationBarColor: Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //bottom bar color
-      systemNavigationBarIconBrightness: Theme.of(context).backgroundColor==Colors.white? Brightness.dark:Brightness.light,
+      statusBarColor: Theme.of(context).backgroundColor == Colors.white
+          ? Colors.white10
+          : Colors.black, //top bar color
+      systemNavigationBarColor:
+          Theme.of(context).backgroundColor == Colors.white
+              ? Colors.white10
+              : Colors.black, //bottom bar color
+      systemNavigationBarIconBrightness:
+          Theme.of(context).backgroundColor == Colors.white
+              ? Brightness.dark
+              : Brightness.light,
     ));
     return WillPopScope(
       onWillPop: _willPopCallback,
       child: Scaffold(
-        backgroundColor:Theme.of(context).backgroundColor,
+        backgroundColor: Theme.of(context).backgroundColor,
         appBar: AppBar(
-         brightness: Theme.of(context).backgroundColor==Colors.white? Brightness.light:Brightness.dark, //check
-         iconTheme: new IconThemeData(color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white),
+          brightness: Theme.of(context).backgroundColor == Colors.white
+              ? Brightness.light
+              : Brightness.dark, //check
+          iconTheme: new IconThemeData(
+              color: Theme.of(context).backgroundColor == Colors.white
+                  ? Colors.grey.shade600
+                  : Colors.white),
           title: Text(
             'Speakers',
             style: TextStyle(
-             color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white,
+              color: Theme.of(context).backgroundColor == Colors.white
+                  ? Colors.grey.shade600
+                  : Colors.white,
             ),
           ),
           elevation: 5.0,
@@ -108,8 +123,13 @@ class SpeakersList extends StatelessWidget {
     return ListView.builder(
       itemCount: speakers.length,
       itemBuilder: (context, index) {
-        return SpeakerCards(speakers[index].fullName, speakers[index].tagLine,
-            "", speakers[index].profilePicture, speakers[index].bio, speakers[index].links);
+        return SpeakerCards(
+            speakers[index].fullName,
+            speakers[index].tagLine,
+            "",
+            speakers[index].profilePicture,
+            speakers[index].bio,
+            speakers[index].links);
       },
     );
   }

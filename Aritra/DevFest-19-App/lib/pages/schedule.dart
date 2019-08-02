@@ -6,7 +6,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 import 'dart:async';
-import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/services.dart';
 
 // Data imports
@@ -24,8 +23,8 @@ import './utils/drawerInfo.dart';
 Future<List<SessionResponse>> fetchSessionResponse(
     http.Client client, BuildContext context) async {
   try {
-    final response = await client
-        .get('https://raw.githubusercontent.com/Rimjhim28/Devfest-19-Data/master/schedule.json?t=timestamp');
+    final response = await client.get(
+        'https://raw.githubusercontent.com/Rimjhim28/Devfest-19-Data/master/schedule.json?t=timestamp');
     return compute(parseSessionResponse, response.body);
   } on SocketException catch (_) {
     selection(0);
@@ -69,10 +68,18 @@ class _ScheduleState extends State<Schedule> {
 
   @override
   Widget build(BuildContext context) {
-     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor:Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //top bar color
-      systemNavigationBarColor: Theme.of(context).backgroundColor==Colors.white? Colors.white10:Colors.black, //bottom bar color
-      systemNavigationBarIconBrightness: Theme.of(context).backgroundColor==Colors.white? Brightness.dark:Brightness.light,
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Theme.of(context).backgroundColor == Colors.white
+          ? Colors.white10
+          : Colors.black, //top bar color
+      systemNavigationBarColor:
+          Theme.of(context).backgroundColor == Colors.white
+              ? Colors.white10
+              : Colors.black, //bottom bar color
+      systemNavigationBarIconBrightness:
+          Theme.of(context).backgroundColor == Colors.white
+              ? Brightness.dark
+              : Brightness.light,
     ));
     return WillPopScope(
       onWillPop: _willPopCallback,
@@ -81,7 +88,6 @@ class _ScheduleState extends State<Schedule> {
         child: Scaffold(
           backgroundColor: Theme.of(context).backgroundColor,
           appBar: AppBar(
-            
             // Tabbar
             bottom: TabBar(
               // labelColor: hexToColor("#C7B7E4"),
@@ -91,24 +97,39 @@ class _ScheduleState extends State<Schedule> {
                 Tab(
                   icon: Text(
                     "Eiffel Hall 1",
-                    style: TextStyle( color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white,),
+                    style: TextStyle(
+                      color: Theme.of(context).backgroundColor == Colors.white
+                          ? Colors.grey.shade600
+                          : Colors.white,
+                    ),
                   ),
                 ),
                 Tab(
                   icon: Text(
                     "Eiffel Hall 2",
-                    style: TextStyle( color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white,),
+                    style: TextStyle(
+                      color: Theme.of(context).backgroundColor == Colors.white
+                          ? Colors.grey.shade600
+                          : Colors.white,
+                    ),
                   ),
                 ),
               ],
             ),
-            brightness: Theme.of(context).backgroundColor==Colors.white? Brightness.light:Brightness.dark, //check
+            brightness: Theme.of(context).backgroundColor == Colors.white
+                ? Brightness.light
+                : Brightness.dark, //check
             backgroundColor: Theme.of(context).backgroundColor,
-           iconTheme: new IconThemeData(color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white),
+            iconTheme: new IconThemeData(
+                color: Theme.of(context).backgroundColor == Colors.white
+                    ? Colors.grey.shade600
+                    : Colors.white),
             title: Text(
               'Schedule',
               style: TextStyle(
-                color:Theme.of(context).backgroundColor==Colors.white? Colors.grey.shade600:Colors.white,
+                color: Theme.of(context).backgroundColor == Colors.white
+                    ? Colors.grey.shade600
+                    : Colors.white,
               ),
             ),
             elevation: 5.0,

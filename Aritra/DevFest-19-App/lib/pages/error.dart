@@ -1,7 +1,6 @@
-import 'package:devfest19/pages/home.dart';
+// Flutter import
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
-// Utils import
-import './utils/color.dart';
 
 class ErrorPage extends StatelessWidget {
   final String message;
@@ -12,6 +11,7 @@ class ErrorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       body: Container(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

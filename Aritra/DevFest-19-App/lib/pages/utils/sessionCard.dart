@@ -15,22 +15,6 @@ class _SessionCardState extends State<SessionCard> {
     return new Color(int.parse(code.substring(1, 7), radix: 16) + 0xFF000000);
   }
 
-  Widget placeTags(String tags) {
-    List<String> _tags;
-    _tags = tags.split(",");
-    return tags == ""
-        ? Container()
-        : Container(
-            child: Text(
-              _tags.join(" | "),
-              style: TextStyle(
-                color: hexToColor('#673ab7'),
-                fontSize: 15.0,
-              ),
-            ),
-          );
-  }
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -42,7 +26,14 @@ class _SessionCardState extends State<SessionCard> {
           margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
-             side: BorderSide(color: Colors.white,width: 0.2),
+            // side: BorderSide(color: Colors.white, width: 0.2),
+            side: widget._description != "null"
+                ? (Theme.of(context).backgroundColor == Colors.black
+                    ? BorderSide(color: Colors.white, width: 0.2)
+                    : BorderSide(color: Colors.white, width: 0.2))
+                :(Theme.of(context).backgroundColor == Colors.black
+                    ? BorderSide(color: Colors.black, width: 0.2)
+                    : BorderSide(color: Colors.white, width: 0.2)),
           ),
           child: Center(
             child: ListTile(
@@ -56,7 +47,10 @@ class _SessionCardState extends State<SessionCard> {
                   widget._slot == "null"
                       ? "--:--"
                       : widget._slot.substring(11, 16),
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(
+                      color: Theme.of(context).backgroundColor == Colors.white
+                          ? Colors.white
+                          : Colors.black),
                 ),
               ),
               // Title of the session
@@ -64,8 +58,11 @@ class _SessionCardState extends State<SessionCard> {
                 widget._title.length > 50
                     ? "${widget._title.substring(0, 47)}..."
                     : widget._title,
-                style:
-                    TextStyle(color: Theme.of(context).backgroundColor==Colors.white?Colors.black:Colors.white, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: Theme.of(context).backgroundColor == Colors.white
+                        ? Colors.black
+                        : Colors.white,
+                    fontWeight: FontWeight.bold),
               ),
               // Speaker
               subtitle: Text(
@@ -76,92 +73,33 @@ class _SessionCardState extends State<SessionCard> {
                     color: Colors.grey.shade600, fontWeight: FontWeight.bold),
               ),
               // The Go button
-              trailing:Icon(Icons.keyboard_arrow_right,
-                  color:widget._description!="null"?  Colors.grey.shade600:Theme.of(context).backgroundColor, size: 30.0),
-             
-              onTap: () {
-                if(widget._description!="null"){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => sessionDetails(
-                            widget._speaker,
-                            widget._slot,
-                            widget._title,
-                            widget._tags,
-                            widget._level,
-                            widget._venue,
-                            widget._description)));
-                }
-              },
+              trailing: Icon(Icons.keyboard_arrow_right,
+                  color: widget._description != "null"
+                      ? Colors.grey.shade600
+                      : Theme.of(context).backgroundColor,
+                  size: 30.0),
+
+              onTap: widget._description != "null"
+                  ? () {
+                      if (widget._description != "null") {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => sessionDetails(
+                                    widget._speaker,
+                                    widget._slot,
+                                    widget._title,
+                                    widget._tags,
+                                    widget._level,
+                                    widget._venue,
+                                    widget._description)));
+                      }
+                    }
+                  : null,
             ),
           ),
         ),
       ),
     );
-
-    // return Container(
-    //   height: MediaQuery.of(context).size.height / 4,
-    //   width: MediaQuery.of(context).size.width - 20,
-    //   child: GestureDetector(
-    //     child: Padding(
-    //       padding: const EdgeInsets.all(8.0),
-    //       child: Card(
-    //         elevation: 5.0,
-    //         shape: RoundedRectangleBorder(
-    //             borderRadius: BorderRadius.circular(10.0)),
-    //         child: Row(
-    //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    //           children: <Widget>[
-    //             Container(
-    //               width: 300.0,
-    //               child: Column(
-    //                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    //                 children: <Widget>[
-    //                   Text(
-    //                     widget._slot,
-    //                     style: TextStyle(
-    //                       color: hexToColor('#673ab7'),
-    //                       fontSize: 12.0,
-    //                     ),
-    //                   ),
-    //                   Text(
-    //                     widget._title,
-    //                     style: TextStyle(
-    //                       color: Colors.black87,
-    //                       fontSize: 22.0,
-    //                     ),
-    //                   ),
-    //                   Text(
-    //                     widget._speaker,
-    //                     style: TextStyle(
-    //                       color: Colors.black38,
-    //                       fontSize: 16.0,
-    //                     ),
-    //                   ),
-    //                   placeTags(widget._tags),
-    //                 ],
-    //               ),
-    //             ),
-    //             Icon(Icons.keyboard_arrow_right,
-    //                 color: Colors.grey.shade600, size: 30.0),
-    //           ],
-    //         ),
-    //       ),
-    //     ),
-    // onTap: () {
-    //   Navigator.push(
-    //       context,
-    //       MaterialPageRoute(
-    //           builder: (context) => sessionDetails(
-    //               widget._slot,
-    //               widget._title,
-    //               widget._tags,
-    //               widget._level,
-    //               widget._venue,
-    //               widget._description)));
-    // },
-    //   ),
-    // );
   }
 }
