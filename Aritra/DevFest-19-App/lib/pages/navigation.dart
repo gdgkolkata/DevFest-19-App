@@ -1,4 +1,5 @@
 // Flutter plugin imports
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -45,8 +46,12 @@ class _NavigationState extends State<Navigation> {
     return false; // return true if the route to be popped
   }
 
-  changeMode() {
+  changeModeDark() {
     getJsonFile('assets/night.json').then(setmapstyle);
+  }
+
+  changeModeLight() {
+    getJsonFile('assets/light.json').then(setmapstyle);
   }
 
   Future<String> getJsonFile(String path) async {
@@ -74,7 +79,9 @@ class _NavigationState extends State<Navigation> {
     ));
     if (isMapCreated) {
       if (Theme.of(context).backgroundColor == Colors.black) {
-        changeMode();
+        changeModeDark();
+      } else {
+        changeModeLight();
       }
     }
     return WillPopScope(
@@ -99,6 +106,20 @@ class _NavigationState extends State<Navigation> {
           brightness: Theme.of(context).backgroundColor == Colors.white
               ? Brightness.light
               : Brightness.dark,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.lightbulb_outline),
+              iconSize: 20.0,
+              onPressed: () {
+                DynamicTheme.of(context).setThemeData(new ThemeData(
+                  backgroundColor:
+                      Theme.of(context).backgroundColor == Colors.white
+                          ? Colors.black
+                          : Colors.white,
+                ));
+              },
+            )
+          ],
         ),
         drawer: myDrawer(),
         body: Column(
@@ -115,9 +136,10 @@ class _NavigationState extends State<Navigation> {
                     _controller = controller;
                     isMapCreated = true;
                     if (Theme.of(context).backgroundColor == Colors.black) {
-                      changeMode();
+                      changeModeDark();
+                    } else {
+                      changeModeLight();
                     }
-                    setState(() {});
                   },
                 ),
               ),

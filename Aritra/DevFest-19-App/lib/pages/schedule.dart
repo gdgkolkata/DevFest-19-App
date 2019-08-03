@@ -1,4 +1,5 @@
 // Flutter plugin imports
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -133,6 +134,20 @@ class _ScheduleState extends State<Schedule> {
               ),
             ),
             elevation: 5.0,
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.lightbulb_outline),
+                iconSize: 20.0,
+                onPressed: () {
+                  DynamicTheme.of(context).setThemeData(new ThemeData(
+                    backgroundColor:
+                        Theme.of(context).backgroundColor == Colors.white
+                            ? Colors.black
+                            : Colors.white,
+                  ));
+                },
+              )
+            ],
           ),
           drawer: myDrawer(),
           body: TabBarView(
