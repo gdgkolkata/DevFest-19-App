@@ -2,7 +2,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3e7f37640e0442818ef71e06b66937da)](https://app.codacy.com/app/ariG23498/DevFest-19-App?utm_source=github.com&utm_medium=referral&utm_content=Rimjhim28/DevFest-19-App&utm_campaign=Badge_Grade_Dashboard)
 
-### PlayStore : https://play.google.com/store/apps/details?id=gdg.devfest19
+<a target="_blank" href='https://play.google.com/store/apps/details?id=gdg.devfest19'><img alt='Get it on Google Play' src='https://goldtonemusicgroup.com/img/goldtone/main-page/news/playstore-badge.png' height='48px'/></a>
 
 ## About the Application
 
