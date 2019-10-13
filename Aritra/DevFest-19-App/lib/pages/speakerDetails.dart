@@ -33,87 +33,89 @@ class speakerDetailsState extends State<speakerDetails> {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(18.0),
-          child: Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            child: Padding(
-              padding: const EdgeInsets.only(
-                top: 10.0,
-                bottom: 10.0,
-              ),
-              child: Card(
-                color: Theme.of(context).backgroundColor,
-                elevation: 5.0,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                    side: BorderSide(color: Colors.white, width: 0.2)),
-                child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    // Image of the Speaker
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: CircleAvatar(
-                        backgroundColor: hexToColor("#C7B7E4"),
-                        backgroundImage: NetworkImage(widget._imgURL),
-                        radius: 50.0,
-                      ),
-                    ),
-                    // Name of the speaker
-                    Text(
-                      widget._name.length > 40
-                          ? "${widget._company.substring(0, 37)}..."
-                          : widget._name,
-                      style: TextStyle(
-                        color: Theme.of(context).backgroundColor == Colors.white
-                            ? Colors.black
-                            : Colors.white,
-                        fontSize: 22.0,
-                      ),
-                    ),
-                    // Company of the speaker
-                    Padding(
-                      padding: const EdgeInsets.only(left: 12.0),
-                      child: Text(
-                        widget._company,
-                        style: TextStyle(
-                          color: hexToColor('#673ab7'),
-                          fontSize: 14.0,
+          child: SafeArea(
+                      child: Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  top: 10.0,
+                  bottom: 10.0,
+                ),
+                child: Card(
+                  color: Theme.of(context).backgroundColor,
+                  elevation: 5.0,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      side: BorderSide(color: Colors.white, width: 0.2)),
+                  child: Column(
+                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      // Image of the Speaker
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: CircleAvatar(
+                          backgroundColor: hexToColor("#C7B7E4"),
+                          backgroundImage: NetworkImage(widget._imgURL),
+                          radius: 50.0,
                         ),
                       ),
-                    ),
-                    // The description with scrollbar
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(bottom: 5.0),
-                        child: Scrollbar(
-                          child: ScrollConfiguration(
-                            behavior: MyBehavior(),
-                            child: ListView(
-                              children: <Widget>[
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    widget._bio,
-                                    style: TextStyle(
-                                      color: Colors.grey.shade600,
-                                      fontSize: 14.0,
+                      // Name of the speaker
+                      Text(
+                        widget._name.length > 40
+                            ? "${widget._company.substring(0, 37)}..."
+                            : widget._name,
+                        style: TextStyle(
+                          color: Theme.of(context).backgroundColor == Colors.white
+                              ? Colors.black
+                              : Colors.white,
+                          fontSize: 22.0,
+                        ),
+                      ),
+                      // Company of the speaker
+                      Padding(
+                        padding: const EdgeInsets.only(left: 12.0),
+                        child: Text(
+                          widget._company,
+                          style: TextStyle(
+                            color: hexToColor('#673ab7'),
+                            fontSize: 14.0,
+                          ),
+                        ),
+                      ),
+                      // The description with scrollbar
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 5.0),
+                          child: Scrollbar(
+                            child: ScrollConfiguration(
+                              behavior: MyBehavior(),
+                              child: ListView(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      widget._bio,
+                                      style: TextStyle(
+                                        color: Colors.grey.shade600,
+                                        fontSize: 14.0,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                    //Social Media links
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[getSocialMediaProfiles()],
-                    )
-                  ],
+                      //Social Media links
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[getSocialMediaProfiles()],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
